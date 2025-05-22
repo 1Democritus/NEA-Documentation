@@ -1,5 +1,6 @@
 Interview questions: "how do you schedule appointments?", "is it clunky? is it hard to keep track of?", "is it time consuming to find the right doctor?", 
-"would an A.I. assistant to link symptoms with doctors which give treatments be useful?", "would a normalised database with links between doctors, rooms, available times be helpful?"
+"would an A.I. assistant to link symptoms with doctors which give treatments be useful?", 
+"would a normalised database with links between doctors, rooms, available times be helpful?"
 , "what other features would you like?"
 
 Key User: The Head of a Hospital (My Uncle)
@@ -15,8 +16,8 @@ Everyday, there are many patients who believe they have a disease or condition d
 
 My project intends to smooth this process: I will set up an assistant on the web, which will take as input the symptoms of the patient, match it to the required treatment or prescription, and then a database will be used to match this to the required doctor, surgeon, the general operator of the treatment, figure out the next available time and output this to the customer.
 
-Key user: My uncle, runs a hospital
-End user: Patients
+Key user: My uncle, runs a hospital; he wouldn't have to invest valuable staff into making many phone calls to understand patients' symptoms and then schedule appointments
+End user: Patients, would have immediate access to communication for symptoms and scheduling instead of waiting in a long queue for a phone call
 
 [INTERVIEW QUESTIONS AND ANSWERS]
 
