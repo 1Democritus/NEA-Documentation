@@ -5,6 +5,9 @@ Interview questions: "how do you schedule appointments?", "is it clunky? is it h
 Key User: The Head of a Hospital (My Uncle)
 End Users: Patients
 
+Questionnaire question: "From scale of 1 to 10, how time consuming is it to schedule an appointment with a hospital after conceiving symptoms of a disease and then a secondary appointment of a treatment", "on a scale of one to ten, how helpful would you find a chatbot who could tell you your most likely disease from given symptoms and required treatment for it?", "on a scale of one to ten, how helpful would you find a web scheduler which would link desired treatment to the required doctor and room, and return to you earliest available time for appointment?", "write down what other features you would find helpful"
+
+
 ANALYSIS for pdf:
 Everyday, there are many patients who believe they have a disease or condition due to experiencing some symptoms, who then contact the local hospital to find out what it is and receive the respective treatment or prescription. It is sometimes hard to understand for the average person the problem they have from a set of symptoms, meaning they have to schedule a visit to the a doctor, find out the problem, contact another hospital for the required treatment, make a second appointment... 
 
