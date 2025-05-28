@@ -3,7 +3,7 @@ Interview questions: "how do you schedule appointments?", "is it clunky? is it h
 "would a normalised database with links between doctors, rooms, available times be helpful?"
 , "what accessibility needs would this system need to implement?", "what other features would you like?"
 
-Key User: The Head of a Hospital (My Uncle)
+Key User: NHS worker, maybe my Uncle
 End Users: Patients
 
 Questionnaire question: "From scale of 1 to 10, how time consuming is it to schedule an appointment with a hospital after conceiving symptoms of a disease and then a secondary appointment of a treatment", 
@@ -16,7 +16,7 @@ Everyday, there are many patients who believe they have a disease or condition d
 
 My project intends to smooth this process: I will set up an assistant on the web, which will take as input the symptoms of the patient, match it to the required treatment or prescription, and then a database will be used to match this to the required doctor, surgeon, the general operator of the treatment, figure out the next available time and output this to the customer.
 
-Key user: My uncle, runs a hospital; he wouldn't have to invest valuable staff into making many phone calls to understand patients' symptoms and then schedule appointments
+Key user: NHS worker, has good idea of how convoluted the health system is
 End user: Patients, would have immediate access to communication for symptoms and scheduling instead of waiting in a long queue for a phone call
 
 [INTERVIEW QUESTIONS AND ANSWERS]
