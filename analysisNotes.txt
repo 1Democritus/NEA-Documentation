@@ -1,23 +1,22 @@
-Interview questions: "how do you schedule appointments?", "is it clunky? is it hard to keep track of?", "is it time consuming to find the right doctor?", 
-"would an A.I. assistant to link symptoms with doctors which give treatments be useful?", 
+Interview questions: 
+"how do you schedule appointments?"
+"is it clunky? is it hard to keep track of?"
+"is it time consuming to find the right doctor?" 
+"would an A.I. assistant to link symptoms with doctors which give treatments be useful?" 
 "would a normalised database with links between doctors, rooms, available times be helpful?"
-, "what accessibility needs would this system need to implement?", "what other features would you like?"
+"what accessibility needs would this system need to implement?", "what other features would you like?"
 
-Key User: NHS worker, maybe my Uncle
-End Users: Patients
-
-Questionnaire question: "From scale of 1 to 10, how time consuming is it to schedule an appointment with a hospital after conceiving symptoms of a disease and then a secondary appointment of a treatment", 
-"on a scale of one to ten, how helpful would you find a chatbot who could tell you your most likely disease from given symptoms and required treatment for it?", 
-"on a scale of one to ten, how helpful would you find a web scheduler which would link desired treatment to the required doctor and room, and return to you earliest available time for appointment?", "write down what other features you would find helpful"
 
 
 ANALYSIS for pdf:
-Everyday, there are many patients who believe they have a disease or condition due to experiencing some symptoms, who then contact the local hospital to find out what it is and receive the respective treatment or prescription. It is sometimes hard to understand for the average person the problem they have from a set of symptoms, meaning they have to schedule a visit to the a doctor, find out the problem, contact another hospital for the required treatment, make a second appointment... 
+For my NEA project, I have decided to have a web-implemented chatbot that would take user symptoms as input, return the doctor responsible for the respective treatment, and use a normalised SQL database to find their next free appointment. Everyday, there are many patients who believe they have a disease or condition due to experiencing some symptoms, or just want to have a basic checkup, who as a next course of action contact the local hospital to receive the respective treatment, prescription or check. In the United Kingdom, this is a complicated, convoluted process, requiring many phone calls, multiple doctor's appointments based on the circumstance, and potentially being on a waiting list for years! I've recently experienced this first hand; possible symptoms and intending to check for a serious condition led to phone calls, multiple appointments, and more than a month of waiting for the checkup I needed. The checkup place I was given was hours away when there was one in the city... I would still consider myself lucky that I only waited months and not years!
 
-My project intends to smooth this process: I will set up an assistant on the web, which will take as input the symptoms of the patient, match it to the required treatment or prescription, and then a database will be used to match this to the required doctor, surgeon, the general operator of the treatment, figure out the next available time and output this to the customer.
+My project intends to smooth this process; if you have symptoms of an unknown reason, the chatbot will significantly shorten the process of figuring out what condition it links to; if it does or could link to a condition, the database will allow for quick and efficient scheduling of an appointment with the doctor who manages the subject, which the normalised SQL will be able to find quickly. It will not only be better for the customers but also for the NHS workers, who won't have to exhaust themselves trying to find the required doctor; the database will do it for them.
 
-Key user: NHS worker, has good idea of how convoluted the health system is
-End user: Patients, would have immediate access to communication for symptoms and scheduling instead of waiting in a long queue for a phone call
+My key user is an NHS worker, working there would give him a good idea of the British Health system and its problems. My end users can be anyone desiring to schedule a health-related appointment; my project would give them immediate access to communication and instant scheduling instead of waiting in a long queue for a phone call and then an indefinite waiting list.
+
+KEY DEFINITIONS:
+
 
 [INTERVIEW QUESTIONS AND ANSWERS]
 
