@@ -1,10 +1,11 @@
 Interview questions: 
-"how do you schedule appointments?"
+"how do does the hospital you work in schedule appointments?"
+"as a worker, what is your main issue with it?"
 "is it clunky? is it hard to keep track of?"
 "is it time consuming to find the right doctor?" 
 "would an A.I. assistant to link symptoms with doctors which give treatments be useful?" 
 "would a normalised database with links between doctors, rooms, available times be helpful?"
-"what accessibility needs would this system need to implement?", "what other features would you like?"
+"what accessibility needs would this system need to implement?"
 
 
 
