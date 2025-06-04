@@ -1,12 +1,18 @@
 Interview questions: 
-"how do does the hospital you work in schedule appointments?"
+"how does the hospital you work in schedule appointments?"
+"Hospitals generally make appointments via referrals; first step is to make a referral. "
 "as a worker, what is your main issue with it?"
+""
 "is it clunky? is it hard to keep track of?"
+""
 "is it time consuming to find the right doctor?" 
+""
 "would an A.I. assistant to link symptoms with doctors which give treatments be useful?" 
+""
 "would a normalised database with links between doctors, rooms, available times be helpful?"
+""
 "what accessibility needs would this system need to implement?"
-
+""
 
 
 ANALYSIS for pdf:
@@ -19,6 +25,7 @@ My key user is an NHS worker, working there would give him a good idea of the Br
 KEY DEFINITIONS:
 
 
-[INTERVIEW QUESTIONS AND ANSWERS]
+INTERVIEW:
+
 
 [MENTION QUESTIONNAIRE AND RESPONSES BY END USERS]
