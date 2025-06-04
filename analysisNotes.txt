@@ -1,6 +1,6 @@
 Interview questions: 
 "how does the hospital you work in schedule appointments?"
-"Hospitals generally make appointments via referrals; first step is to make a referral. "
+""
 "as a worker, what is your main issue with it?"
 ""
 "is it clunky? is it hard to keep track of?"
