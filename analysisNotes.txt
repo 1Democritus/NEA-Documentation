@@ -11,6 +11,8 @@ Interview questions:
 ""
 "would a normalised database with links between doctors, rooms, available times be helpful?"
 ""
+"what could I adjust in this system to solve the issues convolution in NHS's structure, mainly between local clinics and hospitals?"
+""
 "what accessibility needs would this system need to implement?"
 ""
 
