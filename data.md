@@ -1,1 +1,2 @@
-Symptom | Symptom | Symptom | Symptom | Symptom | Symptom | Condition
+| Symptom | Symptom | Symptom | Symptom | Symptom | Symptom | Condition |
+|---|---|---|---|---|---|---|
