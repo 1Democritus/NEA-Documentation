@@ -1,2 +1,0 @@
-Symptom | Symptom | Symptom | Symptom | Symptom | Symptom | Condition
-
