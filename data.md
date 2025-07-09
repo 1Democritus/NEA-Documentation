@@ -5,7 +5,7 @@
 |Headache|Fatigue|Weakness|Diarrhea|Dry cough|Rash|Typhoid fever|
 |Fever|Diarrhea|Stomach cramps|nausea|headache|vomiting|Salmonella|
 |Blood|Diarrhea|Fever|Abdominal Pain|||Shigellosis|
-||||||||
+|Diarrhea|nausea|fever|abdominal cramps|pain in urination||Escherichia coli|
 ||||||||
 ||||||||
 ||||||||
