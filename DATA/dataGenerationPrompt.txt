@@ -1,6 +1,7 @@
 This is your job - Generate a 100 row .csv file dataset about ICD diseases in the range A00-A99. 
+It will be used to train an A.I. to predict a disease from given features, with the obvious aim of achieving high accuracy, precision and recall.
 This is the structure I want: 
-Feature 1 - Geography, where the disease mainly resides (string); 
+Feature 1 - Geography, where the disease mainly resides (string) - if it is general like "Global", just put "Global", no need for explanation; 
 Feature 2 - How the disease transmits (string) - should only be key words, for example use "waterbone" instead of "spread through water"
 Feature 3 - Disease type, would be bacterial, viral, parasitic or fungal (string); 
 Feature 4 - 6 most common associated symptoms with disease (List of 6 elements); 
