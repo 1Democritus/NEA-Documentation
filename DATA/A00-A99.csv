@@ -1,0 +1,87 @@
+Geography,Transmission,Disease Type,Symptoms,Disease Name,ICD Code
+South Asia,"waterborne,foodborne",bacterial,"profuse diarrhea,vomiting,dehydration,thirst,weakness,leg cramps",Cholera,A00
+South Asia,"fecal-oral,foodborne,waterborne",bacterial,"fever,headache,abdominal pain,constipation,malaise,rose spots",Typhoid and paratyphoid fevers,A01
+Global,"foodborne,fecal-oral",bacterial,"diarrhea,abdominal cramps,fever,nausea,vomiting,headache",Other salmonella infections,A02
+Global,"fecal-oral,person-to-person,foodborne",bacterial,"bloody diarrhea,fever,abdominal cramps,tenesmus,nausea,fatigue",Shigellosis,A03
+Global,"foodborne,waterborne",bacterial,"diarrhea,abdominal pain,fever,nausea,vomiting,dehydration",Other bacterial intestinal infections,A04
+Global,foodborne,bacterial,"vomiting,nausea,abdominal cramps,diarrhea,sweats,weakness","Other bacterial foodborne intoxications, NEC",A05
+South Asia,"fecal-oral,waterborne",parasitic,"diarrhea,abdominal pain,bloody stools,fever,tenesmus,weight loss",Amoebiasis,A06
+Global,"waterborne,fecal-oral",parasitic,"diarrhea,bloating,abdominal cramps,flatulence,nausea,fatigue",Other protozoal intestinal diseases,A07
+Global,"fecal-oral,person-to-person",viral,"watery diarrhea,vomiting,nausea,abdominal cramps,fever,dehydration",Viral and other specified intestinal infections,A08
+Global,"fecal-oral,foodborne",bacterial,"diarrhea,vomiting,abdominal pain,fever,nausea,dehydration",Diarrhea and gastroenteritis of presumed infectious origin,A09
+Global,"airborne,droplet",bacterial,"chronic cough,fever,night sweats,weight loss,hemoptysis,fatigue","Respiratory tuberculosis, confirmed",A15
+Global,"airborne,droplet",bacterial,"chronic cough,fever,night sweats,weight loss,chest pain,fatigue","Respiratory tuberculosis, not confirmed",A16
+Global,"airborne,droplet",bacterial,"fever,headache,neck stiffness,altered mental status,focal deficits,weight loss",Tuberculosis of nervous system,A17
+Global,"airborne,droplet",bacterial,"fever,weight loss,night sweats,organ-specific pain,anemia,fatigue",Tuberculosis of other organs,A18
+Global,"airborne,droplet",bacterial,"fever,night sweats,weight loss,cough,hepatosplenomegaly,malaise",Miliary tuberculosis,A19
+Madagascar,"flea-borne,rodent-borne",bacterial,"sudden fever,painful buboes,chills,headache,weakness,cough",Plague,A20
+North America,"tick-borne,aerosol,animal contact",bacterial,"ulcer,fever,lymphadenopathy,chills,headache,fatigue",Tularemia,A21
+Global,"spore inhalation,animal contact,foodborne",bacterial,"cutaneous eschar,fever,cough,dyspnea,chest pain,fatigue",Anthrax,A22
+Mediterranean,"animal contact,foodborne",bacterial,"undulant fever,sweats,arthralgia,fatigue,headache,back pain",Brucellosis,A23
+Southeast Asia,"soil contact,aerosol,waterborne",bacterial,"fever,cough,chest pain,abscesses,weight loss,fatigue",Glanders and melioidosis,A24
+Global,"animal bite,animal contact",bacterial,"fever,rash,migratory arthralgia,myalgia,chills,vomiting",Rat-bite fevers,A25
+Global,animal contact,bacterial,"painful lesion,erythema,swelling,fever,pruritus,burning",Erysipeloid,A26
+Tropics,"waterborne,animal urine",bacterial,"fever,myalgia,headache,jaundice,conjunctival suffusion,abdominal pain",Leptospirosis,A27
+Global,"animal contact,arthropod-borne",bacterial,"fever,lymphadenopathy,malaise,rash,headache,myalgia",Other zoonotic bacterial diseases,A28
+South Asia,"prolonged contact,respiratory droplets",bacterial,"hypopigmented patches,numbness,paresthesia,muscle weakness,thickened nerves,ulcers",Leprosy [Hansen disease],A30
+Global,"environmental,waterborne",bacterial,"chronic cough,weight loss,fever,hemoptysis,fatigue,night sweats",Other mycobacterial infections,A31
+Global,foodborne,bacterial,"fever,myalgia,nausea,diarrhea,headache,stiff neck",Listeriosis,A32
+Sub-Saharan Africa,umbilical infection,bacterial,"poor feeding,muscle rigidity,spasms,fever,irritability,apnea",Tetanus neonatorum,A33
+Sub-Saharan Africa,wound contamination,bacterial,"trismus,muscle rigidity,spasms,fever,autonomic instability,dysphagia",Obstetrical tetanus,A34
+Global,wound contamination,bacterial,"trismus,muscle spasms,stiffness,dysphagia,fever,sweats",Other tetanus,A35
+Global,"droplet,contact",bacterial,"sore throat,pseudomembrane,fever,neck swelling,hoarseness,malaise",Diphtheria,A36
+Global,droplet,bacterial,"paroxysmal cough,whoop,post-tussive vomiting,apnea,low-grade fever,rhinorrhea",Whooping cough [pertussis],A37
+Global,droplet,bacterial,"fever,sandpaper rash,sore throat,strawberry tongue,desquamation,headache",Scarlet fever,A38
+Global,"droplet,close contact",bacterial,"fever,neck stiffness,petechial rash,headache,photophobia,hypotension",Meningococcal infection,A39
+Global,"bloodstream,wound",bacterial,"fever,chills,hypotension,tachycardia,confusion,oliguria",Streptococcal sepsis,A40
+Global,"bloodstream,wound",bacterial,"fever,hypotension,tachypnea,tachycardia,confusion,chills",Other sepsis,A41
+Global,"mucosal breach,dental",bacterial,"chronic swelling,sinus tracts,abscess,fever,pain,weight loss",Actinomycosis,A42
+Global,"inhalation,soil contact",bacterial,"cough,fever,weight loss,skin nodules,brain abscess,chest pain",Nocardiosis,A43
+Andean region,"sandfly-borne,cat scratch",bacterial,"fever,anemia,angiomatous lesions,lymphadenopathy,malaise,bone pain",Bartonellosis,A44
+Europe,skin breach,bacterial,"well-demarcated erythema,fever,chills,edema,pain,lymphangitis",Erysipelas,A46
+Global,varied,bacterial,"fever,malaise,rash,myalgia,hypotension,headache","Other bacterial diseases, NEC",A48
+Global,varied,bacterial,"fever,chills,fatigue,malaise,tachycardia,hypotension",Bacterial infection of unspecified site,A49
+Global,transplacental,bacterial,"snuffles,hepatosplenomegaly,rash,jaundice,bone pain,failure to thrive",Congenital syphilis,A50
+Global,sexual,bacterial,"chancre,painless ulcer,lymphadenopathy,fever,rash,malaise",Early syphilis,A51
+Global,sexual,bacterial,"gummas,tabes dorsalis,aortic aneurysm,neuropathy,ataxia,vision loss",Late syphilis,A52
+Global,sexual,bacterial,"rash,lymphadenopathy,mucous patches,fever,alopecia,malaise",Other and unspecified syphilis,A53
+Global,sexual,bacterial,"urethral discharge,dysuria,pelvic pain,pharyngitis,conjunctivitis,fever",Gonococcal infection,A54
+Global,sexual,bacterial,"painless ulcer,inguinal buboes,fever,proctitis,tenesmus,malaise",Chlamydial lymphogranuloma (venereum),A55
+Global,sexual,bacterial,"cervicitis,urethritis,pelvic pain,dyspareunia,dysuria,discharge",Other sexually transmitted chlamydial diseases,A56
+Sub-Saharan Africa,sexual,bacterial,"painful ulcer,inguinal lymphadenitis,fever,dysuria,malaise,tender nodes",Chancroid,A57
+Tropics,sexual,bacterial,"painless genital ulcers,beefy-red granulation,bleeding,malodor,swelling,pain",Granuloma inguinale (donovanosis),A58
+Global,sexual,parasitic,"frothy discharge,pruritus,dysuria,dyspareunia,erythema,odor",Trichomoniasis,A59
+Global,"sexual,perinatal",viral,"painful vesicles,ulcers,burning,dysuria,fever,inguinal pain",Anogenital herpesviral infection,A60
+Global,sexual,viral,"genital warts,pruritus,papules,bleeding,discomfort,anxiety","Other predominantly sexually transmitted diseases, NEC",A63
+Global,sexual,bacterial,"discharge,dysuria,pelvic pain,ulcers,rash,pruritus",Unspecified sexually transmitted disease,A64
+Sahel,"nonsexual contact,shared utensils",bacterial,"skin lesions,bone pain,lymphadenopathy,fever,ulcers,scarring",Nonvenereal syphilis (endemic treponematoses),A65
+West Africa,skin contact,bacterial,"papillomas,ulcers,bone pain,fever,swelling,scarring",Yaws,A66
+Latin America,skin contact,bacterial,"hypopigmented patches,pruritus,scaling,ulcers,lymphadenopathy,disfigurement",Pinta [Carate],A67
+East Africa,"louse-borne,tick-borne",bacterial,"recurrent fever,headache,myalgia,nausea,hepatosplenomegaly,jaundice",Relapsing fevers,A68
+North America,tick-borne,bacterial,"erythema migrans,fever,arthralgia,fatigue,headache,neck stiffness",Other spirochetal infections (incl. Lyme disease),A69
+Global,"aerosol,bird contact",bacterial,"fever,dry cough,headache,myalgia,chills,pneumonia",Psittacosis (Chlamydia psittaci),A70
+North Africa,"eye-contact,fomite",bacterial,"conjunctival scarring,trichiasis,photophobia,tearing,eye pain,vision loss",Trachoma,A71
+Global,"contact,aerosol",bacterial,"conjunctivitis,urethritis,pelvic pain,cervicitis,fever,discharge",Other chlamydial diseases,A74
+Global,"louse-borne,flea-borne",bacterial,"fever,headache,myalgia,rash,cough,confusion",Typhus fevers,A75
+North America,tick-borne,bacterial,"fever,headache,myalgia,rash,nausea,abdominal pain",Spotted fever rickettsioses,A77
+Global,"aerosol,animal contact",bacterial,"fever,severe headache,myalgia,dry cough,hepatitis,pneumonia",Q fever,A78
+Global,arthropod-borne,bacterial,"fever,rash,myalgia,headache,nausea,lymphadenopathy",Other rickettsioses,A79
+Global,fecal-oral,viral,"fever,sore throat,myalgia,asymmetric weakness,areflexia,respiratory failure",Acute poliomyelitis,A80
+Global,"iatrogenic,foodborne",viral,"rapid dementia,ataxia,myoclonus,behavior change,visual loss,akinetic mutism",Atypical virus infections of CNS (prion disorders),A81
+Global,animal bite,viral,"paresthesia,hydrophobia,agitation,fever,dysphagia,coma",Rabies,A82
+Global,mosquito-borne,viral,"fever,headache,confusion,seizures,stiff neck,weakness",Mosquito-borne viral encephalitis,A83
+Europe,tick-borne,viral,"fever,headache,meningismus,ataxia,paresis,nausea",Tick-borne viral encephalitis,A84
+Global,varied,viral,"fever,headache,confusion,seizures,stiff neck,lethargy","Other viral encephalitis, NEC",A85
+Global,varied,viral,"fever,headache,stiff neck,vomiting,confusion,seizures",Unspecified viral encephalitis,A86
+Global,"fecal-oral,droplet",viral,"fever,headache,photophobia,neck stiffness,nausea,malaise",Viral meningitis,A87
+Global,varied,viral,"fever,headache,altered mental status,seizures,weakness,nausea",Other viral infections of CNS,A88
+Global,varied,viral,"fever,headache,neck stiffness,nausea,vomiting,lethargy",Unspecified viral infection of CNS,A89
+Tropics,mosquito-borne,viral,"fever,retro-orbital pain,myalgia,arthralgia,rash,nausea",Dengue fever,A90
+Tropics,mosquito-borne,viral,"fever,abdominal pain,bleeding,plasma leakage,thrombocytopenia,shock",Dengue hemorrhagic fever,A91
+Tropics,mosquito-borne,viral,"fever,rash,arthralgia,myalgia,headache,nausea",Other mosquito-borne viral fevers,A92
+Global,arthropod-borne,viral,"fever,headache,myalgia,rash,arthralgia,nausea","Other arthropod-borne viral fevers, NEC",A93
+Global,arthropod-borne,viral,"fever,headache,myalgia,malaise,nausea,rash",Unspecified arthropod-borne viral fever,A94
+Sub-Saharan Africa,mosquito-borne,viral,"fever,jaundice,myalgia,headache,nausea,bleeding",Yellow fever,A95
+West Africa,"rodent-borne,aerosol",viral,"fever,sore throat,chest pain,bleeding,shock,hearing loss","Arenaviral hemorrhagic fever (e.g., Lassa)",A96
+Sub-Saharan Africa,"contact,aerosol",viral,"fever,severe headache,vomiting,diarrhea,bleeding,shock","Other viral hemorrhagic fevers (e.g., Ebola, CCHF)",A98
+Global,contact,viral,"fever,malaise,myalgia,bleeding,hypotension,shock",Unspecified viral hemorrhagic fever,A99
