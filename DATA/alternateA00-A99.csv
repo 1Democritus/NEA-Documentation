@@ -9,11 +9,6 @@ tropics; subtropics,fecal-oral; waterborne,parasitic,"['bloody diarrhea', 'abdom
 tropics; subtropics,fecal-oral; waterborne,parasitic,"['diarrhea', 'abdominal pain', 'bloating', 'weight loss', 'nausea', 'fatigue']",Other protozoal intestinal diseases,A07
 global,fecal-oral; foodborne; waterborne,viral,"['watery diarrhea', 'vomiting', 'fever', 'abdominal cramps', 'dehydration', 'malaise']",Viral and other specified intestinal infections,A08
 global,fecal-oral; foodborne; waterborne,bacterial,"['diarrhea', 'abdominal cramps', 'fever', 'nausea', 'vomiting', 'dehydration']",Infectious gastroenteritis and colitis,A09
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A10
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A11
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A12
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A13
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A14
 global (high burden: India; China; Africa),airborne; droplets; aerosol,bacterial,"['chronic cough', 'hemoptysis', 'fever', 'night sweats', 'weight loss', 'fatigue']","Respiratory tuberculosis, confirmed",A15
 global,airborne; droplets; aerosol,bacterial,"['chronic cough', 'fever', 'night sweats', 'weight loss', 'chest pain', 'fatigue']","Respiratory tuberculosis, not confirmed",A16
 global,airborne; droplets,bacterial,"['headache', 'fever', 'neck stiffness', 'confusion', 'cranial neuropathy', 'seizures']",Tuberculosis of nervous system,A17
@@ -28,7 +23,6 @@ global (urban rodents),bite; animal contact,bacterial,"['fever', 'rash', 'migrat
 global (animal handlers),skin abrasion; animal contact,bacterial,"['localized cellulitis', 'violaceous plaques', 'fever', 'tenderness', 'swelling', 'lymphangitis']",Erysipeloid,A26
 tropics; subtropics; flood-prone,waterborne; rodent urine; animal contact,bacterial,"['fever', 'myalgia (calves)', 'headache', 'conjunctival suffusion', 'jaundice', 'renal impairment']",Leptospirosis,A27
 global (zoonoses),zoonotic contact,bacterial,"['fever', 'lymphadenopathy', 'rash', 'myalgia', 'headache', 'malaise']","Other zoonotic bacterial diseases, NEC",A28
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A29
 South Asia; Brazil; Africa,respiratory; prolonged contact,bacterial,"['hypopigmented patches', 'numbness', 'paresthesia', 'muscle weakness', 'nerve thickening', 'ulcers']",Leprosy [Hansen disease],A30
 global (water/soil exposure),environmental; aerosol; waterborne,bacterial,"['chronic cough', 'hemoptysis', 'fatigue', 'fever', 'weight loss', 'skin lesions']",Infection due to other mycobacteria,A31
 global,foodborne; unpasteurized dairy,bacterial,"['fever', 'myalgia', 'diarrhea', 'sepsis', 'meningitis', 'headache']",Listeriosis,A32
@@ -44,9 +38,7 @@ global,bloodstream; nosocomial,bacterial,"['fever', 'hypotension', 'tachypnea', 
 global,endogenous; mucosal breach,bacterial,"['chronic draining sinus', 'jaw swelling', 'fever', 'weight loss', 'abdominal mass', 'pelvic pain']",Actinomycosis,A42
 global (soil),inhalational; cutaneous inoculation,bacterial,"['cough', 'fever', 'weight loss', 'brain abscess', 'skin nodules', 'weakness']",Nocardiosis,A43
 Andes; global (cat exposure),sandfly-borne; louse-borne; cat scratch,bacterial,"['fever', 'lymphadenopathy', 'malaise', 'headache', 'anemia', 'angiomatous lesions']",Bartonellosis,A44
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A45
 global,skin break; streptococcal,bacterial,"['well-demarcated erythema', 'fever', 'chills', 'tenderness', 'swelling', 'lymphangitis']",Erysipelas,A46
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A47
 global,varied,bacterial,"['fever', 'myalgia', 'cough', 'rash', 'hypotension', 'malaise']","Other bacterial diseases, NEC",A48
 global,varied; nosocomial,bacterial,"['fever', 'chills', 'malaise', 'tachycardia', 'pain', 'inflammation']",Bacterial infection of unspecified site,A49
 global,congenital; vertical,bacterial,"['rhinitis', 'hepatosplenomegaly', 'rash', 'bone changes', 'jaundice', 'neurologic deficits']",Congenital syphilis,A50
@@ -60,8 +52,6 @@ tropics; subtropics,sexual,bacterial,"['painful genital ulcer', 'inguinal lympha
 India; Papua New Guinea; Caribbean,sexual,bacterial,"['painless beefy-red ulcers', 'bleeding', 'malodor', 'inguinal swelling', 'scarring', 'dysuria']",Granuloma inguinale [donovanosis],A58
 global,sexual,parasitic,"['vaginitis', 'frothy discharge', 'pruritus', 'dysuria', 'dyspareunia', 'postcoital bleeding']",Trichomoniasis,A59
 global,sexual; perinatal,viral,"['painful vesicles', 'ulcers', 'dysuria', 'itching', 'fever', 'inguinal lymphadenopathy']",Anogenital herpesviral infections,A60
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A61
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A62
 global,sexual,viral,"['anogenital warts', 'pruritus', 'papules', 'discomfort', 'bleeding', 'pain']","Other predominantly sexually transmitted diseases, NEC",A63
 global,sexual,bacterial,"['urethritis', 'vaginitis', 'pelvic pain', 'discharge', 'dysuria', 'genital ulcers']",Unspecified sexually transmitted disease,A64
 arid regions (Middle East; North Africa),nonsexual contact; household,bacterial,"['skin lesions', 'mucosal ulcers', 'bone pain', 'lymphadenopathy', 'fever', 'nasal deformity']",Nonvenereal syphilis,A65
@@ -71,11 +61,8 @@ East Africa; worldwide (tick-borne),louse-borne; tick-borne,bacterial,"['recurre
 North America; Europe; Asia,tick-borne,bacterial,"['erythema migrans', 'fever', 'arthralgia', 'fatigue', 'neuropathy', 'carditis']",Other spirochetal infections,A69
 global (bird exposure),aerosol; bird contact,bacterial,"['fever', 'dry cough', 'headache', 'myalgia', 'pneumonia', 'hepatosplenomegaly']",Chlamydia psittaci infection [psittacosis],A70
 endemic communities (Africa; Middle East; Asia),contact; fomites; flies,bacterial,"['chronic conjunctivitis', 'photophobia', 'trichiasis', 'corneal opacity', 'tearing', 'eye discharge']",Trachoma,A71
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A72
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A73
 global,sexual; respiratory; contact,bacterial,"['urethritis', 'cervicitis', 'conjunctivitis', 'pneumonitis', 'pelvic pain', 'discharge']",Other diseases caused by chlamydiae,A74
 Africa; Asia; Latin America,louse-borne; flea-borne; mite-borne,bacterial,"['high fever', 'severe headache', 'myalgia', 'rash', 'cough', 'confusion']",Typhus fever,A75
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A76
 global (tick habitats),tick-borne,bacterial,"['fever', 'headache', 'myalgia', 'eschar', 'rash', 'nausea']",Spotted fever [tick-borne rickettsioses],A77
 global (livestock exposure),aerosol; animal birth products,bacterial,"['fever', 'pneumonia', 'hepatitis', 'headache', 'myalgia', 'night sweats']",Q fever,A78
 global,tick-borne; mite-borne,bacterial,"['fever', 'rash', 'eschar', 'headache', 'myalgia', 'lymphadenopathy']",Other rickettsioses,A79
@@ -96,6 +83,5 @@ tropics; subtropics,sandfly-borne; tick-borne; mite-borne,viral,"['fever', 'rash
 tropics; subtropics,arthropod-borne,viral,"['fever', 'headache', 'myalgia', 'arthralgia', 'rash', 'malaise']",Unspecified arthropod-borne viral fever,A94
 Africa; South America,mosquito-borne,viral,"['fever', 'jaundice', 'myalgia', 'bleeding', 'shock', 'renal failure']",Yellow fever,A95
 West Africa; South America,rodent-borne; contact; aerosol,viral,"['fever', 'bleeding', 'shock', 'hepatitis', 'renal failure', 'encephalopathy']",Arenaviral haemorrhagic fevers,A96
-N/A,N/A,N/A,"['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']",UNUSED_ICD10,A97
 Central Africa; East Africa,contact; aerosol; zoonotic,viral,"['fever', 'bleeding', 'vomiting', 'diarrhea', 'shock', 'multi-organ failure']","Other viral haemorrhagic fevers, NEC",A98
 tropics; subtropics,contact; zoonotic,viral,"['fever', 'hemorrhage', 'shock', 'malaise', 'myalgia', 'renal failure']",Unspecified viral haemorrhagic fever,A99
