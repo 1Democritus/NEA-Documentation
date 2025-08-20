@@ -1,0 +1,108 @@
+ICD Code,Disease Name,Reported Symptoms,Geography,Transmission,Disease Type
+B00,Herpesviral [herpes simplex] infections,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",South Asia,waterborne,bacterial
+B01,Varicella [chickenpox],"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Sub-Saharan Africa,foodborne,viral
+B02,Zoster [shingles],"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Latin America,airborne,parasitic
+B03,Smallpox,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Worldwide,fecal-oral,fungal
+B04,Monkeypox,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Eastern Europe,vector-borne,bacterial
+B05,Measles,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Tropical regions,contact,viral
+B06,Rubella [German measles],"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",South Asia,zoonotic,parasitic
+B07,Other viral exanthemas,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Sub-Saharan Africa,waterborne,fungal
+B08,Viral warts,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Latin America,foodborne,bacterial
+B09,Molluscum contagiosum,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Worldwide,airborne,viral
+B10,Other poxvirus infections,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Eastern Europe,fecal-oral,parasitic
+B11,Infectious mononucleosis,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Tropical regions,vector-borne,fungal
+B12,Cytomegaloviral disease,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",South Asia,contact,bacterial
+B13,Other herpesviral infections,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Sub-Saharan Africa,zoonotic,viral
+B14,Viral conjunctivitis,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Latin America,waterborne,parasitic
+B15,Acute poliomyelitis,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Worldwide,foodborne,fungal
+B16,Other enterovirus infections,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Eastern Europe,airborne,bacterial
+B17,Enteroviral encephalitis,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Tropical regions,fecal-oral,viral
+B18,Enteroviral exanthematous fever,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",South Asia,vector-borne,parasitic
+B19,Enteroviral carditis,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Sub-Saharan Africa,contact,fungal
+B20,Other specified enteroviral diseases,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Latin America,zoonotic,bacterial
+B21,"Enteroviral infection, unspecified","bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Worldwide,waterborne,viral
+B22,Arthropod-borne viral encephalitis,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Eastern Europe,foodborne,parasitic
+B23,Japanese encephalitis,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Tropical regions,airborne,fungal
+B24,West Nile virus infection,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",South Asia,fecal-oral,bacterial
+B25,Tick-borne viral encephalitis,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Sub-Saharan Africa,vector-borne,viral
+B26,Other specified mosquito-borne viral encephalitis,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Latin America,contact,parasitic
+B27,Unspecified arthropod-borne viral encephalitis,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Worldwide,zoonotic,fungal
+B28,Dengue fever [classical dengue],"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Eastern Europe,waterborne,bacterial
+B29,Dengue hemorrhagic fever,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Tropical regions,foodborne,viral
+B30,Yellow fever,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",South Asia,airborne,parasitic
+B31,Other mosquito-borne viral fevers,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Sub-Saharan Africa,fecal-oral,fungal
+B32,Unspecified mosquito-borne viral fever,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Latin America,vector-borne,bacterial
+B33,Other arthropod-borne viral fevers,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Worldwide,contact,viral
+B34,Unspecified arthropod-borne viral fever,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Eastern Europe,zoonotic,parasitic
+B35,Rabies,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Tropical regions,waterborne,fungal
+B36,"Viral hepatitis, sequelae","bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",South Asia,foodborne,bacterial
+B37,Acute HIV infection,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Sub-Saharan Africa,airborne,viral
+B38,Symptomatic HIV disease,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Latin America,fecal-oral,parasitic
+B39,Unspecified HIV disease,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Worldwide,vector-borne,fungal
+B40,Influenza due to identified influenza virus,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Eastern Europe,contact,bacterial
+B41,Influenza due to unidentified influenza virus,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Tropical regions,zoonotic,viral
+B42,Other influenza,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",South Asia,waterborne,parasitic
+B43,Influenza with pneumonia,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Sub-Saharan Africa,foodborne,fungal
+B44,Influenza with other respiratory manifestations,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Latin America,airborne,bacterial
+B45,Mumps,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Worldwide,fecal-oral,viral
+B46,Parainfluenza,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Eastern Europe,vector-borne,parasitic
+B47,Respiratory syncytial virus infection,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Tropical regions,contact,fungal
+B48,Other viral pneumonia,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",South Asia,zoonotic,bacterial
+B49,Viral meningitis,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Sub-Saharan Africa,waterborne,viral
+B50,Viral myocarditis,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Latin America,foodborne,parasitic
+B51,Other viral infections of central nervous system,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Worldwide,airborne,fungal
+B52,Other viral infections of unspecified site,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Eastern Europe,fecal-oral,bacterial
+B53,Candidiasis,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Tropical regions,vector-borne,viral
+B54,Cryptococcosis,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",South Asia,contact,parasitic
+B55,Aspergillosis,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Sub-Saharan Africa,zoonotic,fungal
+B56,Zygomycosis,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Latin America,waterborne,bacterial
+B57,Other mycoses,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Worldwide,foodborne,viral
+B58,Unspecified mycosis,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Eastern Europe,airborne,parasitic
+B59,Dermatophytosis,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Tropical regions,fecal-oral,fungal
+B60,Other superficial mycoses,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",South Asia,vector-borne,bacterial
+B61,Subcutaneous mycoses,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Sub-Saharan Africa,contact,viral
+B62,Mycetoma,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Latin America,zoonotic,parasitic
+B63,Other systemic mycoses,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Worldwide,waterborne,fungal
+B64,Malaria,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Eastern Europe,foodborne,bacterial
+B65,Plasmodium falciparum malaria,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Tropical regions,airborne,viral
+B66,Plasmodium vivax malaria,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",South Asia,fecal-oral,parasitic
+B67,Plasmodium malariae malaria,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Sub-Saharan Africa,vector-borne,fungal
+B68,Other malaria,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Latin America,contact,bacterial
+B69,Unspecified malaria,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Worldwide,zoonotic,viral
+B70,Leishmaniasis,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Eastern Europe,waterborne,parasitic
+B71,Visceral leishmaniasis,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Tropical regions,foodborne,fungal
+B72,Cutaneous leishmaniasis,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",South Asia,airborne,bacterial
+B73,Mucocutaneous leishmaniasis,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Sub-Saharan Africa,fecal-oral,viral
+B74,Trypanosomiasis,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Latin America,vector-borne,parasitic
+B75,African trypanosomiasis,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Worldwide,contact,fungal
+B76,American trypanosomiasis [Chagas disease],"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Eastern Europe,zoonotic,bacterial
+B77,Toxoplasmosis,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Tropical regions,waterborne,viral
+B78,Other protozoal diseases,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",South Asia,foodborne,parasitic
+B79,"Protozoal disease, unspecified","confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Sub-Saharan Africa,airborne,fungal
+B80,Schistosomiasis [bilharziasis],"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Latin America,fecal-oral,bacterial
+B81,Intestinal schistosomiasis,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Worldwide,vector-borne,viral
+B82,Urinary schistosomiasis,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Eastern Europe,contact,parasitic
+B83,Hepatic schistosomiasis,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Tropical regions,zoonotic,fungal
+B84,Other schistosomiasis,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",South Asia,waterborne,bacterial
+B85,Unspecified schistosomiasis,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Sub-Saharan Africa,foodborne,viral
+B86,Other trematode infections,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Latin America,airborne,parasitic
+B87,Opisthorchiasis,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Worldwide,fecal-oral,fungal
+B88,Clonorchiasis,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Eastern Europe,vector-borne,bacterial
+B89,Paragonimiasis,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Tropical regions,contact,viral
+B90,Fascioliasis,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",South Asia,zoonotic,parasitic
+B91,Other specified trematode infections,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Sub-Saharan Africa,waterborne,fungal
+B92,Unspecified trematode infection,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Latin America,foodborne,bacterial
+B93,Taeniasis,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Worldwide,airborne,viral
+B94,Cysticercosis,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Eastern Europe,fecal-oral,parasitic
+B95,Other cestode infections,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Tropical regions,vector-borne,fungal
+B96,Echinococcosis,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",South Asia,contact,bacterial
+B97,Trichinellosis,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",Sub-Saharan Africa,zoonotic,viral
+B98,Other helminthiases,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Latin America,waterborne,parasitic
+B99,"Helminthiasis, unspecified","confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Worldwide,foodborne,fungal
+B100,Sequelae of tuberculosis,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Eastern Europe,airborne,bacterial
+B101,Sequelae of poliomyelitis,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Tropical regions,fecal-oral,viral
+B102,Sequelae of leprosy,"rash, joint pain, eye redness, sore throat, cough, swollen lymph nodes",South Asia,vector-borne,parasitic
+B103,Sequelae of viral encephalitis,"night sweats, weight loss, persistent cough, shortness of breath, loss of appetite, chest pain",Sub-Saharan Africa,contact,fungal
+B104,Sequelae of viral hepatitis,"confusion, seizures, stiff neck, sensitivity to light, irritability, drowsiness",Latin America,zoonotic,bacterial
+B105,Sequelae of other specified infectious and parasitic diseases,"fever, diarrhea, vomiting, abdominal pain, fatigue, headache",Worldwide,waterborne,viral
+B106,Sequelae of unspecified infectious disease,"bloody diarrhea, nausea, dehydration, chills, muscle pain, cough",Eastern Europe,foodborne,parasitic
