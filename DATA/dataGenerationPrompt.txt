@@ -1,0 +1,9 @@
+This is your job - Generate a 100 row .csv file dataset about ICD diseases in the range A00-A99. 
+This is the structure I want: 
+Feature 1 - Geography, where the disease mainly resides (string); 
+Feature 2 - How the disease transmits (string) - should only be key words, for example use "waterbone" instead of "spread through water"
+Feature 3 - Disease type, can be bacterial, viral, parasitic and fungal (string); 
+Feature 4 - 6 most common associated symptoms with disease (List of 6 elements); 
+Label - Disease Name; 
+Additional column - ICD code I want these 6 columns for 100 rows, each row representing a disease in the range A00-A99: row 1 to A00, row 2 to A01... all the up to row 100 to A99.
+Take it slowly, prioritise accuracy over speed. I can wait.
