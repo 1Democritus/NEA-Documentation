@@ -1,0 +1,90 @@
+Geography,Transmission,Disease type,Symptoms (6),Disease Name,ICD code
+Oceania,noncommunicable,noninfectious,"mouth-ulcer, oral-pain, bleeding, dysphagia, weight-loss, neck-mass",Malignant neoplasm of lip,C00
+Asia,noncommunicable,noninfectious,"mouth-ulcer, oral-pain, bleeding, dysphagia, weight-loss, neck-mass",Malignant neoplasm of base of tongue,C01
+Asia,noncommunicable,noninfectious,"mouth-ulcer, oral-pain, bleeding, dysphagia, weight-loss, neck-mass",Malignant neoplasm of other/unspecified parts of tongue,C02
+Asia,noncommunicable,noninfectious,"mouth-ulcer, oral-pain, bleeding, dysphagia, weight-loss, neck-mass",Malignant neoplasm of gum,C03
+Asia,noncommunicable,noninfectious,"mouth-ulcer, oral-pain, bleeding, dysphagia, weight-loss, neck-mass",Malignant neoplasm of floor of mouth,C04
+Asia,noncommunicable,noninfectious,"mouth-ulcer, oral-pain, bleeding, dysphagia, weight-loss, neck-mass",Malignant neoplasm of palate,C05
+Asia,noncommunicable,noninfectious,"mouth-ulcer, oral-pain, bleeding, dysphagia, weight-loss, neck-mass",Malignant neoplasm of other/unspecified parts of mouth,C06
+Global,noncommunicable,noninfectious,"parotid-mass, facial-weakness, pain, swelling, xerostomia, dysphagia",Malignant neoplasm of parotid gland,C07
+Global,noncommunicable,noninfectious,"parotid-mass, facial-weakness, pain, swelling, xerostomia, dysphagia",Malignant neoplasm of other/unspecified major salivary glands,C08
+Europe,noncommunicable,noninfectious,"sore-throat, dysphagia, otalgia, neck-mass, weight-loss, muffled-voice",Malignant neoplasm of tonsil,C09
+Europe,noncommunicable,noninfectious,"sore-throat, dysphagia, otalgia, neck-mass, weight-loss, muffled-voice",Malignant neoplasm of oropharynx,C10
+Asia,saliva,viral,"nasal-obstruction, epistaxis, neck-mass, hearing-loss, tinnitus, headache",Malignant neoplasm of nasopharynx,C11
+Asia,noncommunicable,noninfectious,"dysphagia, odynophagia, weight-loss, throat-pain, hoarseness, neck-mass",Malignant neoplasm of pyriform sinus,C12
+Asia,noncommunicable,noninfectious,"dysphagia, odynophagia, weight-loss, throat-pain, hoarseness, neck-mass",Malignant neoplasm of hypopharynx,C13
+Asia,noncommunicable,noninfectious,"mouth-ulcer, oral-pain, bleeding, dysphagia, weight-loss, neck-mass","Malignant neoplasm of other/ill-defined lip, oral cavity and pharynx",C14
+Asia,noncommunicable,noninfectious,"dysphagia, odynophagia, regurgitation, weight-loss, chest-pain, hoarseness",Malignant neoplasm of esophagus,C15
+Asia,fecal-oral,bacterial,"epigastric-pain, early-satiety, weight-loss, nausea, vomiting, melena",Malignant neoplasm of stomach,C16
+Global,noncommunicable,noninfectious,"abdominal-pain, weight-loss, nausea, vomiting, anemia, obstruction",Malignant neoplasm of small intestine,C17
+Europe,noncommunicable,noninfectious,"bowel-change, rectal-bleeding, anemia, weight-loss, abdominal-pain, fatigue",Malignant neoplasm of colon,C18
+Europe,noncommunicable,noninfectious,"bowel-change, rectal-bleeding, anemia, weight-loss, abdominal-pain, fatigue",Malignant neoplasm of rectosigmoid junction,C19
+Europe,noncommunicable,noninfectious,"bowel-change, rectal-bleeding, anemia, weight-loss, abdominal-pain, fatigue",Malignant neoplasm of rectum,C20
+Americas,sexual,viral,"rectal-pain, bleeding, pruritus, anal-mass, tenesmus, discharge",Malignant neoplasm of anus and anal canal,C21
+Asia,"bloodborne, sexual, perinatal",viral,"ruq-pain, weight-loss, jaundice, hepatomegaly, fatigue, ascites",Malignant neoplasm of liver and intrahepatic bile ducts,C22
+Americas,noncommunicable,noninfectious,"ruq-pain, jaundice, nausea, vomiting, weight-loss, fever",Malignant neoplasm of gallbladder,C23
+Asia,foodborne,parasitic,"jaundice, pruritus, dark-urine, pale-stools, ruq-pain, weight-loss",Malignant neoplasm of other/unspecified parts of biliary tract,C24
+Americas,noncommunicable,noninfectious,"epigastric-pain, weight-loss, jaundice, back-pain, anorexia, dark-urine",Malignant neoplasm of pancreas,C25
+Global,noncommunicable,noninfectious,"abdominal-pain, weight-loss, anorexia, nausea, vomiting, anemia",Malignant neoplasm of other/ill-defined digestive organs,C26
+Global,noncommunicable,noninfectious,"nasal-obstruction, epistaxis, anosmia, facial-pain, otorrhea, hearing-loss",Malignant neoplasm of nasal cavity and middle ear,C30
+Global,noncommunicable,noninfectious,"facial-pain, nasal-obstruction, epistaxis, headache, tooth-pain, swelling",Malignant neoplasm of accessory sinuses,C31
+Europe,noncommunicable,noninfectious,"hoarseness, dysphagia, cough, sore-throat, dyspnea, neck-mass",Malignant neoplasm of larynx,C32
+Global,noncommunicable,noninfectious,"cough, dyspnea, wheeze, hemoptysis, stridor, chest-pain",Malignant neoplasm of trachea,C33
+Asia,noncommunicable,noninfectious,"cough, hemoptysis, dyspnea, chest-pain, weight-loss, wheeze",Malignant neoplasm of bronchus and lung,C34
+Global,noncommunicable,noninfectious,"chest-pain, cough, dyspnea, svc-syndrome, hoarseness, fatigue",Malignant neoplasm of thymus,C37
+Europe,noncommunicable,noninfectious,"chest-pain, dyspnea, pleural-effusion, cough, weight-loss, fatigue","Malignant neoplasm of heart, mediastinum and pleura",C38
+Global,noncommunicable,noninfectious,"cough, dyspnea, chest-pain, hemoptysis, weight-loss, fatigue",Malignant neoplasm of other/ill-defined intrathoracic organs,C39
+Global,noncommunicable,noninfectious,"bone-pain, swelling, pathologic-fracture, limited-mobility, night-pain, weight-loss",Malignant neoplasm of bone and articular cartilage of limbs,C40
+Global,noncommunicable,noninfectious,"bone-pain, swelling, pathologic-fracture, limited-mobility, night-pain, weight-loss",Malignant neoplasm of bone and articular cartilage of other/unspecified sites,C41
+Oceania,noncommunicable,noninfectious,"changing-mole, asymmetry, border-irregular, color-change, diameter-growth, itching",Malignant melanoma of skin,C43
+Oceania,noncommunicable,noninfectious,"nonhealing-lesion, bleeding, crusting, ulceration, local-pain, pruritus",Other malignant neoplasms of skin,C44
+Europe,noncommunicable,noninfectious,"dyspnea, chest-pain, pleural-effusion, cough, weight-loss, fatigue",Mesothelioma,C45
+Africa,"sexual, saliva",viral,"skin-lesions, mucosal-lesions, edema, cough, dyspnea, weight-loss",Kaposi sarcoma,C46
+Global,noncommunicable,noninfectious,"neuropathic-pain, paresthesia, weakness, nerve-mass, numbness, gait-issue",Malignant neoplasm of peripheral nerves and autonomic nervous system,C47
+Global,noncommunicable,noninfectious,"abdominal-distension, ascites, abdominal-pain, early-satiety, weight-loss, obstruction",Malignant neoplasm of retroperitoneum and peritoneum,C48
+Global,noncommunicable,noninfectious,"painless-mass, swelling, pain, limited-rom, weight-loss, neuropathy",Malignant neoplasm of other connective and soft tissue,C49
+Europe,noncommunicable,noninfectious,"breast-lump, nipple-discharge, skin-dimpling, breast-pain, axillary-mass, asymmetry",Malignant neoplasm of breast,C50
+Europe,sexual,viral,"vulvar-pruritus, lesion, pain, bleeding, dysuria, swelling",Malignant neoplasm of vulva,C51
+Africa,sexual,viral,"vaginal-bleeding, discharge, pain, dyspareunia, mass, dysuria",Malignant neoplasm of vagina,C52
+Africa,sexual,viral,"postcoital-bleeding, intermenstrual-bleeding, discharge, pelvic-pain, dyspareunia, urinary-frequency",Malignant neoplasm of cervix uteri,C53
+Europe,noncommunicable,noninfectious,"postmenopausal-bleeding, pelvic-pain, discharge, anemia, uterine-enlargement, fatigue",Malignant neoplasm of corpus uteri,C54
+Europe,noncommunicable,noninfectious,"postmenopausal-bleeding, pelvic-pain, discharge, anemia, uterine-enlargement, fatigue","Malignant neoplasm of uterus, part unspecified",C55
+Europe,noncommunicable,noninfectious,"bloating, abdominal-pain, early-satiety, urinary-urgency, fatigue, back-pain",Malignant neoplasm of ovary,C56
+Global,noncommunicable,noninfectious,"pelvic-pain, abnormal-bleeding, discharge, pelvic-mass, dyspareunia, bloating",Malignant neoplasm of other/unspecified female genital organs,C57
+Africa,noncommunicable,noninfectious,"vaginal-bleeding, uterine-enlargement, hyperemesis, pelvic-pain, anemia, high-hcg",Malignant neoplasm of placenta,C58
+Africa,sexual,viral,"penile-lesion, ulcer, pain, discharge, bleeding, inguinal-mass",Malignant neoplasm of penis,C60
+Americas,noncommunicable,noninfectious,"urinary-frequency, nocturia, weak-stream, hematuria, pelvic-pain, erectile-dysfunction",Malignant neoplasm of prostate,C61
+Europe,noncommunicable,noninfectious,"testicular-mass, heaviness, pain, swelling, gynecomastia, back-pain",Malignant neoplasm of testis,C62
+Global,noncommunicable,noninfectious,"groin-mass, pain, swelling, discharge, bleeding, urinary-symptoms",Malignant neoplasm of other/unspecified male genital organs,C63
+Europe,noncommunicable,noninfectious,"hematuria, flank-pain, renal-mass, weight-loss, fever, anemia","Malignant neoplasm of kidney, except renal pelvis",C64
+Europe,noncommunicable,noninfectious,"hematuria, flank-pain, dysuria, frequency, weight-loss, uti",Malignant neoplasm of renal pelvis,C65
+Europe,noncommunicable,noninfectious,"hematuria, flank-pain, dysuria, obstruction, frequency, uti",Malignant neoplasm of ureter,C66
+Africa,waterborne,parasitic,"hematuria, frequency, urgency, dysuria, pelvic-pain, nocturia",Malignant neoplasm of bladder,C67
+Global,noncommunicable,noninfectious,"hematuria, dysuria, frequency, pelvic-pain, obstruction, back-pain",Malignant neoplasm of other/unspecified urinary organs,C68
+Global,noncommunicable,noninfectious,"vision-loss, floaters, eye-pain, photophobia, redness, proptosis",Malignant neoplasm of eye and adnexa,C69
+Global,noncommunicable,noninfectious,"headache, seizures, focal-deficit, nausea, vomiting, vision-change",Malignant neoplasm of meninges,C70
+Europe,noncommunicable,noninfectious,"headache, seizures, weakness, cognitive-change, nausea, vomiting",Malignant neoplasm of brain,C71
+Global,noncommunicable,noninfectious,"back-pain, weakness, sensory-loss, gait-issue, bowel-bladder-dysfunction, radicular-pain","Malignant neoplasm of spinal cord, cranial nerves and other CNS parts",C72
+Americas,noncommunicable,noninfectious,"neck-mass, hoarseness, dysphagia, cough, dyspnea, neck-pain",Malignant neoplasm of thyroid gland,C73
+Global,noncommunicable,noninfectious,"hypertension, palpitations, headache, weight-loss, abdominal-pain, sweating",Malignant neoplasm of adrenal gland,C74
+Global,noncommunicable,noninfectious,"headache, vision-loss, hormone-imbalance, fatigue, weight-change, polydipsia",Malignant neoplasm of other endocrine glands and related structures,C75
+Global,noncommunicable,noninfectious,"weight-loss, pain, mass, fatigue, night-sweats, anorexia",Malignant neoplasm of other/ill-defined sites,C76
+Global,noncommunicable,noninfectious,"lymph-node-mass, pain, fever, night-sweats, weight-loss, fatigue",Secondary and unspecified malignant neoplasm of lymph nodes,C77
+Global,noncommunicable,noninfectious,"cough, dyspnea, jaundice, abdominal-pain, weight-loss, fatigue",Secondary malignant neoplasm of respiratory and digestive organs,C78
+Global,noncommunicable,noninfectious,"bone-pain, neurologic-deficit, jaundice, cough, weight-loss, fatigue",Secondary malignant neoplasm of other sites,C79
+Global,noncommunicable,noninfectious,"weight-loss, fatigue, pain, anemia, anorexia, fever","Malignant neoplasm, without specification of site",C80
+Europe,noncommunicable,noninfectious,"painless-lymphadenopathy, night-sweats, fever, weight-loss, pruritus, fatigue",Hodgkin lymphoma,C81
+Europe,noncommunicable,noninfectious,"painless-lymphadenopathy, fatigue, night-sweats, weight-loss, fever, abdominal-fullness",Follicular lymphoma,C82
+Global,noncommunicable,noninfectious,"lymphadenopathy, fever, night-sweats, weight-loss, fatigue, abdominal-pain",Diffuse non-Hodgkin lymphoma,C83
+Asia,noncommunicable,noninfectious,"skin-lesions, pruritus, lymphadenopathy, night-sweats, weight-loss, fatigue",Mature T/NK-cell lymphomas,C84
+Global,noncommunicable,noninfectious,"lymphadenopathy, fever, night-sweats, weight-loss, fatigue, anorexia",Other/unspecified types of non-Hodgkin lymphoma,C85
+Asia,noncommunicable,noninfectious,"fever, night-sweats, weight-loss, cytopenias, lymphadenopathy, hepatosplenomegaly",Other specified types of T/NK-cell lymphomas,C86
+Europe,noncommunicable,noninfectious,"hyperviscosity, fatigue, neuropathy, bleeding, weight-loss, lymphadenopathy",Malignant immunoproliferative diseases,C88
+Americas,noncommunicable,noninfectious,"bone-pain, anemia, fatigue, infections, hypercalcemia, renal-dysfunction",Multiple myeloma and malignant plasma cell neoplasms,C90
+Americas,noncommunicable,noninfectious,"fatigue, infections, bruising, lymphadenopathy, fever, pallor",Lymphoid leukemia,C91
+Americas,noncommunicable,noninfectious,"fatigue, fever, bruising, infections, bone-pain, weight-loss",Myeloid leukemia,C92
+Global,noncommunicable,noninfectious,"fever, fatigue, bleeding, infections, weight-loss, splenomegaly",Monocytic leukemia,C93
+Global,noncommunicable,noninfectious,"cytopenias, fatigue, fever, bruising, infections, weight-loss",Other leukemias of specified cell type,C94
+Global,noncommunicable,noninfectious,"fatigue, fever, bruising, infections, weight-loss, anemia","Leukemia, unspecified",C95
+Global,noncommunicable,noninfectious,"lymphadenopathy, fever, night-sweats, weight-loss, cytopenias, hepatosplenomegaly","Other/unspecified malignant neoplasms of lymphoid, hematopoietic and related tissue",C96
+Global,noncommunicable,noninfectious,"weight-loss, fatigue, pain, anorexia, anemia, night-sweats",Malignant neoplasms of independent (primary) multiple sites,C97
