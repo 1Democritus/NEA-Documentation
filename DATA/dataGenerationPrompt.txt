@@ -1,4 +1,4 @@
-This is your job - Generate a 100 row .csv file dataset about ICD diseases in the range A00-A99. 
+This is your job - Generate a .csv file dataset about ICD diseases in the range A00-A99. 
 It will be used to train an A.I. to predict a disease from given features, with the obvious aim of achieving high accuracy, precision and recall.
 This is the structure I want: 
 Feature 1 - Geography, where the disease mainly resides (string) - give a general area where it is prominent - as an example, if the infection is prominent in mostly part of America [continent] state "Americas" instead of "Americas (Ohio, Michigan, Mexico", for example; 
