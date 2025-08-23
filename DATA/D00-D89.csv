@@ -1,0 +1,85 @@
+Geography,Transmission,Disease type,Symptoms (6),Label,ICD code
+Global,noncommunicable,noninfectious,"lesion,dysphagia,odynophagia,epigastric pain,weight loss,bleeding","Carcinoma in situ of oral cavity, esophagus and stomach",D00
+Global,noncommunicable,noninfectious,"abdominal pain,altered bowel habits,bleeding,weight loss,fatigue,anemia",Carcinoma in situ of other and unspecified digestive organs,D01
+Global,noncommunicable,noninfectious,"chronic cough,hoarseness,hemoptysis,dyspnea,ear pain,otorrhea",Carcinoma in situ of middle ear and respiratory system,D02
+Global,noncommunicable,noninfectious,"asymmetry,border irregularity,color change,diameter>6mm,evolving lesion,itching",Melanoma in situ,D03
+Global,noncommunicable,noninfectious,"scaly patch,erythema,crusting,nonhealing lesion,itching,bleeding",Carcinoma in situ of skin,D04
+Global,noncommunicable,noninfectious,"breast lump,nipple discharge,breast pain,skin changes,erythema,asymmetry",Carcinoma in situ of breast,D05
+Global,noncommunicable,noninfectious,"asymptomatic,postcoital bleeding,irregular bleeding,pelvic pain,vaginal discharge,dyspareunia",Carcinoma in situ of cervix uteri,D06
+Global,noncommunicable,noninfectious,"local lesion,bleeding,pain,discharge,pruritus,dyspareunia",Carcinoma in situ of other and unspecified genital organs,D07
+Global,noncommunicable,noninfectious,"local lesion,bleeding,pain,ulceration,pruritus,asymptomatic",Carcinoma in situ of other and unspecified sites,D09
+Global,noncommunicable,noninfectious,"painless mass,dysphagia,odynophagia,voice change,weight loss,ulceration",Benign neoplasm of mouth and pharynx,D10
+Global,noncommunicable,noninfectious,"parotid mass,facial pain,xerostomia,facial weakness,swelling,tenderness",Benign neoplasm of major salivary glands,D11
+Global,noncommunicable,noninfectious,"rectal bleeding,constipation,change in stool,abdominal pain,anemia,mucus","Benign neoplasm of colon, rectum, anus and anal canal",D12
+Global,noncommunicable,noninfectious,"abdominal pain,bloating,early satiety,bleeding,weight loss,anemia",Benign neoplasm of other and ill-defined parts of digestive system,D13
+Global,noncommunicable,noninfectious,"chronic cough,airway obstruction,hoarseness,otitis media,hearing loss,dyspnea",Benign neoplasm of middle ear and respiratory system,D14
+Global,noncommunicable,noninfectious,"chest pain,dyspnea,cough,wheezing,mediastinal mass,dysphagia",Benign neoplasm of other and unspecified intrathoracic organs,D15
+Global,noncommunicable,noninfectious,"bone pain,swelling,pathologic fracture,limited motion,deformity,tenderness",Benign neoplasm of bone and articular cartilage,D16
+Global,noncommunicable,noninfectious,"soft mass,painless,mobile,pressure symptoms,slow growth,cosmetic concern",Benign lipomatous neoplasm,D17
+Global,noncommunicable,noninfectious,"red-blue lesion,bleeding,pain,cosmetic concern,ulceration,swelling","Hemangioma and lymphangioma, any site",D18
+Global,noncommunicable,noninfectious,"abdominal distension,pain,ascites,mass,bloating,early satiety",Benign neoplasm of mesothelial tissue,D19
+Global,noncommunicable,noninfectious,"abdominal pain,early satiety,abdominal mass,ascites,obstruction,weight loss",Benign neoplasm of soft tissue of retroperitoneum and peritoneum,D20
+Global,noncommunicable,noninfectious,"soft tissue mass,pain,limited motion,nerve compression,swelling,tenderness",Other benign neoplasms of connective and other soft tissue,D21
+Global,noncommunicable,noninfectious,"pigmented mole,itching,change in size,bleeding,irritation,cosmetic concern",Melanocytic nevi,D22
+Global,noncommunicable,noninfectious,"papule,plaque,itching,bleeding,scaling,cosmetic concern",Other benign neoplasms of skin,D23
+Global,noncommunicable,noninfectious,"breast lump,tenderness,cyclic pain,nipple discharge,swelling,asymmetry",Benign neoplasm of breast,D24
+Global,noncommunicable,noninfectious,"menorrhagia,pelvic pressure,dysmenorrhea,infertility,urinary frequency,constipation",Leiomyoma of uterus,D25
+Global,noncommunicable,noninfectious,"abnormal bleeding,pelvic pain,dyspareunia,pressure,infertility,discharge",Other benign neoplasms of uterus,D26
+Global,noncommunicable,noninfectious,"pelvic pain,bloating,irregular menses,dyspareunia,urinary frequency,nausea",Benign neoplasm of ovary,D27
+Global,noncommunicable,noninfectious,"pelvic pain,abnormal bleeding,discharge,mass,dyspareunia,infertility",Benign neoplasm of other and unspecified female genital organs,D28
+Global,noncommunicable,noninfectious,"scrotal mass,testicular pain,urinary symptoms,hematospermia,erectile dysfunction,inguinal discomfort",Benign neoplasm of male genital organs,D29
+Global,noncommunicable,noninfectious,"hematuria,dysuria,frequency,flank pain,obstruction,urgency",Benign neoplasm of urinary organs,D30
+Global,noncommunicable,noninfectious,"vision change,floaters,eye pain,photophobia,periocular mass,redness",Benign neoplasm of eye and adnexa,D31
+Global,noncommunicable,noninfectious,"headache,seizures,focal deficits,nausea,visual changes,tinnitus",Benign neoplasm of meninges,D32
+Global,noncommunicable,noninfectious,"headache,seizures,cognitive changes,ataxia,nausea,weakness",Benign neoplasm of brain and other parts of the central nervous system,D33
+Global,noncommunicable,noninfectious,"thyroid nodule,dysphagia,hoarseness,neck swelling,hyperthyroid signs,hypothyroid signs",Benign neoplasm of thyroid gland,D34
+Global,noncommunicable,noninfectious,"hormonal symptoms,mass,hypertension,flushing,weight changes,palpitations",Benign neoplasm of other and unspecified endocrine glands,D35
+Global,noncommunicable,noninfectious,"mass,pain,bleeding,obstruction,ulceration,asymptomatic",Benign neoplasm of other and unspecified sites,D36
+Global,noncommunicable,noninfectious,"dysphagia,abdominal pain,bleeding,weight loss,anemia,mass",Neoplasm of uncertain behavior of oral cavity and digestive organs,D37
+Global,noncommunicable,noninfectious,"cough,dyspnea,hemoptysis,chest pain,wheezing,hoarseness",Neoplasm of uncertain behavior of middle ear and respiratory and intrathoracic organs,D38
+Global,noncommunicable,noninfectious,"abnormal bleeding,pelvic pain,discharge,mass,infertility,dyspareunia",Neoplasm of uncertain behavior of female genital organs,D39
+Global,noncommunicable,noninfectious,"testicular mass,pain,urinary symptoms,hematospermia,erectile dysfunction,inguinal mass",Neoplasm of uncertain behavior of male genital organs,D40
+Global,noncommunicable,noninfectious,"hematuria,dysuria,frequency,flank pain,obstruction,urgency",Neoplasm of uncertain behavior of urinary organs,D41
+Global,noncommunicable,noninfectious,"headache,seizures,focal deficits,visual changes,nausea,tinnitus",Neoplasm of uncertain behavior of meninges,D42
+Global,noncommunicable,noninfectious,"headache,seizures,cognitive changes,weakness,ataxia,nausea",Neoplasm of uncertain behavior of brain and central nervous system,D43
+Global,noncommunicable,noninfectious,"hormonal symptoms,weight change,hypertension,palpitations,heat intolerance,cold intolerance",Neoplasm of uncertain behavior of endocrine glands,D44
+Global,noncommunicable,noninfectious,"headache,pruritus,erythromelalgia,splenomegaly,thrombosis,fatigue",Polycythemia vera,D45
+Global,noncommunicable,noninfectious,"fatigue,pallor,infections,bleeding,bruising,dyspnea",Myelodysplastic syndromes,D46
+Global,noncommunicable,noninfectious,"lymphadenopathy,splenomegaly,fever,night sweats,weight loss,fatigue","Other neoplasms of uncertain behavior of lymphoid, hematopoietic and related tissue",D47
+Global,noncommunicable,noninfectious,"mass,pain,bleeding,obstruction,ulceration,weight loss",Neoplasm of uncertain behavior of other and unspecified sites,D48
+Global,noncommunicable,noninfectious,"mass,pain,bleeding,weight loss,obstruction,fatigue",Neoplasm of unspecified behavior,D49
+Global,"noncommunicable,dietary",noninfectious,"fatigue,pallor,dyspnea,pica,tachycardia,koilonychia",Iron deficiency anemia,D50
+Global,"noncommunicable,dietary",noninfectious,"paresthesia,glossitis,fatigue,pallor,ataxia,memory issues",Vitamin B12 deficiency anemia,D51
+Global,"noncommunicable,dietary",noninfectious,"fatigue,pallor,glossitis,dyspnea,irritability,anorexia",Folate deficiency anemia,D52
+Global,"noncommunicable,dietary",noninfectious,"fatigue,pallor,dyspnea,dizziness,headache,weakness",Other nutritional anemias,D53
+"Sub-Saharan Africa, Mediterranean, South/Southeast Asia","genetic,noncommunicable",noninfectious,"jaundice,dark urine,fatigue,pallor,back pain,hemolysis",Anemia due to enzyme disorders,D55
+"Mediterranean, Middle East, South Asia","genetic,noncommunicable",noninfectious,"anemia,jaundice,bone deformities,hepatosplenomegaly,fatigue,growth delay",Thalassemia,D56
+"Sub-Saharan Africa, Americas diaspora","genetic,noncommunicable",noninfectious,"pain crises,anemia,jaundice,dactylitis,infections,splenic sequestration",Sickle-cell disorders,D57
+Global,"genetic,noncommunicable",noninfectious,"jaundice,splenomegaly,anemia,fatigue,gallstones,dark urine",Other hereditary hemolytic anemias,D58
+Global,"noncommunicable,autoimmune",noninfectious,"jaundice,hemoglobinuria,fatigue,pallor,dyspnea,tachycardia",Acquired hemolytic anemias,D59
+Global,noncommunicable,noninfectious,"fatigue,pallor,dyspnea,tachycardia,weakness,dizziness",Acquired pure red cell aplasia,D60
+Global,noncommunicable,noninfectious,"pancytopenia,fatigue,infections,bleeding,petechiae,pallor",Aplastic anemia and other bone marrow failure syndromes,D61
+Global,noncommunicable,noninfectious,"tachycardia,hypotension,dizziness,pallor,fatigue,syncope",Acute posthemorrhagic anemia,D62
+Global,"noncommunicable,secondary",noninfectious,"fatigue,pallor,dyspnea,weakness,headache,reduced exercise tolerance",Anemia in chronic diseases classified elsewhere,D63
+Global,noncommunicable,noninfectious,"fatigue,pallor,dyspnea,dizziness,headache,tachycardia",Other anemias,D64
+Global,noncommunicable,noninfectious,"bleeding,bruising,petechiae,organ failure,thrombosis,hypotension",Disseminated intravascular coagulation [defibrination syndrome],D65
+Global,"genetic,noncommunicable",noninfectious,"hemarthrosis,easy bruising,prolonged bleeding,hematomas,epistaxis,hematuria",Hereditary factor VIII deficiency (Hemophilia A),D66
+Global,"genetic,noncommunicable",noninfectious,"hemarthrosis,easy bruising,prolonged bleeding,hematomas,epistaxis,hematuria",Hereditary factor IX deficiency (Hemophilia B),D67
+Global,noncommunicable,noninfectious,"bleeding,easy bruising,prolonged PT/aPTT,hematomas,menorrhagia,epistaxis",Other coagulation defects,D68
+Global,"noncommunicable,autoimmune",noninfectious,"petechiae,purpura,mucosal bleeding,epistaxis,menorrhagia,bruising",Purpura and other hemorrhagic conditions,D69
+Global,"drug-induced,noncommunicable",noninfectious,"fever,sore throat,infections,mouth ulcers,fatigue,sepsis",Agranulocytosis,D70
+Global,"genetic,noncommunicable",noninfectious,"recurrent infections,abscesses,poor wound healing,gingivitis,fever,lymphadenitis",Functional disorders of polymorphonuclear neutrophils,D71
+Global,noncommunicable,noninfectious,"leukocytosis,leukopenia,fever,infections,fatigue,night sweats",Other disorders of white blood cells,D72
+Global,noncommunicable,noninfectious,"splenomegaly,left upper quadrant pain,early satiety,anemia,thrombocytopenia,fatigue",Diseases of spleen,D73
+Global,"genetic,drug-induced,noncommunicable",noninfectious,"cyanosis,dyspnea,headache,fatigue,dizziness,tachycardia",Methemoglobinemia,D74
+Global,noncommunicable,noninfectious,"erythrocytosis,thrombocytosis,anemia,fatigue,splenomegaly,thrombosis",Other and unspecified diseases of blood and blood-forming organs,D75
+Global,"noncommunicable,immune-mediated",noninfectious,"fever,hepatosplenomegaly,lymphadenopathy,cytopenias,rash,organ failure",Other specified diseases with participation of lymphoreticular and reticulohistiocytic tissue,D76
+Global,"secondary,noncommunicable",noninfectious,"anemia,coagulopathy,thrombocytopenia,leukocytosis,bleeding,fatigue",Other disorders of blood and blood-forming organs in diseases classified elsewhere,D77
+Global,"iatrogenic,noncommunicable",noninfectious,"bleeding,splenic injury,hypotension,abdominal pain,fever,anemia",Other specified diseases of blood and blood-forming organs and certain disorders involving the immune mechanism (intraoperative and postprocedural complications of the spleen),D78
+Global,"noncommunicable,immune-mediated",noninfectious,"recurrent infections,sinusitis,pneumonia,otitis media,diarrhea,failure to thrive",Immunodeficiency with predominantly antibody defects,D80
+Global,"genetic,noncommunicable",noninfectious,"severe infections,opportunistic infections,chronic diarrhea,failure to thrive,thrush,pneumonia",Combined immunodeficiencies,D81
+Global,"genetic,noncommunicable",noninfectious,"recurrent infections,eczema,thrombocytopenia,autoimmunity,diarrhea,failure to thrive",Immunodeficiency associated with other major defects,D82
+Global,"noncommunicable,immune-mediated",noninfectious,"recurrent sinopulmonary infections,diarrhea,autoimmune disease,fatigue,bronchiectasis,weight loss",Common variable immunodeficiency,D83
+Global,"noncommunicable,immune-mediated",noninfectious,"recurrent infections,opportunistic infections,autoimmunity,failure to thrive,chronic diarrhea,pneumonia",Other immunodeficiencies,D84
+"Europe, Sub-Saharan Africa","noncommunicable,immune-mediated",noninfectious,"cough,dyspnea,chest pain,fatigue,erythema nodosum,uveitis",Sarcoidosis,D86
+Global,"noncommunicable,immune-mediated",noninfectious,"angioedema,autoimmunity,fever,lymphadenopathy,cytopenias,organ dysfunction","Other disorders involving the immune mechanism, not elsewhere classified",D89
