@@ -1,0 +1,70 @@
+Geography,Transmission,Disease type,Symptoms,Disease Name,ICD code
+Global,nontransmissible,bacterial,"eyelid pain,redness,tender nodule,swelling,tearing,crusting",Hordeolum and chalazion,H00
+Global,nontransmissible,bacterial,"itching,redness,scaling,burning,crusting,foreign body sensation",Other inflammation of eyelid,H01
+Global,nontransmissible,noninfectious,"ptosis,ectropion,entropion,eyelid edema,tearing,eyelid retraction",Other disorders of eyelid,H02
+Global,nontransmissible,noninfectious,"eyelid swelling,redness,itching,pain,tearing,crusting",Disorders of eyelid in diseases classified elsewhere,H03
+Global,nontransmissible,bacterial,"epiphora,medial canthal pain,swelling,redness,discharge,tenderness",Disorders of lacrimal system,H04
+Global,nontransmissible,noninfectious,"proptosis,pain,diplopia,vision changes,eyelid swelling,chemosis",Disorders of orbit,H05
+Global,nontransmissible,noninfectious,"proptosis,eyelid swelling,pain,vision changes,chemosis,diplopia",Disorders of lacrimal system and orbit in diseases classified elsewhere,H06
+Global,"contact,droplet,autoinoculation",viral,"red eye,discharge,gritty sensation,itching,tearing,photophobia",Conjunctivitis,H10
+Global,nontransmissible,noninfectious,"pterygium,subconjunctival hemorrhage,chemosis,foreign body sensation,redness,irritation",Other disorders of conjunctiva,H11
+Global,nontransmissible,noninfectious,"scleral tenderness,bluish sclera,redness,photophobia,tearing,eye pain",Disorders of sclera,H15
+Global,"contact,trauma,contact lens",bacterial,"eye pain,photophobia,redness,blurred vision,tearing,foreign body sensation",Keratitis,H16
+Global,nontransmissible,noninfectious,"corneal opacity,blurred vision,glare,photophobia,scarring,foreign body sensation",Corneal scars and opacities,H17
+Global,nontransmissible,noninfectious,"recurrent erosions,corneal edema,blurred vision,glare,photophobia,eye pain",Other disorders of cornea,H18
+Global,nontransmissible,noninfectious,"eye pain,redness,photophobia,blurred vision,tearing,visual field loss","Disorders of sclera, cornea, iris and ciliary body in diseases classified elsewhere",H19
+Global,nontransmissible,noninfectious,"eye pain,photophobia,redness,blurred vision,floaters,tearing",Iridocyclitis,H20
+Global,nontransmissible,noninfectious,"anisocoria,irregular pupil,blurred vision,eye pain,photophobia,tearing",Other disorders of iris and ciliary body,H21
+Global,nontransmissible,noninfectious,"anisocoria,irregular pupil,blurred vision,eye pain,photophobia,tearing",Disorders of iris and ciliary body in diseases classified elsewhere,H22
+Global,nontransmissible,noninfectious,"progressive blurred vision,glare,halos at night,frequent prescription change,monocular diplopia,photophobia",Age-related cataract,H25
+Global,nontransmissible,noninfectious,"blurred vision,glare,halos,monocular diplopia,photophobia,cloudy lens",Other cataract,H26
+Global,nontransmissible,noninfectious,"lens dislocation,blurred vision,monocular diplopia,glare,anisometropia,visual distortion",Other disorders of lens,H27
+Global,nontransmissible,noninfectious,"blurred vision,glare,halos,monocular diplopia,photophobia,visual impairment",Cataract and other disorders of lens in diseases classified elsewhere,H28
+Global,nontransmissible,noninfectious,"floaters,blurred vision,photopsia,scotomas,eye pain,redness",Chorioretinal inflammation,H30
+Global,nontransmissible,noninfectious,"blurred vision,metamorphopsia,scotomas,photopsia,visual field defects,floaters",Other disorders of choroid,H31
+Global,nontransmissible,noninfectious,"floaters,blurred vision,photopsia,scotomas,visual field defects,eye pain",Chorioretinal disorders in diseases classified elsewhere,H32
+Global,nontransmissible,noninfectious,"sudden floaters,flashes of light,curtain over vision,vision loss,visual field defect,blurred vision",Retinal detachments and breaks,H33
+Global,nontransmissible,noninfectious,"sudden vision loss,visual field defect,blurred vision,scotomas,eye pain,headache",Retinal vascular occlusions,H34
+Global,nontransmissible,noninfectious,"metamorphopsia,central vision loss,scotomas,blurred vision,photopsia,night vision problems",Other retinal disorders,H35
+Global,nontransmissible,noninfectious,"blurred vision,scotomas,visual field defects,photopsia,floaters,vision loss",Retinal disorders in diseases classified elsewhere,H36
+Global,nontransmissible,noninfectious,"peripheral vision loss,halos around lights,eye pain,headache,blurred vision,nausea",Glaucoma,H40
+Global,nontransmissible,noninfectious,"eye pain,blurred vision,halos,peripheral field loss,headache,nausea",Other glaucoma,H41
+Global,nontransmissible,noninfectious,"peripheral vision loss,halos,eye pain,headache,blurred vision,nausea",Glaucoma in diseases classified elsewhere,H42
+Global,nontransmissible,noninfectious,"floaters,blurred vision,flashes,visual haze,vision loss,metamorphopsia",Disorders of vitreous body,H43
+Global,nontransmissible,noninfectious,"eye pain,redness,vision loss,photophobia,abnormal globe size,floaters",Disorders of globe,H44
+Global,nontransmissible,noninfectious,"eye pain,vision loss,loss of color vision,photophobia,afferent pupillary defect,headache",Optic neuritis,H46
+Global,nontransmissible,noninfectious,"visual field loss,optic atrophy,blurred vision,headache,transient vision loss,photophobia",Other disorders of optic nerve and visual pathways,H47
+Global,nontransmissible,noninfectious,"diplopia,ptosis,limited gaze,head turn,ocular misalignment,blurred vision",Paralytic strabismus,H49
+Global,nontransmissible,noninfectious,"ocular misalignment,squinting,diplopia (adult),eye strain,headache,depth perception loss",Strabismus,H50
+Global,nontransmissible,noninfectious,"convergence insufficiency,accommodative spasm,headache,asthenopia,blurred near vision,double vision",Other disorders of binocular movement,H51
+Global,nontransmissible,noninfectious,"blurred vision,asthenopia,headache,difficulty focusing,squinting,visual fatigue",Disorders of refraction and accommodation,H52
+Global,nontransmissible,noninfectious,"photophobia,diplopia,visual field defects,flashes,floaters,night blindness",Visual disturbances,H53
+Global,nontransmissible,noninfectious,"profound vision loss,light perception only,low vision,field loss,functional impairment,legal blindness",Blindness and low vision,H54
+Global,nontransmissible,noninfectious,"nystagmus,oscillopsia,blurred vision,dizziness,imbalance,poor depth perception",Nystagmus and other irregular eye movements,H55
+Global,nontransmissible,noninfectious,"photophobia,abnormal pupillary reflex,visual discomfort,tearing,blepharospasm,eye pain",Other disorders of eye movements,H56
+Global,nontransmissible,noninfectious,"eye pain,ocular surface irritation,tearing,photophobia,foreign body sensation,redness",Other disorders of eye and adnexa,H57
+Global,nontransmissible,noninfectious,"postoperative pain,blurred vision,photophobia,redness,floaters,vision loss","Intraoperative and postprocedural complications and disorders of eye and adnexa, not elsewhere classified",H59
+Global,"water exposure,trauma,nontransmissible",bacterial,"ear pain,itching,ear canal swelling,discharge,tenderness,muffled hearing",Otitis externa,H60
+Global,nontransmissible,noninfectious,"cerumen impaction,ear fullness,itching,otorrhea,canal stenosis,ear pain",Other disorders of external ear,H61
+Global,nontransmissible,noninfectious,"ear pain,redness,swelling,discharge,hearing loss,fever",Disorders of external ear in diseases classified elsewhere,H62
+Global,"droplet,respiratory,autoinoculation",viral,"ear fullness,muffled hearing,ear pain,effusion,pressure,balance trouble",Nonsuppurative otitis media,H65
+Global,"droplet,respiratory,contact",bacterial,"ear pain,fever,otorrhea,muffled hearing,irritability,pressure",Suppurative and unspecified otitis media,H66
+Global,"droplet,respiratory,contact",bacterial,"ear pain,fever,otorrhea,muffled hearing,irritability,pressure",Otitis media in diseases classified elsewhere,H67
+Global,nontransmissible,noninfectious,"ear fullness,pressure,muffled hearing,popping,tinnitus,imbalance",Eustachian salpingitis and obstruction,H68
+Global,nontransmissible,noninfectious,"ear fullness,pressure,muffled hearing,popping,tinnitus,autophony",Other disorders of Eustachian tube,H69
+Global,nontransmissible,bacterial,"postauricular pain,swelling,fever,otorrhea,tenderness,redness",Mastoiditis and related conditions,H70
+Global,nontransmissible,noninfectious,"chronic otorrhea,hearing loss,fullness,vertigo,ear odor,ear discharge",Cholesteatoma of middle ear,H71
+Global,nontransmissible,noninfectious,"sudden ear pain,otorrhea,hearing loss,tinnitus,vertigo,bleeding",Perforation of tympanic membrane,H72
+Global,nontransmissible,noninfectious,"tympanosclerosis,ear fullness,hearing loss,ear pain,effusion,pressure",Other disorders of tympanic membrane,H73
+Global,nontransmissible,noninfectious,"hearing loss,ear fullness,otorrhea,vertigo,ear pain,pressure",Other disorders of middle ear and mastoid,H74
+Global,nontransmissible,noninfectious,"hearing loss,ear fullness,vertigo,ear pain,otorrhea,pressure",Other disorders of middle ear and mastoid in diseases classified elsewhere,H75
+Global,nontransmissible,noninfectious,"progressive hearing loss,tinnitus,paracusis willisii,fullness,imbalance,vertigo",Otosclerosis,H80
+Global,nontransmissible,noninfectious,"vertigo,imbalance,nausea,nystagmus,motion intolerance,tinnitus",Disorders of vestibular function,H81
+Global,nontransmissible,noninfectious,"vertigo,nausea,imbalance,nystagmus,oscillopsia,hearing changes",Vertiginous syndromes in diseases classified elsewhere,H82
+Global,nontransmissible,viral,"acute vertigo,hearing loss,tinnitus,nausea,imbalance,nystagmus",Other disorders of inner ear,H83
+Global,nontransmissible,noninfectious,"hearing loss,difficulty understanding speech,tinnitus,asking repetition,social withdrawal,ear fullness",Conductive and sensorineural hearing loss,H90
+Global,nontransmissible,noninfectious,"hearing loss,abnormal auditory perception,tinnitus,hyperacusis,ear fullness,dizziness",Other and unspecified hearing loss,H91
+Global,nontransmissible,noninfectious,"ear pain,ear fullness,otorrhea,otorrhagia,pressure,tinnitus",Otalgia and effusion of ear,H92
+Global,nontransmissible,noninfectious,"tinnitus,hyperacusis,ear fullness,acoustic nerve symptoms,ear pain,dizziness","Other disorders of ear, not elsewhere classified",H93
+Global,nontransmissible,noninfectious,"ear symptoms secondary to systemic disease,ear pain,hearing change,vertigo,tinnitus,ear fullness",Other disorders of ear in diseases classified elsewhere,H94
+Global,nontransmissible,noninfectious,"postoperative ear pain,otorrhea,hearing loss,vertigo,tinnitus,swelling","Intraoperative and postprocedural complications and disorders of ear and mastoid process, not elsewhere classified",H95
