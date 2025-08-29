@@ -1,0 +1,80 @@
+Geography,Transmission,Disease type,Symptoms (6),Label - Disease Name,ICD code
+South-East Asia,"droplet,direct-contact",bacterial,"fever,migratory-arthralgia,carditis,chorea,rash,fatigue",Rheumatic fever without mention of heart involvement,I00
+South-East Asia,"droplet,direct-contact",bacterial,"fever,carditis,murmur,dyspnea,fatigue,chest-pain",Rheumatic fever with heart involvement,I01
+South-East Asia,"droplet,direct-contact",bacterial,"chorea,behavior-change,weakness,fever,fatigue,slurred-speech",Rheumatic chorea,I02
+South-East Asia,"droplet,direct-contact",bacterial,"dyspnea,fatigue,palpitations,edema,chest-pain,murmur",Rheumatic mitral valve diseases,I05
+South-East Asia,"droplet,direct-contact",bacterial,"chest-pain,dyspnea,syncope,fatigue,edema,murmur",Rheumatic aortic valve diseases,I06
+South-East Asia,"droplet,direct-contact",bacterial,"edema,fatigue,hepatic-congestion,ascites,dyspnea,murmur",Rheumatic tricuspid valve diseases,I07
+South-East Asia,"droplet,direct-contact",bacterial,"dyspnea,fatigue,palpitations,edema,chest-pain,murmur",Multiple valve diseases (rheumatic),I08
+South-East Asia,"droplet,direct-contact",bacterial,"dyspnea,fatigue,palpitations,edema,chest-pain,murmur",Other rheumatic heart diseases,I09
+Global,non-communicable,noninfectious,"asymptomatic,headache,dizziness,vision-blur,chest-pain,shortness-of-breath",Essential (primary) hypertension,I10
+Global,non-communicable,noninfectious,"asymptomatic,headache,dizziness,vision-blur,chest-pain,shortness-of-breath",Hypertensive heart disease,I11
+Global,non-communicable,noninfectious,"asymptomatic,headache,dizziness,vision-blur,chest-pain,shortness-of-breath",Hypertensive chronic kidney disease,I12
+Global,non-communicable,noninfectious,"asymptomatic,headache,dizziness,vision-blur,chest-pain,shortness-of-breath",Hypertensive heart and chronic kidney disease,I13
+Global,non-communicable,noninfectious,"asymptomatic,headache,dizziness,vision-blur,chest-pain,shortness-of-breath",Secondary hypertension,I15
+Global,non-communicable,noninfectious,"asymptomatic,headache,dizziness,vision-blur,chest-pain,shortness-of-breath",Hypertensive crisis,I16
+Global,non-communicable,noninfectious,"chest-pain,exertional-dyspnea,fatigue,diaphoresis,nausea,jaw-pain",Angina pectoris,I20
+Global,non-communicable,noninfectious,"chest-pain,diaphoresis,shortness-of-breath,nausea,vomiting,anxiety",Acute myocardial infarction,I21
+Global,non-communicable,noninfectious,"chest-pain,diaphoresis,shortness-of-breath,nausea,weakness,anxiety",Subsequent myocardial infarction,I22
+Global,non-communicable,noninfectious,"arrhythmia,heart-failure,chest-pain,fever,murmur,pericardial-pain",Certain current complications following acute myocardial infarction,I23
+Global,non-communicable,noninfectious,"chest-pain,shortness-of-breath,fatigue,diaphoresis,dizziness,nausea",Other acute ischemic heart diseases,I24
+Global,non-communicable,noninfectious,"exertional-angina,dyspnea,fatigue,palpitations,edema,chest-discomfort",Chronic ischemic heart disease,I25
+Global,non-communicable,noninfectious,"sudden-dyspnea,pleuritic-chest-pain,tachycardia,cough,hemoptysis,syncope",Pulmonary embolism,I26
+Global,non-communicable,noninfectious,"exertional-dyspnea,fatigue,syncope,chest-pain,edema,palpitations",Other pulmonary heart diseases,I27
+Global,non-communicable,noninfectious,"dyspnea,chest-pain,cough,fatigue,hemoptysis,dizziness",Other diseases of pulmonary vessels,I28
+Global,droplet,viral,"chest-pain,fever,pericardial-friction-rub,dyspnea,worse-when-supine,relief-leaning-forward",Acute pericarditis,I30
+Global,non-communicable,noninfectious,"chest-pain,dyspnea,edema,fatigue,cough,tachycardia",Other diseases of pericardium,I31
+Global,"droplet,fecal-oral",viral,"chest-pain,fever,pericardial-friction-rub,dyspnea,fatigue,cough",Pericarditis in diseases classified elsewhere,I32
+Global,"bloodborne,healthcare-associated",bacterial,"fever,murmur,fatigue,night-sweats,petechiae,weight-loss",Acute and subacute endocarditis,I33
+Global,non-communicable,noninfectious,"murmur,dyspnea,fatigue,palpitations,edema,chest-pain",Nonrheumatic mitral valve disorders,I34
+Global,non-communicable,noninfectious,"chest-pain,dyspnea,syncope,fatigue,edema,murmur",Nonrheumatic aortic valve disorders,I35
+Global,non-communicable,noninfectious,"edema,fatigue,hepatic-congestion,ascites,dyspnea,murmur",Nonrheumatic tricuspid valve disorders,I36
+Global,non-communicable,noninfectious,"dyspnea,fatigue,cyanosis,palpitations,chest-pain,murmur",Nonrheumatic pulmonary valve disorders,I37
+Global,"bloodborne,healthcare-associated",bacterial,"fever,murmur,fatigue,night-sweats,petechiae,weight-loss","Endocarditis, valve unspecified",I38
+Global,"bloodborne,healthcare-associated",bacterial,"fever,murmur,fatigue,night-sweats,petechiae,weight-loss",Endocarditis and heart valve disorders in diseases classified elsewhere,I39
+Global,"droplet,fecal-oral",viral,"fatigue,chest-pain,dyspnea,palpitations,fever,syncope",Acute myocarditis,I40
+Global,"droplet,fecal-oral",viral,"fatigue,chest-pain,dyspnea,palpitations,fever,syncope",Myocarditis in diseases classified elsewhere,I41
+Global,non-communicable,noninfectious,"dyspnea,fatigue,edema,palpitations,syncope,chest-pain",Cardiomyopathy,I42
+Global,non-communicable,noninfectious,"dyspnea,fatigue,edema,palpitations,syncope,chest-pain",Cardiomyopathy in diseases classified elsewhere,I43
+Global,non-communicable,noninfectious,"bradycardia,syncope,dizziness,fatigue,palpitations,exercise-intolerance",Atrioventricular and left bundle-branch block,I44
+Global,non-communicable,noninfectious,"bradycardia,syncope,dizziness,fatigue,palpitations,lightheadedness",Other conduction disorders,I45
+Global,non-communicable,noninfectious,"collapse,unresponsiveness,apnea,pulselessness,cyanosis,agonal-breathing",Cardiac arrest,I46
+Global,non-communicable,noninfectious,"palpitations,chest-pain,dyspnea,dizziness,syncope,anxiety",Paroxysmal tachycardia,I47
+Global,non-communicable,noninfectious,"palpitations,irregular-pulse,dyspnea,fatigue,dizziness,chest-discomfort",Atrial fibrillation and flutter,I48
+Global,non-communicable,noninfectious,"palpitations,dizziness,syncope,chest-pain,dyspnea,fatigue",Other cardiac arrhythmias,I49
+Global,non-communicable,noninfectious,"dyspnea,orthopnea,edema,fatigue,weight-gain,paroxysmal-nocturnal-dyspnea",Heart failure,I50
+Global,non-communicable,noninfectious,"chest-pain,dyspnea,palpitations,fatigue,edema,syncope",Complications and ill-defined descriptions of heart disease,I51
+Global,non-communicable,noninfectious,"chest-pain,dyspnea,palpitations,fatigue,edema,syncope",Other heart disorders in diseases classified elsewhere,I52
+Global,non-communicable,noninfectious,"sudden-severe-headache,neck-stiffness,photophobia,nausea,vomiting,loss-of-consciousness",Nontraumatic subarachnoid hemorrhage,I60
+Global,non-communicable,noninfectious,"headache,neurologic-deficit,vomiting,altered-consciousness,seizure,dizziness",Nontraumatic intracerebral hemorrhage,I61
+Global,non-communicable,noninfectious,"headache,neurologic-deficit,nausea,vomiting,drowsiness,confusion",Other and unspecified nontraumatic intracranial hemorrhage,I62
+Global,non-communicable,noninfectious,"unilateral-weakness,facial-droop,aphasia,vision-loss,dysarthria,ataxia",Cerebral infarction,I63
+Global,non-communicable,noninfectious,"unilateral-weakness,facial-droop,aphasia,vision-loss,severe-headache,dizziness","Stroke, not specified as hemorrhage or infarction",I64
+Global,non-communicable,noninfectious,"transient-weakness,transient-aphasia,dizziness,vision-loss,facial-droop,numbness","Occlusion and stenosis of precerebral arteries, not resulting in cerebral infarction",I65
+Global,non-communicable,noninfectious,"transient-weakness,transient-aphasia,dizziness,vision-loss,facial-droop,numbness","Occlusion and stenosis of cerebral arteries, not resulting in cerebral infarction",I66
+Global,non-communicable,noninfectious,"headache,dizziness,cognitive-decline,vision-change,weakness,ataxia",Other cerebrovascular diseases,I67
+Global,non-communicable,noninfectious,"headache,dizziness,cognitive-decline,vision-change,weakness,ataxia",Cerebrovascular disorders in diseases classified elsewhere,I68
+Global,non-communicable,noninfectious,"hemiparesis,aphasia,dysphagia,cognitive-impairment,gait-disturbance,vision-deficit",Sequelae of cerebrovascular disease,I69
+Global,non-communicable,noninfectious,"claudication,chest-pain,rest-pain,nonhealing-ulcers,numbness,cool-limb",Atherosclerosis,I70
+Global,non-communicable,noninfectious,"chest-pain,back-pain,tearing-pain,hypotension,syncope,pulsatile-mass",Aortic aneurysm and dissection,I71
+Global,non-communicable,noninfectious,"pulsatile-mass,pain,ischemia,bruit,numbness,swelling",Other aneurysm,I72
+Global,non-communicable,noninfectious,"claudication,rest-pain,ulcers,cool-limb,numbness,diminished-pulses",Other peripheral vascular diseases,I73
+Global,non-communicable,noninfectious,"sudden-pain,pallor,pulselessness,paresthesia,paralysis,poikilothermia",Arterial embolism and thrombosis,I74
+Global,non-communicable,noninfectious,"blue-toe,livedo-reticularis,pain,renal-dysfunction,skin-necrosis,neuropathy",Atheroembolism,I75
+Global,"bloodborne,healthcare-associated",bacterial,"fever,pain,ischemia,skin-lesions,chills,malaise",Septic arterial embolism,I76
+Global,non-communicable,noninfectious,"bruit,hypertension,ischemia,pain,dizziness,headache",Other disorders of arteries and arterioles,I77
+Global,non-communicable,noninfectious,"petechiae,purpura,telangiectasia,skin-lesions,bleeding,rash",Diseases of capillaries,I78
+Global,non-communicable,noninfectious,"ischemia,pain,ulcers,numbness,weakness,cool-limb","Disorders of arteries, arterioles and capillaries in diseases classified elsewhere",I79
+Global,non-communicable,noninfectious,"leg-pain,swelling,warmth,redness,tenderness,calf-pain",Phlebitis and thrombophlebitis,I80
+Global,non-communicable,noninfectious,"abdominal-pain,ascites,splenomegaly,variceal-bleeding,nausea,fatigue",Portal vein thrombosis,I81
+Global,non-communicable,noninfectious,"swelling,pain,warmth,redness,tenderness,dyspnea",Other venous embolism and thrombosis,I82
+Europe,non-communicable,noninfectious,"leg-aching,heaviness,swelling,itching,visible-veins,cramps",Varicose veins of lower extremities,I83
+Western Pacific,non-communicable,noninfectious,"hematemesis,melena,dizziness,hypotension,weakness,abdominal-distension",Esophageal varices,I85
+Europe,non-communicable,noninfectious,"swelling,visible-veins,aching,heaviness,tenderness,skin-changes",Varicose veins of other sites,I86
+Global,non-communicable,noninfectious,"leg-swelling,skin-discoloration,pain,ulceration,heaviness,itching",Other disorders of veins,I87
+Global,"direct-contact,droplet",bacterial,"lymph-node-swelling,tenderness,fever,malaise,night-sweats,fatigue",Nonspecific lymphadenitis,I88
+Global,non-communicable,noninfectious,"limb-swelling,heaviness,skin-thickening,recurrent-infections,pain,decreased-mobility",Other noninfective disorders of lymphatic vessels and lymph nodes,I89
+Global,non-communicable,noninfectious,"dizziness,syncope,fatigue,blurred-vision,nausea,weakness",Hypotension,I95
+Africa,non-communicable,noninfectious,"pain,blackened-tissue,foul-odor,numbness,fever,swelling","Gangrene, not elsewhere classified",I96
+Global,non-communicable,noninfectious,"bleeding,hypotension,tachycardia,chest-pain,dyspnea,wound-pain","Intraoperative and postprocedural complications and disorders of circulatory system, not elsewhere classified",I97
+Global,non-communicable,noninfectious,"poor-perfusion,cyanosis,pain,fatigue,dizziness,edema",Other and unspecified disorders of circulatory system,I99
