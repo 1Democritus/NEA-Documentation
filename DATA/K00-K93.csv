@@ -1,0 +1,74 @@
+Geography,Transmission,DiseaseType,Symptoms,Label,ICDCode
+Global,noncommunicable,noninfectious,"delayed_eruption, malocclusion, tooth_gap, crowding, pain, difficulty_chewing",Disorders of tooth development and eruption,K00
+Global,noncommunicable,noninfectious,"jaw_pain, swelling, trismus, pericoronitis, bad_breath, difficulty_opening",Embedded and impacted teeth,K01
+Global,"noncommunicable, endogenous",bacterial,"toothache, sensitivity, visible_pits, discoloration, halitosis, pain_on_chewing",Dental caries,K02
+Global,noncommunicable,noninfectious,"enamel_wear, tooth_fracture, sensitivity, discoloration, pain_on_bite, rough_surfaces",Other diseases of hard tissues of teeth,K03
+Global,"noncommunicable, endogenous",bacterial,"toothache, throbbing_pain, sensitivity_hot_cold, swelling, abscess, pain_on_bite",Diseases of pulp and periapical tissues,K04
+Global,"noncommunicable, endogenous",bacterial,"gum_bleeding, gum_swelling, tenderness, recession, halitosis, loose_teeth",Gingivitis and periodontal diseases,K05
+Global,noncommunicable,noninfectious,"mouth_pain, sensitivity, swelling, bleeding, halitosis, difficulty_chewing",Other disorders of gingiva and edentulous alveolar ridge,K06
+Global,noncommunicable,noninfectious,"delayed_eruption, malocclusion, tooth_gap, crowding, pain, difficulty_chewing",Dentofacial anomalies [including malocclusion],K07
+Global,noncommunicable,noninfectious,"mouth_pain, sensitivity, swelling, bleeding, halitosis, difficulty_chewing",Other disorders of teeth and supporting structures,K08
+Global,noncommunicable,noninfectious,"jaw_swelling, painless_mass, tooth_displacement, tenderness, facial_swelling, infection","Cysts of oral region, not elsewhere classified",K09
+Global,noncommunicable,noninfectious,"jaw_pain, limited_opening, clicking, swelling, malocclusion, tenderness",Other diseases of jaws,K10
+Global,"noncommunicable, endogenous",bacterial,"parotid_swelling, dry_mouth, pain_with_meals, fever, tenderness, purulent_drainage",Diseases of salivary glands,K11
+Global,noncommunicable,noninfectious,"oral_ulcers, burning_mouth, soreness, erythema, dysphagia, drooling",Stomatitis and related lesions,K12
+Global,noncommunicable,noninfectious,"leukoplakia, ulcers, burning, swelling, pain, numbness",Other diseases of lip and oral mucosa,K13
+Global,noncommunicable,noninfectious,"glossitis, burning, fissures, taste_change, pain, swelling",Diseases of tongue,K14
+Americas,"noncommunicable, reflux",noninfectious,"heartburn, dysphagia, chest_pain, odynophagia, regurgitation, hoarseness",Esophagitis,K20
+Americas,"noncommunicable, reflux",noninfectious,"heartburn, regurgitation, sour_taste, chronic_cough, hoarseness, chest_pain",Gastro-esophageal reflux disease,K21
+Global,noncommunicable,noninfectious,"dysphagia, chest_pain, regurgitation, odynophagia, choking, hoarseness",Other diseases of esophagus,K22
+Global,noncommunicable,noninfectious,"dysphagia, chest_pain, weight_loss, odynophagia, regurgitation, hoarseness",Disorders of esophagus in diseases classified elsewhere,K23
+Asia-Pacific,"fecaloral, oraloral",bacterial,"epigastric_pain, nausea, vomiting, bloating, melena, hematemesis",Gastric ulcer,K25
+Asia-Pacific,"fecaloral, oraloral",bacterial,"epigastric_pain, nausea, vomiting, bloating, melena, hematemesis",Duodenal ulcer,K26
+Asia-Pacific,"fecaloral, oraloral",bacterial,"epigastric_pain, nausea, vomiting, bloating, melena, hematemesis","Peptic ulcer, site unspecified",K27
+Asia-Pacific,"fecaloral, oraloral",bacterial,"epigastric_pain, nausea, vomiting, bloating, melena, hematemesis",Gastrojejunal ulcer,K28
+Asia-Pacific,"fecaloral, oraloral",bacterial,"epigastric_pain, nausea, early_satiety, bloating, indigestion, vomiting",Gastritis and duodenitis,K29
+Global,"noncommunicable, functional",noninfectious,"postprandial_fullness, early_satiety, epigastric_pain, bloating, nausea, belching",Functional dyspepsia,K30
+Global,noncommunicable,noninfectious,"epigastric_pain, nausea, vomiting, bloating, weight_loss, anemia",Other diseases of stomach and duodenum,K31
+Global,"noncommunicable, endogenous",bacterial,"rlq_pain, fever, nausea, vomiting, anorexia, rebound_tenderness",Acute appendicitis,K35
+Global,"noncommunicable, endogenous",bacterial,"rlq_pain, fever, nausea, vomiting, tenderness, leukocytosis",Other appendicitis,K36
+Global,"noncommunicable, endogenous",bacterial,"rlq_pain, fever, nausea, vomiting, tenderness, leukocytosis",Unspecified appendicitis,K37
+Global,"noncommunicable, endogenous",bacterial,"rlq_pain, fever, nausea, vomiting, tenderness, leukocytosis",Other diseases of appendix,K38
+Global,"mechanical, noncommunicable",noninfectious,"groin_bulge, groin_pain, discomfort, nausea, vomiting, obstruction",Inguinal hernia,K40
+Global,"mechanical, noncommunicable",noninfectious,"groin_bulge, groin_pain, discomfort, nausea, vomiting, obstruction",Femoral hernia,K41
+Global,"mechanical, noncommunicable",noninfectious,"groin_bulge, groin_pain, discomfort, nausea, vomiting, obstruction",Umbilical hernia,K42
+Global,"mechanical, noncommunicable",noninfectious,"groin_bulge, groin_pain, discomfort, nausea, vomiting, obstruction",Ventral hernia,K43
+Global,"mechanical, noncommunicable",noninfectious,"dyspnea, chest_pain, epigastric_pain, nausea, vomiting, obstruction",Diaphragmatic hernia,K44
+Global,"mechanical, noncommunicable",noninfectious,"groin_bulge, groin_pain, discomfort, nausea, vomiting, obstruction",Other abdominal hernia,K45
+Global,"mechanical, noncommunicable",noninfectious,"groin_bulge, groin_pain, discomfort, nausea, vomiting, obstruction",Unspecified abdominal hernia,K46
+Europe,"autoimmune, noncommunicable",noninfectious,"abdominal_pain, diarrhea, weight_loss, fatigue, rectal_bleeding, fever",Crohn's disease [regional enteritis],K50
+Europe,"autoimmune, noncommunicable",noninfectious,"bloody_diarrhea, abdominal_pain, urgency, tenesmus, fatigue, weight_loss",Ulcerative colitis,K51
+Global,noncommunicable,noninfectious,"diarrhea, abdominal_pain, vomiting, dehydration, cramps, bloating",Other and unspecified noninfective gastroenteritis and colitis,K52
+Global,"ischemic, noncommunicable",noninfectious,"severe_abdominal_pain, bloody_stools, diarrhea, vomiting, fever, shock",Vascular disorders of intestine,K55
+Global,"obstructive, noncommunicable",noninfectious,"abdominal_pain, distension, vomiting, constipation, no_flatus, high_pitched_bowel_sounds",Paralytic ileus and intestinal obstruction without hernia,K56
+Europe,noncommunicable,noninfectious,"llq_pain, fever, constipation, diarrhea, bloating, tenderness",Diverticular disease of intestine,K57
+Europe,"noncommunicable, functional",noninfectious,"abdominal_pain, bloating, diarrhea, constipation, urgency, mucus_stools",Irritable bowel syndrome,K58
+Global,"functional, noncommunicable",noninfectious,"abdominal_pain, bloating, constipation, diarrhea, nausea, gas",Other functional intestinal disorders,K59
+Global,noncommunicable,noninfectious,"sharp_rectal_pain, bleeding, spasm, constipation, tearing_sensation, pruritus",Fissure and fistula of anal and rectal regions,K60
+Global,"noncommunicable, endogenous",bacterial,"perianal_pain, swelling, redness, fever, purulent_drainage, tenderness",Abscess of anal and rectal regions,K61
+Global,noncommunicable,noninfectious,"rectal_pain, bleeding, pruritus, tenesmus, mucus, constipation",Other diseases of anus and rectum,K62
+Global,noncommunicable,noninfectious,"abdominal_pain, diarrhea, constipation, bloating, bleeding, weight_loss",Other diseases of intestine,K63
+Europe,"venous, noncommunicable",noninfectious,"rectal_bleeding, anal_pain, itching, swelling, prolapse, mucus",Hemorrhoids and perianal venous thrombosis,K64
+Global,"noncommunicable, endogenous",bacterial,"severe_abdominal_pain, guarding, rebound, fever, nausea, tachycardia",Peritonitis,K65
+Global,"adhesive, noncommunicable",noninfectious,"abdominal_pain, distension, nausea, vomiting, constipation, adhesions",Other disorders of peritoneum,K66
+Global,"noncommunicable, endogenous",bacterial,"fever, abdominal_pain, ascites, night_sweats, weight_loss, tenderness",Disorders of peritoneum in infectious diseases classified elsewhere,K67
+Global,noncommunicable,noninfectious,"back_pain, abdominal_pain, palpable_mass, weight_loss, leg_edema, urinary_symptoms",Disorders of retroperitoneum,K68
+Europe,"alcohol, noncommunicable",noninfectious,"jaundice, hepatomegaly, abdominal_pain, ascites, fatigue, nausea",Alcoholic liver disease,K70
+Global,"toxin, noncommunicable",noninfectious,"jaundice, pruritus, nausea, abdominal_pain, dark_urine, fatigue",Toxic liver disease,K71
+Global,noncommunicable,noninfectious,"jaundice, confusion, ascites, bleeding_tendency, fatigue, edema","Hepatic failure, not elsewhere classified",K72
+Global,"autoimmune, noncommunicable",noninfectious,"fatigue, malaise, ruq_pain, jaundice, pruritus, anorexia","Chronic hepatitis, not elsewhere classified",K73
+Asia-Pacific,noncommunicable,noninfectious,"ascites, jaundice, confusion, edema, variceal_bleeding, muscle_wasting",Fibrosis and cirrhosis of liver,K74
+Europe,"autoimmune, noncommunicable",noninfectious,"fatigue, jaundice, hepatomegaly, abdominal_pain, pruritus, malaise",Other inflammatory liver diseases,K75
+Americas,"metabolic, noncommunicable",noninfectious,"fatigue, ruq_pain, hepatomegaly, malaise, pruritus, nausea",Other diseases of liver,K76
+Global,"bloodborne, sexual, perinatal",viral,"jaundice, hepatomegaly, fever, abdominal_pain, dark_urine, fatigue",Liver disorders in diseases classified elsewhere,K77
+Americas,noncommunicable,noninfectious,"ruq_pain, biliary_colic, nausea, vomiting, back_pain, jaundice",Cholelithiasis,K80
+Americas,"noncommunicable, endogenous",bacterial,"ruq_pain, fever, nausea, vomiting, jaundice, tenderness",Cholecystitis,K81
+Americas,noncommunicable,noninfectious,"ruq_pain, nausea, vomiting, bloating, dyspepsia, jaundice",Other diseases of gallbladder,K82
+Americas,"noncommunicable, endogenous",bacterial,"ruq_pain, fever, jaundice, pale_stools, dark_urine, pruritus",Other diseases of biliary tract,K83
+Americas,noncommunicable,noninfectious,"epigastric_pain, radiating_back_pain, nausea, vomiting, fever, tachycardia",Acute pancreatitis,K85
+Americas,noncommunicable,noninfectious,"chronic_epigastric_pain, steatorrhea, weight_loss, malabsorption, flatulence, diabetes",Other diseases of pancreas,K86
+Global,noncommunicable,noninfectious,"ruq_pain, jaundice, fever, pruritus, dark_urine, pancreatitis_pain","Disorders of gallbladder, biliary tract and pancreas in diseases classified elsewhere",K87
+Europe,"autoimmune, noncommunicable",noninfectious,"chronic_diarrhea, weight_loss, bloating, steatorrhea, anemia, fatigue",Intestinal malabsorption,K90
+Global,"iatrogenic, noncommunicable",noninfectious,"abdominal_pain, bleeding, fever, ileus, leakage, nausea","Intraoperative and postprocedural disorders of digestive system, not elsewhere classified",K91
+Global,noncommunicable,noninfectious,"hematemesis, melena, nausea, vomiting, abdominal_pain, diarrhea",Other diseases of digestive system,K92
+Global,noncommunicable,noninfectious,"abdominal_pain, jaundice, diarrhea, weight_loss, fever, hepatosplenomegaly",Disorders of other digestive organs in diseases classified elsewhere,K93
