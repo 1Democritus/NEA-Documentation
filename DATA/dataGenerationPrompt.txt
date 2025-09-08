@@ -2,9 +2,9 @@ This is your job - Generate rows for a .csv file dataset about ICD diseases in t
 It will be used to train an A.I. to predict a disease from given features, with the obvious aim of achieving high accuracy, precision and recall.
 This is the structure I want: 
 Feature 1 - Geography, where the disease mainly resides (string) - give a general area where it is prominent - as an example, if the infection is prominent in mostly part of America [continent] state "Americas" instead of "Americas (Ohio, Michigan, Mexico", for example; 
-Feature 2 - How the disease transmits (up to 3 strings with commas in between) - should only be key words, for example use "waterbone" instead of "spread through water"
+Feature 2 - How the disease transmits (a mini-list comprising 3 strings) - should only be key words, for example use "waterbone" instead of "spread through water"
 Feature 3 - Disease type, would be bacterial, viral, parasitic or fungal (string); 
-Feature 4 - 6 most common associated symptoms with disease (6 strings with commas in between); 
+Feature 4 - 6 most common associated symptoms with disease (list containing 6 strings in between); 
 Label - Disease Name; 
 Additional column - ICD code 
 I want these 6 columns for every row, with each row mapping to A00, A01... A99 (Should be 100 rows unless certain ICD codes aren't used - in that case, omit those unused codes and use less rows).
