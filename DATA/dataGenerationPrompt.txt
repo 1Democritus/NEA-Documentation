@@ -9,4 +9,5 @@ Label - Disease Name;
 Additional column - ICD code 
 I want these 6 columns for every row, with each row mapping to A00, A01... A99 (Should be 100 rows unless certain ICD codes aren't used - in that case, omit those unused codes and use less rows).
 Don't make code for creating the actual database, just make the 100 or so rows. Leave the database creation to me.
-Take it slowly, prioritise accuracy over speed. I can wait. 
+
+DO NOT MAKE A SMALL SUBSET, MAKE THE WHOLE THING, I DO NOT WANT A STARTER!!!!!!!!
