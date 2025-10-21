@@ -11,3 +11,4 @@ I want these 6 columns for every row, with each row mapping to A00, A01... A99 (
 Don't make code for creating the actual database, just make the 100 or so rows. Leave the database creation to me.
 
 DO NOT MAKE A SMALL SUBSET, MAKE THE WHOLE THING, I DO NOT WANT A STARTER!!!!!!!!
+Please do not include subsets of a category (for example, if A00 contains A00.0, A00.1 etc., generalise them to A00)
