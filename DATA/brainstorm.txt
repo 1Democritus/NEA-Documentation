@@ -1,0 +1,5 @@
+one hot encoding for labels
+
+use PyTorch to create transformer, Pandas/PyTorch for dataset
+
+which sections are useful and which aren't?
