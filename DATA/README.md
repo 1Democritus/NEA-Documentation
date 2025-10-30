@@ -1,4 +1,4 @@
 Training data will be stored here; 
-Each file contains 100 rows from ICD 10
-Use Julius.ai as chatgpt is useless
-can't use julius.ai for everything, need a second ai
+Each file contains ~100 rows from ICD 10
+use gemini.google pro version to generate the raw data
+will turn into a csv myself
