@@ -116,5 +116,5 @@ disease_data = [
     ['Worldwide', ['Stress', 'Developmental factors', 'Unknown etiology'], 'Behavioural', ['Enuresis (involuntary urination)', 'Encopresis (involuntary defecation)', 'Pica of infancy/childhood', 'Stuttering', 'Cluttering (rapid, disorganized speech)', 'Stereotyped movement disorders'], 'Other behavioural and emotional disorders with onset in childhood', 'F98'],
 
     # F99: Unspecified mental disorder
-    ['Worldwide', ['Insufficient data', 'Atypical presentation', 'Provisional diagnosis'], 'Unspecified', ['Psychological distress', 'Functional impairment',m'Does not meet full criteria for any other disorder', 'Atypical presentation of a known disorder', 'Symptoms are present but undefined', 'Used when diagnosis is uncertain'], 'Mental disorder, not otherwise specified', 'F99']
+    ['Worldwide', ['Insufficient data', 'Atypical presentation', 'Provisional diagnosis'], 'Unspecified', ['Psychological distress', 'Functional impairment','Does not meet full criteria for any other disorder', 'Atypical presentation of a known disorder', 'Symptoms are present but undefined', 'Used when diagnosis is uncertain'], 'Mental disorder, not otherwise specified', 'F99']
 ]
