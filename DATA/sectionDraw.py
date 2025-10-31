@@ -68,7 +68,6 @@ disease_data = [
         "icd_code": "D07"
     },
     {
-        "geography":Example: D08 is not a standard WHO code, but exists in some national classifications. Assuming it's skipped.
         "geography": "Worldwide",
         "transmission": ["environmental", "chronic irritation", "idiopathic"],
         "disease_type": "neoplastic",
