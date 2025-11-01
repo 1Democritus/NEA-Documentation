@@ -416,14 +416,6 @@ icd_y_code_data = [
     },
     {
         "Geography": "Global",
-        "Transmission_Mechanism": ["Adverse effect", "Therapeutic use", "Cardiovascular"],
-        "Cause_Type": "Adverse Drug Effect (Therapeutic Use)",
-        "Associated_Outcomes": ["Hypotension", "Bradycardia", "Cough", "Dizziness", "Electrolyte imbalance", "Arrhythmia"],
-        "Label": "Adverse effect of cardiovascular drugs (duplicate, distinct code)",
-        "ICD_Code": "Y52"
-    },
-    {
-        "Geography": "Global",
         "Transmission_Mechanism": ["Adverse effect", "Therapeutic use", "Gastrointestinal"],
         "Cause_Type": "Adverse Drug Effect (Therapeutic Use)",
         "Associated_Outcomes": ["Diarrhea", "Constipation", "Nausea", "Vomiting", "Abdominal pain", "Headache"],
@@ -453,14 +445,6 @@ icd_y_code_data = [
         "Associated_Outcomes": ["Contact dermatitis", "Rash", "Pruritus (itching)", "Dryness", "Erythema", "Burning sensation"],
         "Label": "Adverse effect of topical agents",
         "ICD_Code": "Y56"
-    },
-    {
-        "Geography": "Global",
-        "Transmission_Mechanism": ["Adverse effect", "Therapeutic use", "Various"],
-        "Cause_Type": "Adverse Drug Effect (Therapeutic Use)",
-        "Associated_Outcomes": ["Varies", "Rash", "Nausea", "Headache", "Dizziness", "Vomiting"],
-        "Label": "Adverse effect of other and unspecified drugs and medicaments",
-        "ICD_Code": "Y57"
     },
     {
         "Geography": "Global",
