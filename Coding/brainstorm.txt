@@ -6,5 +6,4 @@ database postgreSQL connection:
 completely clueless about this rn
 watch a tutorial
 
-transformer arhitecture:
-use pytorch - more low level so can increase proof of complexity
+machine learning architecture:
