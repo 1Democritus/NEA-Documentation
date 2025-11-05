@@ -1,4 +1,4 @@
-Geography,Transmission,Disease Type,Symptoms,Disease Name,ICD Code, Disease Group
+Geography,Transmission,Disease Type,Symptoms,Disease Name,ICD Code
 South Asia,"waterborne, fecal-oral, poor sanitation",bacterial,"profuse diarrhea, dehydration, shock, vomiting, rapid heart rate, low blood pressure",Cholera,A00
 Global/Developing Nations,"contaminated food, poor hygiene, fecal-oral",bacterial,"sustained high fever, headache, abdominal pain, rose spots, malaise, constipation",Typhoid Fever,A01
 Americas,"contaminated food, poultry, pet reptiles",bacterial,"diarrhea, abdominal cramps, fever, vomiting, nausea, bloody stool",Other salmonella infections,A02
