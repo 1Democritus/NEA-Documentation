@@ -18,7 +18,6 @@ from sectionQraw import disease_rows as sectionQ
 from sectionRraw import icd_r_code_data as sectionR
 from sectionSraw import icd_s_data as sectionS
 from sectionTraw import icd_t_data as sectionT
-from sectionVraw import icd_v_code_data as sectionV
 from sectionWraw import icd_w_data as sectionW
 from sectionXraw import icd_x_data as sectionX
 from sectionYraw import icd_y_code_data as sectionY
@@ -43,8 +42,6 @@ for e in range(len(sectionO)):
     sectionO[e] = sectionO[e].values()
 for f in range(len(sectionR)):
     sectionR[f] = sectionR[f].values()
-for h in range(len(sectionV)):
-    sectionV[h] = sectionV[h].values()
 for i in range(len(sectionW)):
     sectionW[i] = sectionW[i].values()
 for j in range(len(sectionX)):
@@ -52,5 +49,5 @@ for j in range(len(sectionX)):
 for k in range(len(sectionY)):
     sectionY[k] = sectionY[k].values()
 
-df = pd.DataFrame(columns = columns, data = sectionA + sectionB + sectionC + sectionD + sectionE + sectionF + sectionG + sectionH + sectionI + sectionJ + sectionK + sectionL + sectionM + sectionN + sectionO + sectionP + sectionQ + sectionR + sectionS + sectionT + sectionV + sectionW + sectionX + sectionY)
+df = pd.DataFrame(columns = columns, data = sectionA + sectionB + sectionC + sectionD + sectionE + sectionF + sectionG + sectionH + sectionI + sectionJ + sectionK + sectionL + sectionM + sectionN + sectionO + sectionP + sectionQ + sectionR + sectionS + sectionT + sectionW + sectionX + sectionY)
 df.to_csv("NEAtrainset.csv", index = False)
