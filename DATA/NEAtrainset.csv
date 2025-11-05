@@ -1,71 +1,71 @@
-Geography,Transmission,Disease Type,Symptoms,Disease Name,ICD Code
-South Asia,"waterborne, fecal-oral, poor sanitation",bacterial,"profuse diarrhea, dehydration, shock, vomiting, rapid heart rate, low blood pressure",Cholera,A00
-Global/Developing Nations,"contaminated food, poor hygiene, fecal-oral",bacterial,"sustained high fever, headache, abdominal pain, rose spots, malaise, constipation",Typhoid Fever,A01
-Americas,"contaminated food, poultry, pet reptiles",bacterial,"diarrhea, abdominal cramps, fever, vomiting, nausea, bloody stool",Other salmonella infections,A02
-Sub-Saharan Africa,"fecal-oral, direct contact, waterborne",bacterial,"bloody diarrhea, abdominal cramps, fever, tenesmus, dehydration, vomiting",Shigellosis,A03
-Global,"ingestion, contaminated food, poor cooking",bacterial,"diarrhea, cramping, nausea, vomiting, fever, abdominal tenderness",Other bacterial intestinal infections,A04
-Global,"toxins, improper storage, raw foods",bacterial,"rapid onset, nausea, vomiting, abdominal pain, dizziness, weakness",Other bacterial food poisoning,A05
-Indian Subcontinent,"contaminated water, fecal-oral, poor sanitation",parasitic,"bloody diarrhea, stomach pain, fever, fatigue, weight loss, liver abscess",Amoebiasis,A06
-Americas/Europe,"waterborne, direct contact, host-to-host",parasitic,"watery diarrhea, bloating, gas, cramps, greasy stools, weight loss",Other protozoal intestinal diseases,A07
-Global,"airborne droplets, fecal-oral, fomites",viral,"vomiting, watery diarrhea, low-grade fever, abdominal cramps, nausea, muscle aches",Viral and other specified intestinal infections,A08
-Global,"fecal-oral, contact, contaminated food",viral,"diarrhea, vomiting, dehydration, abdominal discomfort, fever, loss of appetite","Infectious gastroenteritis and colitis, unspecified",A09
-Southeast Asia,"airborne droplets, prolonged contact, coughing",bacterial,"chronic cough, chest pain, fever, night sweats, weight loss, fatigue",Respiratory tuberculosis confirmed,A15
-Southeast Asia,"airborne droplets, prolonged contact, coughing",bacterial,"chronic cough, chest pain, fever, night sweats, weight loss, fatigue",Respiratory tuberculosis not confirmed,A16
-Global/Immunocompromised,"airborne droplets, prolonged contact, coughing",bacterial,"severe headache, neck stiffness, confusion, vision changes, fever, seizures",Tuberculosis of nervous system,A17
-Global/Immunocompromised,"airborne droplets, prolonged contact, coughing",bacterial,"local pain, fever, organ dysfunction, weight loss, fatigue, swollen glands",Tuberculosis of other organs,A18
-Global/Immunocompromised,"airborne droplets, prolonged contact, coughing",bacterial,"high fever, chills, weakness, breathing issues, enlarged spleen, skin lesions",Miliary tuberculosis,A19
-Central Asia,"flea bites, rodent contact, airborne",bacterial,"sudden fever, chills, headache, painful lymph nodes (buboes), weakness, coughing",Plague,A20
-North America,"insect bites, handling animals, inhalation",bacterial,"fever, skin ulcer, swollen lymph nodes, headache, joint pain, nausea",Tularemia,A21
-Global/Agricultural,"spores, contact with animals, contaminated products",bacterial,"skin sore, fever, chills, nausea, headache, difficulty breathing",Anthrax,A22
-Mediterranean/Middle East,"unpasteurized dairy, animal contact, inhalation",bacterial,"undulating fever, joint pain, sweating, fatigue, back pain, loss of appetite",Brucellosis,A23
-Southeast Asia,"contaminated water, soil contact, inhalation",bacterial,"fever, muscle aches, chest pain, coughing, lung nodules, abscesses",Glanders and melioidosis,A24
-Asia,"rat bite, rodent urine, contaminated food",bacterial,"fever, chills, vomiting, joint pain, rash, muscle aches",Rat-bite fever,A25
-Global/Occupational,"handling infected meat, skin puncture, cuts",bacterial,"purple skin lesion, fever, joint pain, swollen lymph nodes, general illness, headache",Erysipeloid,A26
-Southeast Asia,"contaminated water, animal urine, skin contact",bacterial,"high fever, headache, muscle aches, jaundice, vomiting, red eyes",Leptospirosis,A27
-Global,"animal contact, bites, environmental",bacterial,"fever, localized swelling, headache, general weakness, nausea, joint pain",Other zoonotic bacterial diseases,A28
-South America,"airborne droplets, close contact, prolonged exposure",bacterial,"skin lesions, nerve damage, muscle weakness, sensory loss, eye problems, nosebleeds",Leprosy [Hansen's disease],A30
-Global/Immunocompromised,"environmental, soil contact, aerosols",bacterial,"lung disease, swollen lymph nodes, skin ulcers, fever, weight loss, fatigue",Infection due to other mycobacteria,A31
-Global,"contaminated food, raw dairy, soil",bacterial,"fever, muscle aches, diarrhea, stiff neck, confusion, convulsions",Listeriosis,A32
-Developing Nations,"non-sterile delivery, umbilical cord infection",bacterial,"muscle spasms, difficulty feeding, irritability, lockjaw, arching of back, seizures",Tetanus neonatorum,A33
-Developing Nations,"non-sterile birth, wound infection",bacterial,"muscle spasms, lockjaw, stiff neck, fever, irritability, sweating",Obstetrical tetanus,A34
-Global/Unvaccinated,"deep puncture wound, soil contamination",bacterial,"muscle spasms, lockjaw, stiff neck, headache, fever, excessive sweating",Other tetanus,A35
-Global/Unvaccinated,"airborne droplets, direct contact, fomites",bacterial,"sore throat, fever, swollen neck glands, difficulty breathing, bluish skin, nasal discharge",Diphtheria,A36
-Global/Infants,"airborne droplets, direct contact, coughing",bacterial,"severe coughing fits, vomiting after cough, ""whoop"" sound, runny nose, fatigue, apnea",Whooping cough,A37
-Global,"airborne droplets, direct contact, saliva",bacterial,"sore throat, high fever, bright red rash, strawberry tongue, headache, chills",Scarlet fever,A38
-Sub-Saharan Africa,"airborne droplets, saliva, close contact",bacterial,"sudden fever, stiff neck, severe headache, photophobia, rash, confusion",Meningococcal infection,A39
-Global,"contact, wounds, bloodstream",bacterial,"high fever, shaking chills, rapid heart rate, confusion, low blood pressure, rapid breathing",Streptococcal septicaemia,A40
-Global,"contact, wounds, bloodstream",bacterial,"high fever, shaking chills, rapid heart rate, confusion, low blood pressure, rapid breathing",Other septicaemia,A41
-Global,"normal flora, dental procedure, trauma",bacterial,"painful swelling, abscesses, draining sinus tracts, fever, weight loss, fatigue",Actinomycosis,A42
-Global/Immunocompromised,"inhalation, soil contact, skin trauma",bacterial,"persistent cough, chest pain, fever, shortness of breath, skin lesions, weight loss",Nocardiosis,A43
-South America,"sandfly bite, cat scratch, lice",bacterial,"fever, headache, fatigue, swollen glands, skin lesions, body aches",Bartonellosis,A44
-Global,"skin break, open wound, direct contact",bacterial,"bright red skin rash, raised border, fever, chills, headache, general malaise",Erysipelas,A46
-Global,"various, contact, inhalation",bacterial,"fever, localized symptoms, headache, fatigue, inflammation, body aches","Other bacterial diseases, not elsewhere classified",A48
-Global,"various, unknown source",bacterial,"fever, inflammation, fatigue, chills, body aches, localized pain",Bacterial infection of unspecified site,A49
-Global,"mother-to-child, vertical transmission",bacterial,"rash, runny nose, hepatosplenomegaly, bone deformities, anemia, jaundice",Congenital syphilis,A50
-Global,"sexual contact, direct contact",bacterial,"painless chancre, rash, swollen lymph nodes, fever, sore throat, hair loss",Early syphilis,A51
-Global,"sexual contact, direct contact",bacterial,"neurological damage, heart problems, gummas, blindness, dementia, paralysis",Late syphilis,A52
-Global,"sexual contact, direct contact",bacterial,"varied, non-specific symptoms, fever, malaise, rash, headache, muscle pain",Other and unspecified syphilis,A53
-Global,"sexual contact, mother-to-child",bacterial,"painful urination, discharge, abdominal pain, fever, joint swelling, sore throat",Gonococcal infection,A54
-"Africa, Asia, S America","sexual contact, direct contact",bacterial,"swollen lymph nodes, fever, joint pain, headache, rectal pain, genital ulcers",Chlamydial lymphogranuloma (venereum),A55
-Global,"sexual contact, mother-to-child",bacterial,"painful urination, discharge, abdominal pain, testicular pain, rectal pain, sore throat",Other sexually transmitted chlamydial diseases,A56
-"Africa, Asia","sexual contact, direct contact",bacterial,"painful genital ulcer, swollen lymph nodes, fever, pus discharge, burning sensation, headache",Chancroid,A57
-Developing Countries,"sexual contact, direct contact",bacterial,"progressive genital ulcers, bleeding, swelling, pain, lack of lymph node involvement",Granuloma inguinale,A58
-Global,"sexual contact, direct contact, fomites",parasitic,"discharge, itching, painful urination, abdominal pain, foul odor, spotting",Trichomoniasis,A59
-Global,"sexual contact, direct contact, skin-to-skin",viral,"painful blisters, ulcers, itching, flu-like symptoms, lymph node swelling, painful urination",Anogenital herpesviral infection,A60
-Global,"sexual contact, direct contact",bacterial,"genital lesions, discharge, pain, itching, swelling, fever","Other predominantly sexually transmitted diseases, NEC",A63
-Global,"sexual contact, unknown",viral,"discharge, pain, itching, rash, fever, malaise",Unspecified sexually transmitted disease,A64
-"Africa, Middle East","non-sexual contact, oral contact, direct contact",bacterial,"skin lesions, bone damage, gummas, painless ulcers, nerve deafness, eye inflammation",Nonvenereal syphilis,A65
-"Africa, Southeast Asia","skin contact, direct contact, non-sexual contact",bacterial,"painless skin nodules, bone pain, joint swelling, skin ulcers, fever, rash",Yaws,A66
-Latin America,"skin contact, direct contact",bacterial,"initial skin lesion, white skin patches, hyperpigmentation, itching, rash, scaling",Pinta (carate),A67
-"Africa, Asia","tick vector, louse vector, direct contact",bacterial,"recurring high fever, headache, muscle aches, nausea, rash, vomiting",Relapsing fevers,A68
-Global,"tick bite, animal contact, direct contact",bacterial,"fever, rash, joint pain, headache, fatigue, neurological symptoms",Other spirochaetal infections,A69
-Global/Birds,"avian aerosols, bird droppings, inhalation",bacterial,"fever, headache, dry cough, chest pain, muscle aches, chills",Infection due to Chlamydia psittaci,A70
-"Africa, Middle East","eye discharge, direct contact, flies",bacterial,"painful eyes, inflammation, discharge, in-turned eyelashes, blurred vision, scarring",Trachoma,A71
-Global,"various, contact, aerosols",bacterial,"fever, localized inflammation, headache, body aches, joint pain, fatigue",Other diseases caused by Chlamydiae,A74
-Global/Poverty Areas,"louse vector, flea vector, body fluids",bacterial,"high fever, severe headache, rash, muscle aches, chills, confusion",Typhus fever,A75
-Global/Americas,"tick vector, animal contact, insect bites",bacterial,"fever, headache, rash, muscle pain, nausea, vomiting",Spotted fever [rickettsioses],A77
-Global/Livestock,"inhalation, contaminated milk, animal contact",bacterial,"high fever, severe headache, dry cough, chest pain, fatigue, night sweats",Q fever,A78
-Global,"insect vector, animal contact",bacterial,"fever, rash, headache, muscle aches, malaise, chills",Other rickettsioses,A79
+Geography,Transmission,Disease Type,Symptoms,Disease Name,ICD Code, Disease Group
+South Asia,"waterborne, fecal-oral, poor sanitation",bacterial,"profuse diarrhea, dehydration, shock, vomiting, rapid heart rate, low blood pressure",Cholera,A00,Intestinal Infectious Diseases
+Global/Developing Nations,"contaminated food, poor hygiene, fecal-oral",bacterial,"sustained high fever, headache, abdominal pain, rose spots, malaise, constipation",Typhoid Fever,A01,Intestinal Infectious Diseases
+Americas,"contaminated food, poultry, pet reptiles",bacterial,"diarrhea, abdominal cramps, fever, vomiting, nausea, bloody stool",Other salmonella infections,A02,Intestinal Infectious Diseases
+Sub-Saharan Africa,"fecal-oral, direct contact, waterborne",bacterial,"bloody diarrhea, abdominal cramps, fever, tenesmus, dehydration, vomiting",Shigellosis,A03,Intestinal Infectious Diseases
+Global,"ingestion, contaminated food, poor cooking",bacterial,"diarrhea, cramping, nausea, vomiting, fever, abdominal tenderness",Other bacterial intestinal infections,A04,Intestinal Infectious Diseases
+Global,"toxins, improper storage, raw foods",bacterial,"rapid onset, nausea, vomiting, abdominal pain, dizziness, weakness",Other bacterial food poisoning,A05,Intestinal Infectious Diseases
+Indian Subcontinent,"contaminated water, fecal-oral, poor sanitation",parasitic,"bloody diarrhea, stomach pain, fever, fatigue, weight loss, liver abscess",Amoebiasis,A06,Intestinal Infectious Diseases
+Americas/Europe,"waterborne, direct contact, host-to-host",parasitic,"watery diarrhea, bloating, gas, cramps, greasy stools, weight loss",Other protozoal intestinal diseases,A07,Intestinal Infectious Diseases
+Global,"airborne droplets, fecal-oral, fomites",viral,"vomiting, watery diarrhea, low-grade fever, abdominal cramps, nausea, muscle aches",Viral and other specified intestinal infections,A08,Intestinal Infectious Diseases
+Global,"fecal-oral, contact, contaminated food",viral,"diarrhea, vomiting, dehydration, abdominal discomfort, fever, loss of appetite","Infectious gastroenteritis and colitis, unspecified",A09,Intestinal Infectious Diseases
+Southeast Asia,"airborne droplets, prolonged contact, coughing",bacterial,"chronic cough, chest pain, fever, night sweats, weight loss, fatigue",Respiratory tuberculosis confirmed,A15,Tuberculosis
+Southeast Asia,"airborne droplets, prolonged contact, coughing",bacterial,"chronic cough, chest pain, fever, night sweats, weight loss, fatigue",Respiratory tuberculosis not confirmed,A16,Tuberculosis
+Global/Immunocompromised,"airborne droplets, prolonged contact, coughing",bacterial,"severe headache, neck stiffness, confusion, vision changes, fever, seizures",Tuberculosis of nervous system,A17,Tuberculosis
+Global/Immunocompromised,"airborne droplets, prolonged contact, coughing",bacterial,"local pain, fever, organ dysfunction, weight loss, fatigue, swollen glands",Tuberculosis of other organs,A18,Tuberculosis
+Global/Immunocompromised,"airborne droplets, prolonged contact, coughing",bacterial,"high fever, chills, weakness, breathing issues, enlarged spleen, skin lesions",Miliary tuberculosis,A19,Tuberculosis
+Central Asia,"flea bites, rodent contact, airborne",bacterial,"sudden fever, chills, headache, painful lymph nodes (buboes), weakness, coughing",Plague,A20,Certain Zootonic Bacterial Diseases
+North America,"insect bites, handling animals, inhalation",bacterial,"fever, skin ulcer, swollen lymph nodes, headache, joint pain, nausea",Tularemia,A21,Certain Zootonic Bacterial Diseases
+Global/Agricultural,"spores, contact with animals, contaminated products",bacterial,"skin sore, fever, chills, nausea, headache, difficulty breathing",Anthrax,A22,Certain Zootonic Bacterial Diseases
+Mediterranean/Middle East,"unpasteurized dairy, animal contact, inhalation",bacterial,"undulating fever, joint pain, sweating, fatigue, back pain, loss of appetite",Brucellosis,A23,Certain Zootonic Bacterial Diseases
+Southeast Asia,"contaminated water, soil contact, inhalation",bacterial,"fever, muscle aches, chest pain, coughing, lung nodules, abscesses",Glanders and melioidosis,A24,Certain Zootonic Bacterial Diseases
+Asia,"rat bite, rodent urine, contaminated food",bacterial,"fever, chills, vomiting, joint pain, rash, muscle aches",Rat-bite fever,A25,Certain Zootonic Bacterial Diseases
+Global/Occupational,"handling infected meat, skin puncture, cuts",bacterial,"purple skin lesion, fever, joint pain, swollen lymph nodes, general illness, headache",Erysipeloid,A26,Certain Zootonic Bacterial Diseases
+Southeast Asia,"contaminated water, animal urine, skin contact",bacterial,"high fever, headache, muscle aches, jaundice, vomiting, red eyes",Leptospirosis,A27,Certain Zootonic Bacterial Diseases
+Global,"animal contact, bites, environmental",bacterial,"fever, localized swelling, headache, general weakness, nausea, joint pain",Other zoonotic bacterial diseases,A28,Certain Zootonic Bacterial Diseases
+South America,"airborne droplets, close contact, prolonged exposure",bacterial,"skin lesions, nerve damage, muscle weakness, sensory loss, eye problems, nosebleeds",Leprosy [Hansen's disease],A30,Other Bacterial Diseases
+Global/Immunocompromised,"environmental, soil contact, aerosols",bacterial,"lung disease, swollen lymph nodes, skin ulcers, fever, weight loss, fatigue",Infection due to other mycobacteria,A31,Other Bacterial Diseases
+Global,"contaminated food, raw dairy, soil",bacterial,"fever, muscle aches, diarrhea, stiff neck, confusion, convulsions",Listeriosis,A32,Other Bacterial Diseases
+Developing Nations,"non-sterile delivery, umbilical cord infection",bacterial,"muscle spasms, difficulty feeding, irritability, lockjaw, arching of back, seizures",Tetanus neonatorum,A33,Other Bacterial Diseases
+Developing Nations,"non-sterile birth, wound infection",bacterial,"muscle spasms, lockjaw, stiff neck, fever, irritability, sweating",Obstetrical tetanus,A34,Other Bacterial Diseases
+Global/Unvaccinated,"deep puncture wound, soil contamination",bacterial,"muscle spasms, lockjaw, stiff neck, headache, fever, excessive sweating",Other tetanus,A35,Other Bacterial Diseases
+Global/Unvaccinated,"airborne droplets, direct contact, fomites",bacterial,"sore throat, fever, swollen neck glands, difficulty breathing, bluish skin, nasal discharge",Diphtheria,A36,Other Bacterial Diseases
+Global/Infants,"airborne droplets, direct contact, coughing",bacterial,"severe coughing fits, vomiting after cough, ""whoop"" sound, runny nose, fatigue, apnea",Whooping cough,A37,Other Bacterial Diseases
+Global,"airborne droplets, direct contact, saliva",bacterial,"sore throat, high fever, bright red rash, strawberry tongue, headache, chills",Scarlet fever,A38,Other Bacterial Diseases
+Sub-Saharan Africa,"airborne droplets, saliva, close contact",bacterial,"sudden fever, stiff neck, severe headache, photophobia, rash, confusion",Meningococcal infection,A39,Other Bacterial Diseases
+Global,"contact, wounds, bloodstream",bacterial,"high fever, shaking chills, rapid heart rate, confusion, low blood pressure, rapid breathing",Streptococcal septicaemia,A40,Other Bacterial Diseases
+Global,"contact, wounds, bloodstream",bacterial,"high fever, shaking chills, rapid heart rate, confusion, low blood pressure, rapid breathing",Other septicaemia,A41,Other Bacterial Diseases
+Global,"normal flora, dental procedure, trauma",bacterial,"painful swelling, abscesses, draining sinus tracts, fever, weight loss, fatigue",Actinomycosis,A42,Other Bacterial Diseases
+Global/Immunocompromised,"inhalation, soil contact, skin trauma",bacterial,"persistent cough, chest pain, fever, shortness of breath, skin lesions, weight loss",Nocardiosis,A43,Other Bacterial Diseases
+South America,"sandfly bite, cat scratch, lice",bacterial,"fever, headache, fatigue, swollen glands, skin lesions, body aches",Bartonellosis,A44,Other Bacterial Diseases
+Global,"skin break, open wound, direct contact",bacterial,"bright red skin rash, raised border, fever, chills, headache, general malaise",Erysipelas,A46,Other Bacterial Diseases
+Global,"various, contact, inhalation",bacterial,"fever, localized symptoms, headache, fatigue, inflammation, body aches","Other bacterial diseases, not elsewhere classified",A48,Other Bacterial Diseases
+Global,"various, unknown source",bacterial,"fever, inflammation, fatigue, chills, body aches, localized pain",Bacterial infection of unspecified site,A49,Other Bacterial Diseases
+Global,"mother-to-child, vertical transmission",bacterial,"rash, runny nose, hepatosplenomegaly, bone deformities, anemia, jaundice",Congenital syphilis,A50,STDs
+Global,"sexual contact, direct contact",bacterial,"painless chancre, rash, swollen lymph nodes, fever, sore throat, hair loss",Early syphilis,A51,STDs
+Global,"sexual contact, direct contact",bacterial,"neurological damage, heart problems, gummas, blindness, dementia, paralysis",Late syphilis,A52,STDs
+Global,"sexual contact, direct contact",bacterial,"varied, non-specific symptoms, fever, malaise, rash, headache, muscle pain",Other and unspecified syphilis,A53,STDs
+Global,"sexual contact, mother-to-child",bacterial,"painful urination, discharge, abdominal pain, fever, joint swelling, sore throat",Gonococcal infection,A54,STDs
+"Africa, Asia, S America","sexual contact, direct contact",bacterial,"swollen lymph nodes, fever, joint pain, headache, rectal pain, genital ulcers",Chlamydial lymphogranuloma (venereum),A55,STDs
+Global,"sexual contact, mother-to-child",bacterial,"painful urination, discharge, abdominal pain, testicular pain, rectal pain, sore throat",Other sexually transmitted chlamydial diseases,A56,STDs
+"Africa, Asia","sexual contact, direct contact",bacterial,"painful genital ulcer, swollen lymph nodes, fever, pus discharge, burning sensation, headache",Chancroid,A57,STDs
+Developing Countries,"sexual contact, direct contact",bacterial,"progressive genital ulcers, bleeding, swelling, pain, lack of lymph node involvement",Granuloma inguinale,A58,STDs
+Global,"sexual contact, direct contact, fomites",parasitic,"discharge, itching, painful urination, abdominal pain, foul odor, spotting",Trichomoniasis,A59,STDs
+Global,"sexual contact, direct contact, skin-to-skin",viral,"painful blisters, ulcers, itching, flu-like symptoms, lymph node swelling, painful urination",Anogenital herpesviral infection,A60,STDs
+Global,"sexual contact, direct contact",bacterial,"genital lesions, discharge, pain, itching, swelling, fever","Other predominantly sexually transmitted diseases, NEC",A63,STDs
+Global,"sexual contact, unknown",viral,"discharge, pain, itching, rash, fever, malaise",Unspecified sexually transmitted disease,A64,STDs
+"Africa, Middle East","non-sexual contact, oral contact, direct contact",bacterial,"skin lesions, bone damage, gummas, painless ulcers, nerve deafness, eye inflammation",Nonvenereal syphilis,A65,Other spirochaetal diseases
+"Africa, Southeast Asia","skin contact, direct contact, non-sexual contact",bacterial,"painless skin nodules, bone pain, joint swelling, skin ulcers, fever, rash",Yaws,A66,Other spirochaetal diseases
+Latin America,"skin contact, direct contact",bacterial,"initial skin lesion, white skin patches, hyperpigmentation, itching, rash, scaling",Pinta (carate),A67,Other spirochaetal diseases
+"Africa, Asia","tick vector, louse vector, direct contact",bacterial,"recurring high fever, headache, muscle aches, nausea, rash, vomiting",Relapsing fevers,A68,Other spirochaetal diseases
+Global,"tick bite, animal contact, direct contact",bacterial,"fever, rash, joint pain, headache, fatigue, neurological symptoms",Other spirochaetal infections,A69,Other spirochaetal diseases
+Global/Birds,"avian aerosols, bird droppings, inhalation",bacterial,"fever, headache, dry cough, chest pain, muscle aches, chills",Infection due to Chlamydia psittaci,A70,Other diseases caused by clamydiae
+"Africa, Middle East","eye discharge, direct contact, flies",bacterial,"painful eyes, inflammation, discharge, in-turned eyelashes, blurred vision, scarring",Trachoma,A71,Other diseases caused by clamydiae
+Global,"various, contact, aerosols",bacterial,"fever, localized inflammation, headache, body aches, joint pain, fatigue",Other diseases caused by Chlamydiae,A74,Other diseases caused by clamydiae
+Global/Poverty Areas,"louse vector, flea vector, body fluids",bacterial,"high fever, severe headache, rash, muscle aches, chills, confusion",Typhus fever,A75,Rickettsioses
+Global/Americas,"tick vector, animal contact, insect bites",bacterial,"fever, headache, rash, muscle pain, nausea, vomiting",Spotted fever [rickettsioses],A77,Rickettsioses
+Global/Livestock,"inhalation, contaminated milk, animal contact",bacterial,"high fever, severe headache, dry cough, chest pain, fatigue, night sweats",Q fever,A78,Rickettsioses
+Global,"insect vector, animal contact",bacterial,"fever, rash, headache, muscle aches, malaise, chills",Other rickettsioses,A79,Rickettsioses
 "Asia, Africa","fecal-oral, direct contact, waterborne",viral,"fever, fatigue, vomiting, stiff neck, muscle weakness, paralysis",Acute poliomyelitis,A80
 Global,"unknown, direct contact, droplet",viral,"slow onset, neurological changes, cognitive decline, ataxia, vision loss, seizure",Atypical virus infections of central nervous system,A81
 Global/Zoonotic,"animal bite, saliva contact, direct contact",viral,"fever, headache, confusion, hydrophobia, muscle spasms, paralysis",Rabies,A82
