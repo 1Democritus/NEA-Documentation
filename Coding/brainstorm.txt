@@ -11,3 +11,9 @@ deep neural network
 only imported module is numpy
 define ReLu and Softmax layers ourselves from scratch
 make backpropagation from scratch
+
+order of objectives:
+database connection; logins, diseases etc.
+machine learning architecture
+interface
+extras (adding appointment to callendar)
