@@ -7,3 +7,6 @@ completely clueless about this rn
 watch a tutorial
 
 machine learning architecture:
+deep neural network
+define ReLu and Softmax layers ourselves from scratch (only numpy)
+make backpropagation from scratch
