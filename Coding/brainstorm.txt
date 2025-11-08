@@ -3,8 +3,8 @@ use python
 tkinter for buttons and widgets - have expertise so using should be comfortable
 
 database postgreSQL connection:
-completely clueless about this rn
-watch a tutorial
+use psycopg2
+
 
 machine learning architecture:
 deep neural network
