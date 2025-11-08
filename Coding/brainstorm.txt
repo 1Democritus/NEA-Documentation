@@ -8,5 +8,6 @@ watch a tutorial
 
 machine learning architecture:
 deep neural network
-define ReLu and Softmax layers ourselves from scratch (only numpy)
+only imported module is numpy
+define ReLu and Softmax layers ourselves from scratch
 make backpropagation from scratch
