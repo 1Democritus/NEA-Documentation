@@ -30,4 +30,57 @@ connection.close()
 connection = psycopg2.connect(dbname = 'appointments', **databaseParameters)
 connection.autocommit = True
 cursor = connection.cursor()
-appointmentQuery = '''
+
+treatmentQuery = '''CREATE TABLE Treatment(
+TreatmentName VARCHAR(40) PRIMARY KEY,
+TreatmentType VARCHAR(20) NOT NULL,
+TreatmentHourDuration INT NOT NULL
+)'''
+
+conditionQuery = '''CREATE TABLE ConditionDetails(
+ConditionName VARCHAR(40) PRIMARY KEY,
+ConditionType VARCHAR(20) NOT NULL,
+Severity VARCHAR(15) NOT NULL,
+Contagiousness VARCHAR(15) NOT NULL
+)'''
+
+linkconditionQuery = '''CREATE TABLE LinkedCondition(
+ConditionName VARCHAR(40) FOREIGN KEY REFERENCES (ConditionDetails),
+TreatmentName VARCHAR(40) FOREIGN KEY REFERENCES (Treatment),
+PRIMARY KEY (ConditionName, TreatmentName)
+)'''
+
+doctorQuery = '''CREATE TABLE Doctor(
+DoctorID VARCHAR(20) PRIMARY KEY,
+DoctorName VARCHAR(15) NOT NULL,
+Surname VARCHAR(15) NOT NULL,
+TelephoneNo CHAR(11) NOT NULL
+)'''
+
+customerQuery = '''CREATE TABLE Patient(
+PatientID VARCHAR(20) PRIMARY KEY,
+Forename VARCHAR(15) NOT NULL,
+Surname VARCHAR(15) NOT NULL,
+TelephoneNo CHAR(11) NOT NULL
+)'''
+
+roomQuery = '''CREATE TABLE Room(
+RoomNumber INT PRIMARY KEY,
+RoomFloor INT NOT NULL
+)'''
+
+appointmentQuery = '''CREATE TABLE Appointment(
+AppointmentID VARCHAR(20) PRIMARY KEY,
+PatientID VARCHAR(20) FOREIGN KEY REFERENCES(Patient),
+DoctorID VARCHAR(20) FOREIGN KEY REFERENCES(Doctor),
+TreatmentName VARCHAR(40) FOREIGN KEY REFERENCES(Treatment, LinkedCondition),
+AppointmentDate DATE NOT NULL,
+AppointmentTime TIME NOT NULL,
+RoomNumber INT FOREIGN KEY REFERENCES(Room)
+)'''
+
+queries = [treatmentQuery, conditionQuery, linkconditionQuery, doctorQuery, customerQuery, roomQuery, appointmentQuery]
+for query in queries:
+  cursor.execute(query)
+cursor.close()
+connection.close()
