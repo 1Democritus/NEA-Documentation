@@ -45,8 +45,8 @@ Contagiousness VARCHAR(15) NOT NULL
 )'''
 
 linkconditionQuery = '''CREATE TABLE LinkedCondition(
-ConditionName VARCHAR(40) FOREIGN KEY REFERENCES (ConditionDetails),
-TreatmentName VARCHAR(40) FOREIGN KEY REFERENCES (Treatment),
+ConditionName VARCHAR(40) REFERENCES ConditionDetails(ConditionName),
+TreatmentName VARCHAR(40) REFERENCES Treatment(TreatmentName),
 PRIMARY KEY (ConditionName, TreatmentName)
 )'''
 
@@ -71,12 +71,12 @@ RoomFloor INT NOT NULL
 
 appointmentQuery = '''CREATE TABLE Appointment(
 AppointmentID VARCHAR(20) PRIMARY KEY,
-PatientID VARCHAR(20) FOREIGN KEY REFERENCES(Patient),
-DoctorID VARCHAR(20) FOREIGN KEY REFERENCES(Doctor),
-TreatmentName VARCHAR(40) FOREIGN KEY REFERENCES(Treatment, LinkedCondition),
+PatientID VARCHAR(20) REFERENCES Patient(PatientID),
+DoctorID VARCHAR(20) REFERENCES Doctor(DoctorID),
+TreatmentName VARCHAR(40) REFERENCES Treatment(TreatmentName),
 AppointmentDate DATE NOT NULL,
 AppointmentTime TIME NOT NULL,
-RoomNumber INT FOREIGN KEY REFERENCES(Room)
+RoomNumber INT REFERENCES Room(RoomNumber)
 )'''
 
 queries = [treatmentQuery, conditionQuery, linkconditionQuery, doctorQuery, customerQuery, roomQuery, appointmentQuery]
