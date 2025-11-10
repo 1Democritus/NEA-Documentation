@@ -17,3 +17,6 @@ class DNN():
     expSum = sum(exp(i) for i in tuple)
     softmaxTuple = [exp(weight)/expSum for weight in tuple]
     return softmaxTuple
+
+  def ReLU(x):
+    return max(0, x)
