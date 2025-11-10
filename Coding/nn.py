@@ -20,6 +20,9 @@ class DNN():
   def backprop(self, tuple):
     pass
 
+  def updateParameters(self, ):
+    pass
+
  @staticmethod
   def softmax(tuple): #activation function to be used for final layer
     expSum = sum(numpy.exp(i) for i in tuple)
