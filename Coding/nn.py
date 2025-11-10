@@ -13,7 +13,7 @@ class DNN():
   def backprop(tuple):
     pass
 
-  def softmax(tuple):
+  def softmax(tuple): #activation function to be used for final layer
     expSum = sum(exp(i) for i in tuple)
     softmaxTuple = [exp(weight)/expSum for weight in tuple]
     return softmaxTuple
