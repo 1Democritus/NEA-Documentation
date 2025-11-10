@@ -21,8 +21,9 @@ class DNN():
   def ReLU(x):
     return max(0, x)
 
-def meanSquaredError():
-  pass
+def meanSquaredError(predicted, actual):
+  return sum((actual[idx]-predicted[idx])**2 for idx in range(len(predicted)))
 
-def trainModel():
-  pass
+def trainModel(lr, layerno, epochCount, trainset):
+  model = DNN(learningRate = lr, hiddenlayerNo = layerno)
+  #
