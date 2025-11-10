@@ -20,17 +20,17 @@ class DNN():
   def backprop(self, tuple):
     pass
 
- 
+ @staticmethod
   def softmax(tuple): #activation function to be used for final layer
     expSum = sum(numpy.exp(i) for i in tuple)
     softmaxTuple = [numpy.exp(weight)/expSum for weight in tuple]
     return softmaxTuple
 
-  
+  @staticmethod
   def ReLU(x):
     return max(0, x)
 
-
+  @staticmethod
   def meanSquaredError(predicted, actual):
     return sum((actual[idx]-predicted[idx])**2 for idx in range(len(predicted)))
 
