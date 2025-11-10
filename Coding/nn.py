@@ -18,6 +18,7 @@ class DNN():
     vals, valsActivated
   
   def backprop(self, tuple):
+    #calculate partial derivatives using chain rule
     pass
 
   def updateParameters(self, ):
