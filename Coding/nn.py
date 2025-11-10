@@ -1,18 +1,12 @@
 import numpy
 
-class neuron():
-  def __init__(weight, bias, activationFunction):
-    self.__weight = weight
-    self.__bias = bias
-    self.__activationFunction = activationFunction
-    
-  def feedforward(activationFunction):
-    pass
-
 class DNN():
   def __init__(learningRate, hiddenlayerNo):
     self.__learningRate = learningRate
     self.__hiddenlayerNo = hiddenlayerNo
+
+  def feedforward(tuple):
+    pass
 
   def backprop(tuple):
     pass
