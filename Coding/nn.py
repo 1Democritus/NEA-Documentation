@@ -12,7 +12,7 @@ class DNN():
     valsActivated = self.ReLU(vals)
     return vals, valsActivated
 
-  def finalfeedforward(self, tuple)
+  def finalfeedforward(self, tuple):
     vals = self.__weight.dot(tuple) - self.__bias
     valsActivated = self.softmax(vals)
     vals, valsActivated
