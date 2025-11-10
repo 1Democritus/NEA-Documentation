@@ -1,23 +1,23 @@
 import numpy
 
 class DNN():
-  def __init__(learningRate, hiddenlayerNo):
+  def __init__(self, learningRate, hiddenlayerNo):
     self.__learningRate = learningRate
     self.__hiddenlayerNo = hiddenlayerNo
     self.__weight = ####
     self.__bias = ####
 
-  def feedforward(tuple):
+  def feedforward(self, tuple):
     vals = self.__weight.dot(tuple) - self.__bias
     valsActivated = self.ReLU(vals)
     return vals, valsActivated
 
-  def finalfeedforward(tuple)
+  def finalfeedforward(self, tuple)
     vals = self.__weight.dot(tuple) - self.__bias
     valsActivated = self.softmax(vals)
     vals, valsActivated
   
-  def backprop(tuple):
+  def backprop(self, tuple):
     pass
 
   def softmax(tuple): #activation function to be used for final layer
