@@ -20,3 +20,9 @@ class DNN():
 
   def ReLU(x):
     return max(0, x)
+
+def meanSquaredError():
+  pass
+
+def trainModel():
+  pass
