@@ -38,6 +38,11 @@ class DNN():
   def meanSquaredError(predicted, actual):
     return sum((actual[idx]-predicted[idx])**2 for idx in range(len(predicted)))
 
+
 def trainModel(lr, layerno, epochCount, trainset):
   model = DNN(learningRate = lr, hiddenlayerNo = layerno)
-  #
+  for epoch in epochCount:
+    model.feedforward(trainset)
+    model.backprop(trainset)
+    model.updateParameters(trainset)
+    #display loss
