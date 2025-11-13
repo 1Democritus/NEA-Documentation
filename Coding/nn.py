@@ -34,9 +34,6 @@ class DNN():
   def ReLU(x):
     return max(0, x)
 
-  @staticmethod
-  def meanSquaredError(predicted, actual):
-    return sum((actual[idx]-predicted[idx])**2 for idx in range(len(predicted)))
 
 
 def trainModel(lr, layerno, epochCount, trainset):
