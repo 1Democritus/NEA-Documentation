@@ -32,7 +32,7 @@ class DNN():
 
   @staticmethod
   def ReLU(x):
-    return max(0, x)
+    return numpy.maximum(0, x)
 
 
 
