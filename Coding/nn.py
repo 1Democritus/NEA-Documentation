@@ -31,14 +31,19 @@ class DNN():
     return softmaxTuple
 
   @staticmethod
-  def ReLU(x):
-    return numpy.maximum(0, x)
+  def ReLU(tuple):
+    return numpy.maximum(0, tuple)
+
+  @staticmethod
+  def ReLUderivative(tuple):
+    #needed for finding derivatives
+    return (tuple>0).astype(float)
 
 
 
 def trainModel(lr, layerno, epochCount, trainset):
   model = DNN(learningRate = lr, hiddenlayerNo = layerno)
-  for epoch in epochCount:
+  for epoch in range(epochCount):
     model.feedforward(trainset)
     model.backprop(trainset)
     model.updateParameters(trainset)
