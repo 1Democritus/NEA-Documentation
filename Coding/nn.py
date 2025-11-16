@@ -4,22 +4,22 @@ class DNN():
   def __init__(self, learningRate, hiddenlayerNo):
     self.__learningRate = learningRate
     self.__hiddenlayerNo = hiddenlayerNo
-    self.__weight = ####
-    self.__bias = ####
+    self.__w1 = ####
+    self.__b1 = ####
+    self.__w2 = ####
+    self.__b2 = ####
 
-  def feedforward(self, tuple):
-    vals = self.__weight.dot(tuple) - self.__bias
-    valsActivated = self.ReLU(vals)
-    return vals, valsActivated
-
-  def finalfeedforward(self, tuple):
-    vals = self.__weight.dot(tuple) - self.__bias
-    valsActivated = self.softmax(vals)
-    vals, valsActivated
+  def feedForward(self, tuple):
+    hiddenTensors = self.__w1.dot(tuple) - self.__b1
+    hiddenTensorsActivated = self.ReLU(vals)
+    finalTensors = self.__w2.dot(hiddenTensorsActivated) - self.__b2
+    finalTensorsActivated = self.softmax(finalTensorsActivated)
+    return hiddenTensors, hiddenTensorsActivated, finalTensors, finalTensorsActivated
   
-  def backprop(self, tuple):
-    #calculate partial derivatives using chain rule
-    pass
+  def backprop(self, tuple, tensors):
+    finalDerivative = ##
+    hiddenDerivative = ##
+    return hiddenDerivative, finalDerivative
 
   def updateParameters(self, ):
     pass
@@ -44,7 +44,7 @@ class DNN():
 def trainModel(lr, layerno, epochCount, trainset):
   model = DNN(learningRate = lr, hiddenlayerNo = layerno)
   for epoch in range(epochCount):
-    model.feedforward(trainset)
-    model.backprop(trainset)
-    model.updateParameters(trainset)
+    tensors = model.feedForward(trainset)
+    hiddenDerivative, finalDerivative = model.backprop(trainset, tensors)
+    model.updateParameters(hiddenDerivative, finalDerivative)
     #display loss
