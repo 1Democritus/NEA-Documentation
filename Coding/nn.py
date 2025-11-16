@@ -21,8 +21,9 @@ class DNN():
     hiddenDerivative = ##
     return hiddenDerivative, finalDerivative
 
-  def updateParameters(self, ):
-    pass
+  def updateParameters(self, hiddenDerivative, finalDerivative):
+    self.__w1, self.__b1 -= self.__learningRate * hiddenDerivative
+    self.__w2, self.__b2 -= self.__learningRate * finalDerivative
 
  @staticmethod
   def softmax(tuple): #activation function to be used for final layer
