@@ -3,10 +3,10 @@ import numpy
 class DNN():
   def __init__(self, learningRate, columnSize, outputSize):
     self.__learningRate = learningRate
-    self.__w1 = np.random.randn(50, columnSize) - 0.5
-    self.__b1 = np.random.randn(50, 1) - 0.5
-    self.__w2 = np.random.randn(outputSize, 50) - 0.5
-    self.__b2 = np.random.randn(outputSize, 50) - 0.5
+    self.__w1 = numpy.random.randn(50, columnSize) - 0.5
+    self.__b1 = numpy.random.randn(50, 1) - 0.5
+    self.__w2 = numpy.random.randn(outputSize, 50) - 0.5
+    self.__b2 = numpy.random.randn(outputSize, 50) - 0.5
 
   def feedForward(self, tuple):
     hiddenTensors = self.__w1.dot(tuple) - self.__b1
