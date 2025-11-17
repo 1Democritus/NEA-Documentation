@@ -46,13 +46,6 @@ class DNN():
     #needed for finding derivatives
     return (tuple>0).astype(float)
 
-  @staticmethod
-  def softmaxDerivative(tuple):
-    pass
-
-def crossentropyError(yPred, yActual):
-  pass
-
 def trainModel(lr, layerno, epochCount, trainset, label, tensors):
   model = DNN(learningRate = lr, hiddenlayerNo = layerno)
   for epoch in range(epochCount):
