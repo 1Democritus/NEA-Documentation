@@ -53,4 +53,6 @@ def trainModel(lr, layerno, epochCount, trainset, label, tensors):
     epochError = tensors[3] - label
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
-    #display loss
+    predictions = numpy.argmax(tensors[3], 0)
+    accuracy = sum(predictions == label)/len(label)
+    print(f"Epoch: {epoch + 1}, accuracy: {accuracy}")
