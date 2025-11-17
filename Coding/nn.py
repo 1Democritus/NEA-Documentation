@@ -16,12 +16,13 @@ class DNN():
     finalTensorsActivated = self.softmax(finalTensorsActivated)
     return hiddenTensors, hiddenTensorsActivated, finalTensors, finalTensorsActivated
   
-  def backprop(self, epochError, tensors, trainset, m):
-    finalWeightDerivative = epochError.dot(tensors[1].T) / m
-    finalBiasDerivative = sum(epochError) / m
+  def backprop(self, epochError, tensors, trainset):
+    Ysize = len(trainset)
+    finalWeightDerivative = epochError.dot(tensors[1].T) / Ysize
+    finalBiasDerivative = sum(epochError) / Ysize
     hiddenDerivative = self.__w2.T.dot(epochError) * self.ReLUderivative(tensors[0])
-    hiddenWeightDerivative = hiddenDerivative.dot(trainset.T) / m
-    hiddenBiasDerivative = sum(hiddenDerivative) / m
+    hiddenWeightDerivative = hiddenDerivative.dot(trainset.T) / Ysize
+    hiddenBiasDerivative = sum(hiddenDerivative) / Ysize
     return hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative
 
   def updateParameters(self, hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative):
@@ -57,6 +58,6 @@ def trainModel(lr, layerno, epochCount, trainset, label, tensors):
   for epoch in range(epochCount):
     tensors = model.feedForward(trainset)
     epochError = tensors[3] - label
-    hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset, m = #)
+    hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
     #display loss
