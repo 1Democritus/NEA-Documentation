@@ -22,8 +22,10 @@ class DNN():
     return hiddenDerivative, finalDerivative
 
   def updateParameters(self, hiddenDerivative, finalDerivative):
-    self.__w1, self.__b1 -= self.__learningRate * hiddenDerivative
-    self.__w2, self.__b2 -= self.__learningRate * finalDerivative
+    self.__w1 -= self.__learningRate * hiddenDerivative
+    self.__b1 -= self.__learningRate * hiddenDerivative
+    self.__w2 -= self.__learningRate * finalDerivative
+    self.__b2 -= self.__learningRate * finalDerivative
 
  @staticmethod
   def softmax(tuple): #activation function to be used for final layer
@@ -40,12 +42,14 @@ class DNN():
     #needed for finding derivatives
     return (tuple>0).astype(float)
 
-
+def crossentropyError(yPred, yActual):
+  pass
 
 def trainModel(lr, layerno, epochCount, trainset):
   model = DNN(learningRate = lr, hiddenlayerNo = layerno)
   for epoch in range(epochCount):
     tensors = model.feedForward(trainset)
+    
     hiddenDerivative, finalDerivative = model.backprop(trainset, tensors)
     model.updateParameters(hiddenDerivative, finalDerivative)
     #display loss
