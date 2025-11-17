@@ -10,13 +10,13 @@ class DNN():
 
   def feedForward(self, tuple):
     hiddenTensors = self.__w1.dot(tuple) - self.__b1
-    hiddenTensorsActivated = self.ReLU(vals)
+    hiddenTensorsActivated = self.ReLU(hiddenTensors)
     finalTensors = self.__w2.dot(hiddenTensorsActivated) - self.__b2
     finalTensorsActivated = self.softmax(finalTensorsActivated)
     return hiddenTensors, hiddenTensorsActivated, finalTensors, finalTensorsActivated
   
   def backprop(self, epochError, tensors, trainset):
-    Ysize = len(trainset)
+    Ysize = trainset.shape(1)
     finalWeightDerivative = epochError.dot(tensors[1].T) / Ysize
     finalBiasDerivative = sum(epochError) / Ysize
     hiddenDerivative = self.__w2.T.dot(epochError) * self.ReLUderivative(tensors[0])
