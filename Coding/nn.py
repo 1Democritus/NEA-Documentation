@@ -16,16 +16,17 @@ class DNN():
     finalTensorsActivated = self.softmax(finalTensorsActivated)
     return hiddenTensors, hiddenTensorsActivated, finalTensors, finalTensorsActivated
   
-  def backprop(self, tuple, tensors):
-    finalDerivative = ##
+  def backprop(self, epochError, tensors):
+    finalWeightDerivative = epochError.dot(tensors[1]) / len(epochError)
+    finalBiasDerivative
     hiddenDerivative = ##
-    return hiddenDerivative, finalDerivative
+    return hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative
 
-  def updateParameters(self, hiddenDerivative, finalDerivative):
-    self.__w1 -= self.__learningRate * hiddenDerivative
-    self.__b1 -= self.__learningRate * hiddenDerivative
-    self.__w2 -= self.__learningRate * finalDerivative
-    self.__b2 -= self.__learningRate * finalDerivative
+  def updateParameters(self, hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative):
+    self.__w1 -= self.__learningRate * hiddenWeightDerivative
+    self.__b1 -= self.__learningRate * hiddenBiasDerivative
+    self.__w2 -= self.__learningRate * finalWeightDerivative
+    self.__b2 -= self.__learningRate * finalBiasDerivative
 
  @staticmethod
   def softmax(tuple): #activation function to be used for final layer
@@ -42,14 +43,18 @@ class DNN():
     #needed for finding derivatives
     return (tuple>0).astype(float)
 
+  @staticmethod
+  def softmaxDerivative(tuple):
+    pass
+
 def crossentropyError(yPred, yActual):
   pass
 
-def trainModel(lr, layerno, epochCount, trainset):
+def trainModel(lr, layerno, epochCount, trainset, label, tensors):
   model = DNN(learningRate = lr, hiddenlayerNo = layerno)
   for epoch in range(epochCount):
     tensors = model.feedForward(trainset)
-    
-    hiddenDerivative, finalDerivative = model.backprop(trainset, tensors)
-    model.updateParameters(hiddenDerivative, finalDerivative)
+    epochError = tensors[3] - trainset[label]
+    hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors)
+    model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
     #display loss
