@@ -12,7 +12,7 @@ class DNN():
     hiddenTensors = self.__w1.dot(tuple) - self.__b1
     hiddenTensorsActivated = self.ReLU(hiddenTensors)
     finalTensors = self.__w2.dot(hiddenTensorsActivated) - self.__b2
-    finalTensorsActivated = self.softmax(finalTensorsActivated)
+    finalTensorsActivated = self.softmax(finalTensors)
     return hiddenTensors, hiddenTensorsActivated, finalTensors, finalTensorsActivated
   
   def backprop(self, epochError, tensors, trainset):
