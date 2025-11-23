@@ -2,8 +2,9 @@ import numpy
 
 class DNN():
   def __init__(self, learningRate, columnSize, outputSize):
-    self.__learningRate = learningRate
-    self.__w1 = numpy.random.randn(50, columnSize) - 0.5
+    self.__learningRate = learningRate #determines the rate at which weights change
+    #initialise random values between 0.5 and -0.5
+    self.__w1 = numpy.random.randn(50, columnSize) - 0.5 
     self.__b1 = numpy.random.randn(50, 1) - 0.5
     self.__w2 = numpy.random.randn(outputSize, 50) - 0.5
     self.__b2 = numpy.random.randn(outputSize, 50) - 0.5
@@ -18,10 +19,10 @@ class DNN():
   def backprop(self, epochError, tensors, trainset):
     Ysize = trainset.shape(1)
     finalWeightDerivative = epochError.dot(tensors[1].T) / Ysize
-    finalBiasDerivative = sum(epochError) / Ysize
+    finalBiasDerivative = numpy.sum(epochError) / Ysize
     hiddenDerivative = self.__w2.T.dot(epochError) * self.ReLUderivative(tensors[0])
     hiddenWeightDerivative = hiddenDerivative.dot(trainset.T) / Ysize
-    hiddenBiasDerivative = sum(hiddenDerivative) / Ysize
+    hiddenBiasDerivative = numpy.sum(hiddenDerivative) / Ysize
     return hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative
 
   def updateParameters(self, hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative):
@@ -32,7 +33,7 @@ class DNN():
 
  @staticmethod
   def softmax(tuple): #activation function to be used for final layer
-    expSum = sum(numpy.exp(i) for i in tuple)
+    expSum = numpy.sum(numpy.exp(i) for i in tuple)
     softmaxTuple = [numpy.exp(weight)/expSum for weight in tuple]
     return softmaxTuple
 
@@ -53,5 +54,5 @@ def trainModel(lr, layerno, epochCount, trainset, label, tensors):
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
     predictions = numpy.argmax(tensors[3], 0)
-    accuracy = sum(predictions == label)/len(label)
+    accuracy = numpy.sum(predictions == label)/len(label)
     print(f"Epoch: {epoch + 1}, accuracy: {accuracy}")
