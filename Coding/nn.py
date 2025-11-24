@@ -34,7 +34,7 @@ class DNN():
   @staticmethod
   def softmax(tuple): #activation function to be used for final layer
     expSum = numpy.sum(numpy.exp(i) for i in tuple)
-    softmaxTuple = [numpy.exp(weight)/expSum for weight in tuple]
+    softmaxTuple = numpy.array([numpy.exp(weight)/expSum for weight in tuple])
     return softmaxTuple
 
   @staticmethod
