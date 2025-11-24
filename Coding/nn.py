@@ -10,7 +10,6 @@ class DNN():
     self.__b2 = numpy.random.randn(outputSize, 1) - 0.5
 
   def feedForward(self, tuple):
-    print(self.__w1)
     hiddenTensors = numpy.dot(self.__w1, tuple) - self.__b1
     hiddenTensorsActivated = self.ReLU(hiddenTensors)
     finalTensors = numpy.dot(self.__w2, hiddenTensorsActivated) - self.__b2
@@ -53,7 +52,7 @@ def trainModel(model, epochCount, trainset, label):
   for epoch in range(epochCount):
     tensors = model.feedForward(tuple)
     epochError = tensors[3] - label
-    hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
+    hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, tuple)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
     predictions = numpy.argmax(tensors[3], 0)
     accuracy = numpy.sum(predictions == label)/len(label)
