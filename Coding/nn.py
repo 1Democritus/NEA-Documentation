@@ -46,10 +46,10 @@ class DNN():
     #needed for finding derivatives
     return (tuple>0).astype(float)
 
-def trainModel(lr, layerno, epochCount, trainset, label, tensors):
-  model = DNN(learningRate = lr, hiddenlayerNo = layerno)
+def trainModel(model, epochCount, trainset, label):
+  tuple = numpy.array(trainset).flatten()
   for epoch in range(epochCount):
-    tensors = model.feedForward(trainset)
+    tensors = model.feedForward(tuple)
     epochError = tensors[3] - label
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
