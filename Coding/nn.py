@@ -31,7 +31,7 @@ class DNN():
     self.__w2 -= self.__learningRate * finalWeightDerivative
     self.__b2 -= self.__learningRate * finalBiasDerivative
 
- @staticmethod
+  @staticmethod
   def softmax(tuple): #activation function to be used for final layer
     expSum = numpy.sum(numpy.exp(i) for i in tuple)
     softmaxTuple = [numpy.exp(weight)/expSum for weight in tuple]
