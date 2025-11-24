@@ -51,9 +51,9 @@ def trainModel(model, epochCount, trainset, label):
   print(tuple)
   for epoch in range(epochCount):
     tensors = model.feedForward(tuple)
-    epochError = tensors[3] - label
+    predictions = numpy.argmax(numpy.vstack([tensors[3][0], tensors[3][1], tensors[3][2], tensors[3][3], tensors[3][4]]), axis = 0)
+    epochError = predictions - label
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, tuple)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
-    predictions = numpy.argmax(tensors[3], 0)
     accuracy = numpy.sum(predictions == label)/len(label)
     print(f"Epoch: {epoch + 1}, accuracy: {accuracy}")
