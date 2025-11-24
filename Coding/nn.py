@@ -10,17 +10,18 @@ class DNN():
     self.__b2 = numpy.random.randn(outputSize, 1) - 0.5
 
   def feedForward(self, tuple):
-    hiddenTensors = self.__w1.dot(tuple) - self.__b1
+    print(self.__w1)
+    hiddenTensors = numpy.dot(self.__w1, tuple) - self.__b1
     hiddenTensorsActivated = self.ReLU(hiddenTensors)
-    finalTensors = self.__w2.dot(hiddenTensorsActivated) - self.__b2
+    finalTensors = numpy.dot(self.__w2, hiddenTensorsActivated) - self.__b2
     finalTensorsActivated = self.softmax(finalTensors)
     return hiddenTensors, hiddenTensorsActivated, finalTensors, finalTensorsActivated
   
   def backprop(self, epochError, tensors, trainset):
     Ysize = trainset.shape(1)
-    finalWeightDerivative = epochError.dot(tensors[1].T) / Ysize
+    finalWeightDerivative = numpy.dot(epochError, tensors[1].T) / Ysize
     finalBiasDerivative = numpy.sum(epochError) / Ysize
-    hiddenDerivative = self.__w2.T.dot(epochError) * self.ReLUderivative(tensors[0])
+    hiddenDerivative = numpy.dot(self.__w2.T, epochError) * self.ReLUderivative(tensors[0])
     hiddenWeightDerivative = hiddenDerivative.dot(trainset.T) / Ysize
     hiddenBiasDerivative = numpy.sum(hiddenDerivative) / Ysize
     return hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative
@@ -48,6 +49,7 @@ class DNN():
 
 def trainModel(model, epochCount, trainset, label):
   tuple = numpy.array(trainset).flatten()
+  print(tuple)
   for epoch in range(epochCount):
     tensors = model.feedForward(tuple)
     epochError = tensors[3] - label
