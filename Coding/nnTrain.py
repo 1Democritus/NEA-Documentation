@@ -12,4 +12,6 @@ def OHElabel(value):
 labels = np.stack(df["Diagnosis"].apply(OHElabel).values).T
 features = df.drop(columns = ["Diagnosis"]).to_numpy(dtype = float).T
 model = nn.DNN(learningRate = 0.01, columnSize = features.shape[0], outputSize = labels.shape[0])
-nn.trainModel(model = model, epochCount = 300, label = labels, trainset = features)
+
+#define final model to be used for predictions
+predictorModel = nn.trainModel(model = model, epochCount = 300, label = labels, trainset = features)
