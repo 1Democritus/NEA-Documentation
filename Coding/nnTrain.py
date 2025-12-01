@@ -6,6 +6,7 @@ import pandas
 df = pandas.read_csv("disease_diagnosis.csv")
 df = df.drop(columns = ["Gender", "Symptom_1", "Symptom_2", "Symptom_3", "Treatment_Plan", "Severity", "Blood_Pressure_mmHg"])
 
+#convert label to one-hot-encoding for later operations
 def OHElabel(value):
     conversionDict = {"Healthy": [1,0,0,0,0], "Bronchitis": [0,1,0,0,0], "Flu":[0,0,1,0,0], "Cold": [0,0,0,1,0], "Pneumonia": [0,0,0,0,1]}
     return conversionDict[value]
