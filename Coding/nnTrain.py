@@ -4,6 +4,7 @@ import pandas
 
 
 df = pandas.read_csv("disease_diagnosis.csv")
+#for now, drop these columns for easy demo. Later on, plan to split blood pressure to systolic and diastolic
 df = df.drop(columns = ["Gender", "Symptom_1", "Symptom_2", "Symptom_3", "Treatment_Plan", "Severity", "Blood_Pressure_mmHg"])
 
 #convert label to one-hot-encoding for later operations
