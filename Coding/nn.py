@@ -49,10 +49,12 @@ def trainModel(model, epochCount, trainset, label):
   tupl = trainset
   for epoch in range(epochCount):
     tensors = model.feedForward(tupl)
+    #to 1D array to compare for accuracy
     predictions = numpy.argmax(tensors[3], axis = 0)
     #find crossentropy error
     epochError = tensors[3] - label
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, tupl)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
-    accuracy = numpy.sum(predictions == label)/len(label)
+    #similarly convert one-hot encoding to 1D array for comparison
+    accuracy = numpy.sum(predictions == numpy.argmax(label, axis = 0))/len(label)
     print(f"Epoch: {epoch + 1}, accuracy: {accuracy}")
