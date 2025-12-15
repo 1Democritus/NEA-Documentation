@@ -7,7 +7,6 @@ accountFile = open("accountsDemo.txt", "a")
 accountDetails = []
 for line in accountFile.readlines():
     accountDetails.append(line.split(" "))
-print(accountDetails)
 
 class Interface:
     #open main menu of interface
