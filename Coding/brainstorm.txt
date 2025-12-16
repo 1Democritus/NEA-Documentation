@@ -5,6 +5,7 @@ tkinter for buttons and widgets - have expertise so using should be comfortable
 
 database postgreSQL connection:
 use psycopg2
+find a way to implement access codes for staff
 
 
 machine learning architecture:
