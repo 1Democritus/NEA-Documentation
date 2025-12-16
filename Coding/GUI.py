@@ -30,12 +30,56 @@ class Interface:
 
     def login(self):
         self.clearScreen()
-        #implement account checking
+        self.loginMain = Label(self.screen, text = "Welcome back! Sign back in now.")
+        self.loginMain.pack()
+        self.emailLabel = Label(self.screen, text = "email")
+        self.emailLabel.pack()
+        self.emailText = Text(self.screen, height = 1)
+        self.emailText.pack()
+        self.passwordLabel = Label(self.screen, text = "password")
+        self.passwordLabel.pack()
+        self.passwordText = Text(self.screen, height = 1)
+        self.passwordText.pack()
+        self.loginButton = Button(self.screen, text = "Login", command = self.checkLogin)
+        self.loginButton.pack()
+        #add access codes later
+
+    def checkLogin(self):
+        email = self.emailText.get("1.0", "end-1c")
+        password = self.passwordText.get("1.0", "end-1c")
+        if [email, password] not in accountDetails:
+            self.loginMain.config(text = "Wrong email or password")
+        else:
+            self.displayForm()
     
     def register(self):
         self.clearScreen()
-        #implement strong password checker
+        self.registryMain = Label(self.screen, text = "Please put your details here so that we can get started")
+        self.registryMain.pack()
+        self.emailLabel = Label(self.screen, text = "email")
+        self.emailLabel.pack()
+        self.emailText = Text(self.screen, height = 1)
+        self.emailText.pack()
+        self.passwordLabel = Label(self.screen, text = "password")
+        self.passwordLabel.pack()
+        self.passwordText = Text(self.screen, height = 1)
+        self.passwordText.pack()
+        self.registerButton = Button(self.screen, text = "Register account", command = self.checkRegistry)
+        self.registerButton.pack()
 
+    def checkRegistry(self):
+        email = self.emailText.get("1.0", "end-1c")
+        password = self.passwordText.get("1.0", "end-1c")
+        if not strongPasswordChecker(password):
+            self.registryMain.config(text = "Password not strong enough. Please choose a different password.")
+        elif not validEmailChecker(email):
+            self.registryMain.config(ext = "Not valid email. Please enter your actual email.")
+        else:
+            self.displayForm()
+        
+    def displayForm(self):
+        self.clearScreen()
+        pass
 #general functions that don't need parameters
 def strongPasswordChecker(password):
     checklist = [False, False, False, False, False]
