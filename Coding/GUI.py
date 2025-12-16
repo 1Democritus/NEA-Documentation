@@ -1,12 +1,17 @@
 from tkinter import *
 from nnTrain import predictorModel as Oracle
 import string
+UPPERCASE = string.ascii_uppercase
+LOWERCASE = string.ascii_lowercase
 
 #setting up accounts list for login validation
-accountFile = open("accountsDemo.txt", "a")
+accountFile = open("accountsDemo.txt", "r")
 accountDetails = []
-for line in accountFile.readlines():
+line = accountFile.readline()
+while line != "":
     accountDetails.append(line.split(" "))
+    line = accountFile.readline()
+accountFile.close()
 
 class Interface:
     #open main menu of interface
@@ -34,19 +39,19 @@ class Interface:
         self.loginMain.pack()
         self.emailLabel = Label(self.screen, text = "email")
         self.emailLabel.pack()
-        self.emailText = Text(self.screen, height = 1)
+        self.emailText = Entry(self.screen)
         self.emailText.pack()
         self.passwordLabel = Label(self.screen, text = "password")
         self.passwordLabel.pack()
-        self.passwordText = Text(self.screen, height = 1)
+        self.passwordText = Entry(self.screen)
         self.passwordText.pack()
         self.loginButton = Button(self.screen, text = "Login", command = self.checkLogin)
         self.loginButton.pack()
         #add access codes later
 
     def checkLogin(self):
-        email = self.emailText.get("1.0", "end-1c")
-        password = self.passwordText.get("1.0", "end-1c")
+        email = self.emailText.get()
+        password = self.passwordText.get()
         if [email, password] not in accountDetails:
             self.loginMain.config(text = "Wrong email or password")
         else:
@@ -58,23 +63,26 @@ class Interface:
         self.registryMain.pack()
         self.emailLabel = Label(self.screen, text = "email")
         self.emailLabel.pack()
-        self.emailText = Text(self.screen, height = 1)
+        self.emailText = Entry(self.screen)
         self.emailText.pack()
         self.passwordLabel = Label(self.screen, text = "password")
         self.passwordLabel.pack()
-        self.passwordText = Text(self.screen, height = 1)
+        self.passwordText = Entry(self.screen)
         self.passwordText.pack()
         self.registerButton = Button(self.screen, text = "Register account", command = self.checkRegistry)
         self.registerButton.pack()
 
     def checkRegistry(self):
-        email = self.emailText.get("1.0", "end-1c")
-        password = self.passwordText.get("1.0", "end-1c")
+        email = self.emailText.get()
+        password = self.passwordText.get()
         if not strongPasswordChecker(password):
             self.registryMain.config(text = "Password not strong enough. Please choose a different password.")
         elif not validEmailChecker(email):
-            self.registryMain.config(ext = "Not valid email. Please enter your actual email.")
+            self.registryMain.config(text = "Not valid email. Please enter your actual email.")
         else:
+            with open("accountsDemo.txt", "a") as file:
+                file.writelines(email + " " + password + "\n")
+                file.close()
             self.displayForm()
         
     def displayForm(self):
@@ -82,22 +90,20 @@ class Interface:
         pass
 #general functions that don't need parameters
 def strongPasswordChecker(password):
+    print(password)
     checklist = [False, False, False, False, False]
     if len(password) >= 8:
         checklist[0] = True
     for k in password:
-        try:
-            k = int(k)
+        if k in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
             checklist[1] = True
-        except:
-            pass
-        if k in string.ascii_uppercase:
+        elif k in UPPERCASE:
             checklist[3] = True
-        elif k in string.ascii_lowercase:
+        elif k in LOWERCASE:
             checklist[2] = True
         elif k in ["?", "!", "$", "£", "#", "@", "(", ")", "*", ".", "%"]:
             checklist[4] = True
-        return False not in checklist
+    return False not in checklist
     
 def validEmailChecker(email):
     validDomains = ["nhs.ac.uk", ""]
