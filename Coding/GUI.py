@@ -113,18 +113,26 @@ class Interface:
         self.oxygenLabel.grid(row = 3, column = 2)
         self.oxygenInput = Entry(self.screen)
         self.oxygenInput.grid(row = 4, column = 2)
-        self.detailsButton = Button(self.screen, text = "Click here to submit", command = self.displaySymptoms)
+        self.detailsButton = Button(self.screen, text = "Click here to submit", command = self.storeDetails)
     
     def displaySymptoms(self):
-        self.storeDetails()
         self.clearScreen()
     
     def storeDetails(self):
-        self.heartrate = self.heartrateInput.get()
-        self.age = self.ageInput.get()
-        self.bloodpressure = self.bloodpressureInput.get()
-        self.bodytemperature = self.bodytemperatureInput.get()
-        self.oxygen = self.oxygenInput.get()
+        try:
+            self.heartrate = int(self.heartrateInput.get())
+            self.age = int(self.ageInput.get())
+            bloodpressure = self.bloodpressureInput.get().split("/")
+            if len(bloodpressure) != 2:
+                raise ValueError()
+            self.systolic = int(bloodpressure[0])
+            self.diastolic = int(bloodpressure[1])
+            self.bodytemperature = int(self.bodytemperatureInput.get())
+            self.oxygen = int(self.oxygenInput.get())
+            self.isFemale = int(self.isFemale)
+            self.displaySymptoms()
+        except:
+            self.formLabel.config(text = "Please ensure all data you've entered is in valid format")
     
     def changeGender(self):
         self.isFemale = True
