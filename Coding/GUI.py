@@ -86,8 +86,50 @@ class Interface:
             self.displayForm()
         
     def displayForm(self):
+        self.isFemale = False
+
         self.clearScreen()
-        pass
+        self.formLabel = Label(self.screen, text = "Please enter your details so the Oracle can give the most accurate predictions")
+        self.formLabel.grid(row = 0, column = 1)
+        self.heartrateLabel = Label(self.screen, text = "Enter heartrate")
+        self.heartrateLabel.grid(row = 1, column = 0)
+        self.heartrateInput = Entry(self.screen)
+        self.heartrateInput.grid(row = 1, column = 0)
+        self.ageLabel = Label(self.screen, text = "Enter age")
+        self.ageLabel.grid(row = 1, column = 1)
+        self.ageInput = Entry(self.screen)
+        self.ageInput.grid(row = 2, column = 1)
+        self.bloodpressureLabel = Label(self.screen, text = "Enter your blood pressure")
+        self.bloodpressureLabel.grid(row = 1, column = 2)
+        self.bloodpressureInput = Entry(self.screen)
+        self.bloodpressureInput.grid(row = 2, column = 2)
+        self.bodytemperatureLabel = Label(self.screen, text = "Body Temperature (Celcius)")
+        self.bodytemperatureLabel.grid(row = 3, column = 0)
+        self.bodytemperatureInput = Entry(self.screen)
+        self.bodytemperatureInput.grid(row = 4, column = 0)
+        self.genderInput = Button(self.screen, text = "Press if you're a woman", command = self.changeGender)
+        self.genderInput.grid(row = 4, column = 1)
+        self.oxygenLabel = Label(self.screen, text = "Enter Oxygen saturation %")
+        self.oxygenLabel.grid(row = 3, column = 2)
+        self.oxygenInput = Entry(self.screen)
+        self.oxygenInput.grid(row = 4, column = 2)
+        self.detailsButton = Button(self.screen, text = "Click here to submit", command = self.displaySymptoms)
+    
+    def displaySymptoms(self):
+        self.storeDetails()
+        self.clearScreen()
+    
+    def storeDetails(self):
+        self.heartrate = self.heartrateInput.get()
+        self.age = self.ageInput.get()
+        self.bloodpressure = self.bloodpressureInput.get()
+        self.bodytemperature = self.bodytemperatureInput.get()
+        self.oxygen = self.oxygenInput.get()
+    
+    def changeGender(self):
+        self.isFemale = True
+        self.genderInput.config(state = DISABLED)
+        
 #general functions that don't need parameters
 def strongPasswordChecker(password):
     print(password)
