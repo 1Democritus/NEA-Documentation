@@ -167,12 +167,11 @@ def validEmailChecker(email):
             return False
     return domain in validDomains and name[0] not in [".", "_", "-"]
 
-def getPredictions(symptoms, details):
-    #combine features in format of database and label it xtest
-    xtest = None
+def getPredictions(details):
+    #combine features in format of database and label it xtest=
     model = nn.DNN(learningRate = 0.01, columnSize = features.shape[0], outputSize = labels.shape[0])
     Oracle = nn.trainModel(model = model, epochCount = 200, label = labels, trainset = features)
-    evaluation = Oracle.feedforward(xtest)    
+    evaluation = Oracle.feedforward(details)    
     return numpy.argmax(evaluation[3], axis = 0)
 nhsInterface = Interface()
 nhsInterface.screen.mainloop()
