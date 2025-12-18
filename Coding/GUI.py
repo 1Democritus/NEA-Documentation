@@ -178,5 +178,6 @@ def getPredictions(details):
     Oracle = nn.trainModel(model = model, epochCount = 200, label = labels, trainset = features)
     evaluation = Oracle.feedforward(details)    
     return numpy.argmax(evaluation[3], axis = 0)
+    
 nhsInterface = Interface()
 nhsInterface.screen.mainloop()
