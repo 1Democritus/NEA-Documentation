@@ -1,5 +1,6 @@
 from tkinter import *
-from nnTrain import predictorModel as Oracle
+from featureEngineering import labels, features
+import nn
 import string
 UPPERCASE = string.ascii_uppercase
 LOWERCASE = string.ascii_lowercase
@@ -165,7 +166,13 @@ def validEmailChecker(email):
         if disallowedChar in name:
             return False
     return domain in validDomains and name[0] not in [".", "_", "-"]
-        
+
+def getPredictions(symptoms, details):
+    #combine features in format of database and label it xtest
+    xtest = None
+    model = nn.DNN(learningRate = 0.01, columnSize = features.shape[0], outputSize = labels.shape[0])
+    predictorModel = nn.trainModel(model = model, epochCount = 200, label = labels, trainset = features)
+    predictorModel.feedforward(xtest)    
 
 nhsInterface = Interface()
 nhsInterface.screen.mainloop()
