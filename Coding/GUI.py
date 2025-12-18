@@ -2,6 +2,7 @@ from tkinter import *
 from featureEngineering import labels, features
 import nn
 import string
+import numpy
 UPPERCASE = string.ascii_uppercase
 LOWERCASE = string.ascii_lowercase
 
