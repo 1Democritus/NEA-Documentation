@@ -171,8 +171,8 @@ def getPredictions(symptoms, details):
     #combine features in format of database and label it xtest
     xtest = None
     model = nn.DNN(learningRate = 0.01, columnSize = features.shape[0], outputSize = labels.shape[0])
-    predictorModel = nn.trainModel(model = model, epochCount = 200, label = labels, trainset = features)
-    predictorModel.feedforward(xtest)    
-
+    Oracle = nn.trainModel(model = model, epochCount = 200, label = labels, trainset = features)
+    evaluation = Oracle.feedforward(xtest)    
+    return numpy.argmax(evaluation[3], axis = 0)
 nhsInterface = Interface()
 nhsInterface.screen.mainloop()
