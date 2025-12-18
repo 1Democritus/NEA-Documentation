@@ -1,4 +1,3 @@
-import nn
 import numpy as np
 import pandas
 
@@ -27,5 +26,4 @@ for symptom in symptomList:
 df = df.drop(columns = ["Symptoms","Symptom_1", "Symptom_2", "Symptom_3", "Treatment_Plan", "Severity", "Blood_Pressure_mmHg"])
 labels = np.stack(df["Diagnosis"].apply(OHElabel).values).T
 features = df.drop(columns = ["Diagnosis"]).to_numpy(dtype = float).T
-model = nn.DNN(learningRate = 0.01, columnSize = features.shape[0], outputSize = labels.shape[0])
-predictorModel = nn.trainModel(model = model, epochCount = 200, label = labels, trainset = features)
+
