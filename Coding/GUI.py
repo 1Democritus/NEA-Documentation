@@ -100,7 +100,7 @@ class Interface:
         self.heartrateLabel = Label(self.screen, text = "Enter heartrate")
         self.heartrateLabel.grid(row = 1, column = 0)
         self.heartrateInput = Entry(self.screen)
-        self.heartrateInput.grid(row = 1, column = 0)
+        self.heartrateInput.grid(row = 2, column = 0)
         self.ageLabel = Label(self.screen, text = "Enter age")
         self.ageLabel.grid(row = 1, column = 1)
         self.ageInput = Entry(self.screen)
@@ -120,10 +120,52 @@ class Interface:
         self.oxygenInput = Entry(self.screen)
         self.oxygenInput.grid(row = 4, column = 2)
         self.detailsButton = Button(self.screen, text = "Click here to submit", command = self.storeDetails)
+        self.detailsButton.grid(row = 5, column = 1)
     
     def displaySymptoms(self):
+        self.bodyache = 0
+        self.cough = 0
+        self.shortnessbreath = 0
+        self.fatigue = 0
+        self.fever = 0
+        self.headache = 0
+        self.runnynose = 0
+        self.sorethroat = 0
+
         self.clearScreen()
+        self.symptomLabel = Label(self.screen, text = "Please click on the symptoms that you have experienced")
+        self.symptomLabel.grid(row = 0, column = 1)
+        self.bodyacheButton = Button(self.screen, text = "body ache", command = lambda:self.changeSymptom(self.bodyache, self.bodyacheButton, "body ache"))
+        self.bodyacheButton.grid(row = 1, column = 0)
+        self.coughButton = Button(self.screen, text = "cough", command = lambda:self.changeSymptom(self.cough, self.coughButton, "cough"))
+        self.coughButton.grid(row = 1, column = 1)
+        self.shortnessbreathButton = Button(self.screen, text = "shortness of breath", command = lambda:self.changeSymptom(self.shortnessbreath, self.shortnessbreathButton, "shortness of breath"))
+        self.shortnessbreathButton.grid(row = 1, column = 2)
+        self.fatigueButton = Button(self.screen, text = "Fatigue", command = lambda: self.changeSymptom(self.fatigue, self.fatigueButton, "Fatigue"))
+        self.fatigueButton.grid(row = 1, column = 3)
+        self.feverButton = Button(self.screen, text = "Fatigue", command = lambda:self.changeSymptom(self.fever, self.feverButton, "Fever"))
+        self.feverButton.grid(row = 2, column = 0)
+        self.headacheButton = Button(self.screen, text = "Headache", command = lambda:self.changeSymptom(self.headache, self.headacheButton, "Headache"))
+        self.headacheButton.grid(row = 2, column = 1)
+        self.runnynoseButton = Button(self.screen, text = "Runny Nose", command = lambda:self.changeSymptom(self.runnynose, self.runnynoseButton, "Runny Nose"))
+        self.runnynoseButton.grid(row = 2, column = 2)
+        self.sorethroatButton = Button(self.screen, text = "Sore Throat", command = lambda:self.changeSymptom(self.sorethroat, self.sorethroatButton, "Sore Throat"))
+        self.sorethroatButton.grid(row = 2, column = 3)
+        self.symptomSubmit = Button(self.screen, text = "Click here to submit", command = self.readyPrediction)
+        self.symptomSubmit.grid(row = 3, column = 1)
     
+    def readyPrediction(self):
+        self.clearScreen()
+        #prepare to pass details into the machine
+
+    def changeSymptom(self, symptom, button, symptomName):
+        if symptom == 0:
+            symptom = 1
+            button.config(text = "Click if you made a mistake and don't have " + symptomName)
+        else:
+            symptom = 0
+            button.config(text = symptomName)
+
     def storeDetails(self):
         try:
             self.heartrate = int(self.heartrateInput.get())
@@ -141,12 +183,15 @@ class Interface:
             self.formLabel.config(text = "Please ensure all data you've entered is in valid format")
     
     def changeGender(self):
-        self.isFemale = True
-        self.genderInput.config(state = DISABLED)
+        if self.isFemale:
+            self.isFemale = False
+            self.genderInput.config(text = "Press if you're a woman")
+        else:
+            self.isFemale = True
+            self.genderInput.config(text = "Press if you're a man")
         
 #general functions that don't need parameters
 def strongPasswordChecker(password):
-    print(password)
     checklist = [False, False, False, False, False]
     if len(password) >= 8:
         checklist[0] = True
@@ -178,6 +223,6 @@ def getPredictions(details):
     Oracle = nn.trainModel(model = model, epochCount = 200, label = labels, trainset = features)
     evaluation = Oracle.feedforward(details)    
     return numpy.argmax(evaluation[3], axis = 0)
-    
+
 nhsInterface = Interface()
 nhsInterface.screen.mainloop()
