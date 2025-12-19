@@ -230,5 +230,8 @@ def getPredictions(details):
     evaluation = Oracle.feedforward(details)    
     return numpy.argmax(evaluation[3], axis = 0)
 
+def SQLCall(disease):
+    pass
+
 nhsInterface = Interface()
 nhsInterface.screen.mainloop()
