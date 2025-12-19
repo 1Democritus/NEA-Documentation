@@ -162,7 +162,7 @@ class Interface:
         #prepare to pass details into the machine
 
     def displayOptions(self):
-        pass
+        self.Oracle = Label(self.screen, text = "You have the disease " + self.disease)
 
     def changeSymptom(self, symptom, button, symptomName):
         if symptom == 0:
