@@ -156,7 +156,13 @@ class Interface:
     
     def readyPrediction(self):
         self.clearScreen()
+        details = numpy.array([self.age, self.isFemale, self.heartrate, self.bodytemperature, self.oxygen, self.systolic, self.diastolic, self.bodyache, self.cough, self.shortnessbreath, self.fatigue, self.fever, self.headache, self.runnynose, self.sorethroat])
+        self.disease = getPredictions(details)
+        self.displayOptions()
         #prepare to pass details into the machine
+
+    def displayOptions(self):
+        pass
 
     def changeSymptom(self, symptom, button, symptomName):
         if symptom == 0:
