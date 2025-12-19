@@ -23,7 +23,7 @@ for symptom in symptomList:
     df[symptom] = df.apply(lambda row: int(row[symptom] in row["Symptoms"]), axis = 1)
 
 
-df = df.drop(columns = ["Symptoms","Symptom_1", "Symptom_2", "Symptom_3", "Treatment_Plan", "Severity", "Blood_Pressure_mmHg"])
+df = df.drop(columns = ["Patient_ID", "Symptoms","Symptom_1", "Symptom_2", "Symptom_3", "Treatment_Plan", "Severity", "Blood_Pressure_mmHg"])
 labels = np.stack(df["Diagnosis"].apply(OHElabel).values).T
 features = df.drop(columns = ["Diagnosis"]).to_numpy(dtype = float).T
 
