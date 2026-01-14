@@ -5,6 +5,8 @@ tkinter for buttons and widgets - have expertise so using should be comfortable
 
 database postgreSQL connection:
 use psycopg2
+making appointment:
+use cursor.fetchall() for appointments to see which doctor is available for customer's desired day
 find a way to implement access codes for staff
 
 
@@ -16,5 +18,4 @@ make backpropagation from scratch
 
 order of objectives:
 finish interface
-replace pack with grid for better user experience
-extras (adding appointment to callendar)
+adding appointment to callendar
