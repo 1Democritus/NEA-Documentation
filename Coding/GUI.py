@@ -213,7 +213,7 @@ def strongPasswordChecker(password):
     return False not in checklist
     
 def validEmailChecker(email):
-    validDomains = ["nhs.ac.uk", ""]
+    validDomains = ["nhs.ac.uk", "denizati.tr", "gmail.com", "yahoo.com", "mcsoxford.org.uk"]
     emailContents = email.split("@")
     if len(emailContents) != 2:
         return False
