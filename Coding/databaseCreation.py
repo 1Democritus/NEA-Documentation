@@ -1,6 +1,6 @@
 import psycopg2
 from databaseParameters import PARAMETERS #contains values required to connect to server
-connection = psycopg2.connect(dbname = 'postgres', **databaseParameters)
+connection = psycopg2.connect(dbname = 'postgres', **PARAMETERS)
 connection.autocommit = True #every SQL query will be committed without requiring specific commits
 cursor = connection.cursor()
 loginScript = 'CREATE DATABASE logins'
@@ -12,7 +12,7 @@ cursor.execute(appointmentScript)
 cursor.close()
 connection.close()
 
-connection = psycopg2.connect(dbname = 'logins', **databaseParameters)
+connection = psycopg2.connect(dbname = 'logins', **PARAMETERS)
 connection.autocommit = True
 cursor = connection.cursor()
 
@@ -27,7 +27,7 @@ cursor.close()
 connection.close()
 
 #now repeat with appointment database
-connection = psycopg2.connect(dbname = 'appointments', **databaseParameters)
+connection = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
 connection.autocommit = True
 cursor = connection.cursor()
 
