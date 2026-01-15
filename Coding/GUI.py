@@ -7,6 +7,7 @@ from tkinter import *
 import string
 import numpy
 import psycopg2
+import calendar, datetime
 UPPERCASE = string.ascii_uppercase
 LOWERCASE = string.ascii_lowercase
 
@@ -163,6 +164,25 @@ class Interface:
 
     def displayOptions(self):
         self.Oracle = Label(self.screen, text = "You have the disease " + self.disease)
+        self.Oracle.pack()
+        self.month = Entry(self.screen)
+        self.month.pack()
+        self.monthButton = Button(self.screen, text = "Display possible dates in above entered month", command = self.returnDates)
+        self.monthButton.pack()
+
+    def returnDates(self):
+        month = self.month.get()
+        self.unavailableDates = SQLCall(month, self.disease)
+        self.displayDates = Label(self.screen, height = 4, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
+        self.displayDates.pack()
+        self.preferredTime = Entry(self.screen)
+        self.preferredTime.pack()
+        self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment", command = self.confirmAppointment)
+        self.appointmentConfirm.pack()
+    
+    def confirmAppointment(self):
+        self.clearScreen()
+        #################
 
     def changeSymptom(self, symptom, button, symptomName):
         if symptom == 0:
@@ -228,10 +248,26 @@ def getPredictions(details):
     model = nn.DNN(learningRate = 0.01, columnSize = features.shape[0], outputSize = labels.shape[0])
     Oracle = nn.trainModel(model = model, epochCount = 200, label = labels, trainset = features)
     evaluation = Oracle.feedforward(details)    
-    return numpy.argmax(evaluation[3], axis = 0)
+    prediction = numpy.argmax(evaluation[3], axis = 0)
+    conversion = {[1,0,0,0,0]: "Healthy", [0,1,0,0,0]: "Bronchitis", [0,0,1,0,0]: "Flu", [0,0,0,1,0]: "Cold", [0,0,0,0,1]: "Pneumonia"}
+    return conversion[prediction]
 
-def SQLCall(disease):
-    pass
+def SQLCall(month, disease):
+    range = calendar.monthrange(2025, month)[1]
+    monthFirst = datetime.date(2025, month, 1)
+    monthLast = datetime.date(2025, month, range)
+    sqlText = f"""
+SELECT AppointmentDate FROM Appointment, LinkedCondition
+WHERE AppointmentDate >= %s AND AppointmentDate <= %s AND LinkedCondition.TreatmentName = Appointment.TreatmentName AND Appointment.ConditionName = %s
+ORDER BY AppointmentDate ASC;
+"""
+    connection = psycopg2.connect(dbname = "Appointments", **PARAMETERS)
+    connection.autocommit = True
+    cursor = connection.cursor()
+    cursor.execute(sqlText, (monthFirst, monthLast, disease))
+    dates = cursor.fetchall()
+    connection.close()
+    return dates
 
 nhsInterface = Interface()
 nhsInterface.screen.mainloop()
