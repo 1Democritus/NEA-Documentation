@@ -59,7 +59,7 @@ class Interface:
     def checkLogin(self):
         email = self.emailText.get()
         password = self.passwordText.get()
-        if [email, password] not in accountDetails:
+        if [email, password, "\n"] not in accountDetails:
             self.loginMain.config(text = "Wrong email or password")
         else:
             self.displayForm()
@@ -88,7 +88,7 @@ class Interface:
             self.registryMain.config(text = "Not valid email. Please enter your actual email.")
         else:
             with open("accountsDemo.txt", "a") as file:
-                file.writelines(email + " " + password + "\n")
+                file.writelines(email + " " + password + " \n")
                 file.close()
             self.displayForm()
         
