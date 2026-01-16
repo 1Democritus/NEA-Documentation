@@ -251,7 +251,7 @@ def getPredictions(details):
     evaluation = Oracle.feedForward(details.reshape(-1, 1))    
     prediction = numpy.argmax(evaluation[3], axis = 0)
     conversion = {0: "Healthy", 1: "Bronchitis", 2: "Flu", 3: "Cold", 4: "Pneumonia"}
-    return conversion[prediction]
+    return conversion[prediction[0]]
 
 def SQLCall(month, disease):
     range = calendar.monthrange(2025, month)[1]
