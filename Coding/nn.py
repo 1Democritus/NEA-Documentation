@@ -10,9 +10,9 @@ class DNN():
     self.__b2 = numpy.random.randn(outputSize, 1) - 0.5
 
   def feedForward(self, tupl):
-    hiddenTensors = numpy.dot(self.__w1, tupl) + self.__b1
+    hiddenTensors = numpy.dot(self.__w1, tupl) - self.__b1
     hiddenTensorsActivated = self.ReLU(hiddenTensors)
-    finalTensors = numpy.dot(self.__w2, hiddenTensorsActivated) + self.__b2
+    finalTensors = numpy.dot(self.__w2, hiddenTensorsActivated) - self.__b2
     finalTensorsActivated = self.softmax(finalTensors)
     return hiddenTensors, hiddenTensorsActivated, finalTensors, finalTensorsActivated
   
