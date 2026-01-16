@@ -59,6 +59,7 @@ class Interface:
     def checkLogin(self):
         email = self.emailText.get()
         password = self.passwordText.get()
+        print(accountDetails)
         if [email, password, "\n"] not in accountDetails:
             self.loginMain.config(text = "Wrong email or password")
         else:
@@ -247,10 +248,10 @@ def getPredictions(details):
     #combine features in format of database and label it xtest=
     model = nn.DNN(learningRate = 0.01, columnSize = features.shape[0], outputSize = labels.shape[0])
     Oracle = nn.trainModel(model = model, epochCount = 200, label = labels, trainset = features)
-    evaluation = Oracle.feedforward(details)    
+    evaluation = Oracle.feedForward(details)    
     prediction = numpy.argmax(evaluation[3], axis = 0)
-    conversion = {[1,0,0,0,0]: "Healthy", [0,1,0,0,0]: "Bronchitis", [0,0,1,0,0]: "Flu", [0,0,0,1,0]: "Cold", [0,0,0,0,1]: "Pneumonia"}
-    return conversion[prediction]
+    conversion = {(1,0,0,0,0): "Healthy", (0,1,0,0,0): "Bronchitis", (0,0,1,0,0): "Flu", (0,0,0,1,0): "Cold", (0,0,0,0,1): "Pneumonia"}
+    return conversion[tuple(prediction)]
 
 def SQLCall(month, disease):
     range = calendar.monthrange(2025, month)[1]
