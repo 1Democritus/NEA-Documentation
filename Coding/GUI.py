@@ -172,17 +172,14 @@ class Interface:
         self.monthButton.pack()
 
     def returnDates(self):
-        month = self.month.get().lower()
-        if month not in ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]:
-            self.monthButton.config(text = "Please enter the full name of the month you want to view")
-        else:
-            self.unavailableDates = SQLCall(month, self.disease)
-            self.displayDates = Label(self.screen, height = 4, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
-            self.displayDates.pack()
-            self.preferredTime = Entry(self.screen)
-            self.preferredTime.pack()
-            self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment", command = self.confirmAppointment)
-            self.appointmentConfirm.pack()
+        month = self.month.get()
+        self.unavailableDates = SQLCall(month, self.disease)
+        self.displayDates = Label(self.screen, height = 4, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
+        self.displayDates.pack()
+        self.preferredTime = Entry(self.screen)
+        self.preferredTime.pack()
+        self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment", command = self.confirmAppointment)
+        self.appointmentConfirm.pack()
     
     def confirmAppointment(self):
         self.clearScreen()
@@ -257,7 +254,8 @@ def getPredictions(details):
     return conversion[prediction[0]]
 
 def SQLCall(month, disease):
-    range = calendar.monthrange(2025, month)[1]
+    monthConversion = {"january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6, "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12}
+    range = calendar.monthrange(2025, monthConversion[month])[1]
     monthFirst = datetime.date(2025, month, 1)
     monthLast = datetime.date(2025, month, range)
     sqlText = f"""
