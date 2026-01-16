@@ -172,14 +172,17 @@ class Interface:
         self.monthButton.pack()
 
     def returnDates(self):
-        month = self.month.get()
-        self.unavailableDates = SQLCall(month, self.disease)
-        self.displayDates = Label(self.screen, height = 4, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
-        self.displayDates.pack()
-        self.preferredTime = Entry(self.screen)
-        self.preferredTime.pack()
-        self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment", command = self.confirmAppointment)
-        self.appointmentConfirm.pack()
+        month = self.month.get().lower()
+        if month not in ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]:
+            self.monthButton.config(text = "Please enter the full name of the month you want to view")
+        else:
+            self.unavailableDates = SQLCall(month, self.disease)
+            self.displayDates = Label(self.screen, height = 4, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
+            self.displayDates.pack()
+            self.preferredTime = Entry(self.screen)
+            self.preferredTime.pack()
+            self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment", command = self.confirmAppointment)
+            self.appointmentConfirm.pack()
     
     def confirmAppointment(self):
         self.clearScreen()
