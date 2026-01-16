@@ -248,10 +248,10 @@ def getPredictions(details):
     #combine features in format of database and label it xtest=
     model = nn.DNN(learningRate = 0.01, columnSize = features.shape[0], outputSize = labels.shape[0])
     Oracle = nn.trainModel(model = model, epochCount = 200, label = labels, trainset = features)
-    evaluation = Oracle.feedForward(details)    
+    evaluation = Oracle.feedForward(details.reshape(-1, 1))    
     prediction = numpy.argmax(evaluation[3], axis = 0)
-    conversion = {(1,0,0,0,0): "Healthy", (0,1,0,0,0): "Bronchitis", (0,0,1,0,0): "Flu", (0,0,0,1,0): "Cold", (0,0,0,0,1): "Pneumonia"}
-    return conversion[tuple(prediction)]
+    conversion = {0: "Healthy", 1: "Bronchitis", 2: "Flu", 3: "Cold", 4: "Pneumonia"}
+    return conversion[prediction]
 
 def SQLCall(month, disease):
     range = calendar.monthrange(2025, month)[1]
