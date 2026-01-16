@@ -19,10 +19,10 @@ class DNN():
   def backprop(self, epochError, tensors, trainset):
     Ysize = trainset.shape[1]
     finalWeightDerivative = numpy.dot(epochError, tensors[1].T) / Ysize
-    finalBiasDerivative = numpy.sum(epochError) / Ysize
+    finalBiasDerivative = numpy.sum(epochError, axis = 1, keepdims = True) / Ysize
     hiddenDerivative = numpy.dot(self.__w2.T, epochError) * self.ReLUderivative(tensors[0])
     hiddenWeightDerivative = hiddenDerivative.dot(trainset.T) / Ysize
-    hiddenBiasDerivative = numpy.sum(hiddenDerivative) / Ysize
+    hiddenBiasDerivative = numpy.sum(hiddenDerivative, axis = 1, keepdims = True) / Ysize
     return hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative
 
   def updateParameters(self, hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative):
@@ -37,7 +37,7 @@ class DNN():
     return expSums / numpy.sum(expSums, axis=0, keepdims=True)
 
   @staticmethod
-  def ReLU(tupl):
+  def ReLU(tupl): #introduces nonlinearity
     return numpy.maximum(0, tupl)
 
   @staticmethod
@@ -49,12 +49,10 @@ def trainModel(model, epochCount, trainset, label):
   tupl = trainset
   for epoch in range(epochCount):
     tensors = model.feedForward(tupl)
-    #to 1D array to compare for accuracy
     predictions = numpy.argmax(tensors[3], axis = 0)
-    #find crossentropy error
     epochError = tensors[3] - label
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, tupl)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
-    #similarly convert one-hot encoding to 1D array for comparison
     accuracy = numpy.sum(predictions == numpy.argmax(label, axis = 0))/len(label)
     print(f"Epoch: {epoch + 1}, accuracy: {accuracy}")
+  return model
