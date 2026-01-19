@@ -262,7 +262,7 @@ def SQLCall(month, disease):
     monthLast = datetime.date(2025, month, range)
     sqlText = f"""
 SELECT AppointmentDate FROM Appointment, LinkedCondition
-WHERE AppointmentDate >= %s AND AppointmentDate <= %s AND LinkedCondition.TreatmentName = Appointment.TreatmentName AND Appointment.ConditionName = %s
+WHERE AppointmentDate >= %s AND AppointmentDate <= %s AND LinkedCondition.TreatmentName = Appointment.TreatmentName AND LinkedCondition.ConditionName = %s
 ORDER BY AppointmentDate ASC;
 """
     connection = psycopg2.connect(dbname = "appointments", **PARAMETERS)
