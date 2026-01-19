@@ -256,6 +256,7 @@ def getPredictions(details):
 def SQLCall(month, disease):
     month = month.lower()
     monthConversion = {"january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6, "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12}
+    month = monthConversion[month]
     range = calendar.monthrange(2025, monthConversion[month])[1]
     monthFirst = datetime.date(2025, month, 1)
     monthLast = datetime.date(2025, month, range)
@@ -264,7 +265,7 @@ SELECT AppointmentDate FROM Appointment, LinkedCondition
 WHERE AppointmentDate >= %s AND AppointmentDate <= %s AND LinkedCondition.TreatmentName = Appointment.TreatmentName AND Appointment.ConditionName = %s
 ORDER BY AppointmentDate ASC;
 """
-    connection = psycopg2.connect(dbname = "Appointments", **PARAMETERS)
+    connection = psycopg2.connect(dbname = "appointments", **PARAMETERS)
     connection.autocommit = True
     cursor = connection.cursor()
     cursor.execute(sqlText, (monthFirst, monthLast, disease))
