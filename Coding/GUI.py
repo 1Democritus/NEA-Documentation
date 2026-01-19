@@ -12,13 +12,12 @@ UPPERCASE = string.ascii_uppercase
 LOWERCASE = string.ascii_lowercase
 
 #setting up accounts list for login validation
-accountFile = open("accountsDemo.txt", "r")
-accountDetails = []
-line = accountFile.readline()
-while line != "":
-    accountDetails.append(line.split(" "))
-    line = accountFile.readline()
-accountFile.close()
+with psycopg2.connect(dbname = "logins", **PARAMETERS) as conn:
+    conn.autocommit = True
+    cursor = conn.cursor()
+    query = "SELECT email, password FROM logindetails;"
+    cursor.execute(query)
+    accountDetails = cursor.fetchall()
 
 class Interface:
     #open main menu of interface
@@ -60,7 +59,7 @@ class Interface:
         email = self.emailText.get()
         password = self.passwordText.get()
         print(accountDetails)
-        if [email, password, "\n"] not in accountDetails:
+        if (email, password) not in accountDetails:
             self.loginMain.config(text = "Wrong email or password")
         else:
             self.displayForm()
@@ -88,9 +87,14 @@ class Interface:
         elif not validEmailChecker(email):
             self.registryMain.config(text = "Not valid email. Please enter your actual email.")
         else:
-            with open("accountsDemo.txt", "a") as file:
-                file.writelines(email + " " + password + " \n")
-                file.close()
+            with psycopg2.connect(dbname = "logins", **PARAMETERS) as connect:
+                connect.autocommit = True
+                cursor = connect.cursor()
+                query = '''
+INSERT INTO logindetails(email, password, accesscode)
+VALUES(%s, %s, )
+'''
+                cursor.execute(query, (email, password))
             self.displayForm()
         
     def displayForm(self):
@@ -257,7 +261,7 @@ def SQLCall(month, disease):
     month = month.lower()
     monthConversion = {"january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6, "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12}
     month = monthConversion[month]
-    range = calendar.monthrange(2025, monthConversion[month])[1]
+    range = calendar.monthrange(2025, month)[1]
     monthFirst = datetime.date(2025, month, 1)
     monthLast = datetime.date(2025, month, range)
     sqlText = f"""
