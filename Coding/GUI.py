@@ -254,6 +254,7 @@ def getPredictions(details):
     return conversion[prediction[0]]
 
 def SQLCall(month, disease):
+    month = month.lower()
     monthConversion = {"january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6, "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12}
     range = calendar.monthrange(2025, monthConversion[month])[1]
     monthFirst = datetime.date(2025, month, 1)
