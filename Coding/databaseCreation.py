@@ -1,5 +1,7 @@
 import psycopg2
-from databaseParameters import PARAMETERS #contains values required to connect to server
+from dotenv import load_dotenv
+load_dotenv(override=True)
+PARAMETERS = os.getenv("PARAMETERS").split(",") #contains details needed to access the server
 connection = psycopg2.connect(dbname = 'postgres', **PARAMETERS)
 connection.autocommit = True #every SQL query will be committed without requiring specific commits
 cursor = connection.cursor()
