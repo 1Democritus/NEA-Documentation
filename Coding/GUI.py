@@ -99,7 +99,7 @@ VALUES(%s, %s, )
         
     def displayForm(self):
         self.isFemale = False
-
+        self.accountEmail = self.emailText.get()
         self.clearScreen()
         self.formLabel = Label(self.screen, text = "Please enter your details so the Oracle can give the most accurate predictions")
         self.formLabel.grid(row = 0, column = 1)
@@ -111,7 +111,7 @@ VALUES(%s, %s, )
         self.ageLabel.grid(row = 1, column = 1)
         self.ageInput = Entry(self.screen)
         self.ageInput.grid(row = 2, column = 1)
-        self.bloodpressureLabel = Label(self.screen, text = "Enter your blood pressure")
+        self.bloodpressureLabel = Label(self.screen, text = "Enter your blood pressure (in the format systolic/diastolic)")
         self.bloodpressureLabel.grid(row = 1, column = 2)
         self.bloodpressureInput = Entry(self.screen)
         self.bloodpressureInput.grid(row = 2, column = 2)
@@ -168,12 +168,16 @@ VALUES(%s, %s, )
         #prepare to pass details into the machine
 
     def displayOptions(self):
-        self.Oracle = Label(self.screen, text = "You have the disease " + self.disease)
-        self.Oracle.pack()
-        self.month = Entry(self.screen)
-        self.month.pack()
-        self.monthButton = Button(self.screen, text = "Display possible dates in above entered month", command = self.returnDates)
-        self.monthButton.pack()
+        if self.disease == "Healthy":
+            Oracle = Label(self.screen, text = "Good news, you don't have a disease! You should rest for a couple days, and then you should be fine. Thank you for using this service!")
+            Oracle.pack()
+        else:
+            self.Oracle = Label(self.screen, text = "You have the disease " + self.disease)
+            self.Oracle.pack()
+            self.month = Entry(self.screen)
+            self.month.pack()
+            self.monthButton = Button(self.screen, text = "Display possible dates in above entered month", command = self.returnDates)
+            self.monthButton.pack()
 
     def returnDates(self):
         month = self.month.get()
@@ -182,12 +186,35 @@ VALUES(%s, %s, )
         self.displayDates.pack()
         self.preferredTime = Entry(self.screen)
         self.preferredTime.pack()
-        self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment", command = self.confirmAppointment)
+        self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment, please enter your date in the format dd/mm/yyyy", command = self.confirmAppointment)
         self.appointmentConfirm.pack()
     
     def confirmAppointment(self):
-        self.clearScreen()
-        #################
+        try:
+            patientID, self.treatment = getDetails(self.accountEmail, self.disease)
+            self.date = self.preferredTime.get()
+            if self.date in self.unavailableDates:
+                raise ValueError()
+            print(patientID, self.treatment, self.date)
+            connection = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
+            connection.autocommit = True
+            cursor = connection.cursor()
+            statement = '''INSERT INTO APPOINTMENTS (AppointmentID, PatientID, DoctorID, TreatmentName, AppointmentDate, AppointmentTime, RoomNumber)
+            VALUES (001, %s, 001, %s, %s, 13:15, 25);'''
+            cursor.execute(statement, (patientID, self.treatment, self.date))
+            connection.close()
+
+            self.clearScreen()
+            self.confirmation = Label(self.screen, text = "Done! We have scheduled your appointment. Click the button below to add the appointment to calendar. Otherwise, thank you for using our service!")
+            self.confirmation.pack()
+            self.calendarButton = Button(self.screen, text = "Add to Calendar", command = self.addToCalendar)
+            self.calendarButton.pack()
+        except Exception as e:
+            print(e)
+            self.appointmentConfirm.config(text = "Please ensure you've entered the date in the right format")
+        
+    def addToCalendar(self):
+        pass
 
     def changeSymptom(self, symptom, button, symptomName):
         if symptom == 0:
@@ -276,6 +303,22 @@ ORDER BY AppointmentDate ASC;
     dates = cursor.fetchall()
     connection.close()
     return dates
+
+def getDetails(email, disease):
+    connection = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
+    connection.autocommit = True
+    cursor = connection.cursor()
+    emailStatement = '''SELECT PatientID FROM Patient WHERE
+email = %s;
+'''
+    cursor.execute(emailStatement, (email, ))
+    patientID = cursor.fetchone()
+    diseaseStatement = '''SELECT TreatmentName FROM LinkedCondition WHERE
+ConditionName = %s;    '''
+    cursor.execute(diseaseStatement, (disease, ))
+    treatmentName = cursor.fetchone()
+    connection.close()
+    return patientID[0], treatmentName[0] #since SQL results are always returned as a list
 
 nhsInterface = Interface()
 nhsInterface.screen.mainloop()
