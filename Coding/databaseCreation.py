@@ -61,6 +61,7 @@ customerQuery = '''CREATE TABLE Patient(
 PatientID VARCHAR(20) PRIMARY KEY,
 Forename VARCHAR(15) NOT NULL,
 Surname VARCHAR(15) NOT NULL,
+Email VARCHAR(30) NOT NULL,
 TelephoneNo CHAR(11) NOT NULL
 )'''
 
