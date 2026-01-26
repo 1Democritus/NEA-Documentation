@@ -1,13 +1,15 @@
 #import needed files
 from featureEngineering import labels, features
 import nn
-from databaseParameters import PARAMETERS
 #import needed modules
 from tkinter import *
 import string
 import numpy
 import psycopg2
 import calendar, datetime
+from dotenv import load_dotenv
+load_dotenv(override=True)
+PARAMETERS = os.getenv("PARAMETERS").split(",")
 UPPERCASE = string.ascii_uppercase
 LOWERCASE = string.ascii_lowercase
 
