@@ -7,6 +7,8 @@ import string
 import numpy
 import psycopg2
 import calendar, datetime
+import caldav
+import os
 from dotenv import load_dotenv
 load_dotenv(override=True)
 PARAMETERS = os.getenv("PARAMETERS").split(",")
@@ -217,7 +219,23 @@ VALUES(%s, %s, )
             self.appointmentConfirm.config(text = "Please ensure you've entered the date in the right format")
         
     def addToCalendar(self):
-        pass
+        self.screen.withdraw()
+        popup = CalendarPopup(self.screen)
+        self.screen.wait_window(popup) #waits to proceed until popup window is destroyed
+        username, password = popup.result
+        dateValues = self.date.split("/")
+        year, month, day = dateValues[2], dateValues[1], dateValues[0]
+        client = caldav.DAVClient(url = "https://caldav.icloud.com/", username = username, password = password)
+        myCalendar = client.principal().calendars()[0]
+        myCalendar.save_event(
+            dtstart = datetime.datetime(year, month, day, 13, 0),
+            dtend = datetime.datetime(year, month, day, 14, 0),
+            summary = "ORACLE APPOINTMENT"
+        )
+        self.screen.deiconify()
+        self.clearScreen()
+        self.finalConfirmation = Label(self.screen, text = "Appointment confirmed, see you then!")
+        self.finalConfirmation.pack()
 
     def changeSymptom(self, symptom, button, symptomName):
         if symptom == 0:
@@ -250,6 +268,24 @@ VALUES(%s, %s, )
         else:
             self.isFemale = True
             self.genderInput.config(text = "Press if you're a man")
+    
+class CalendarPopup(Toplevel):
+    def __init__(self, parent):
+        super().__init__(parent) #initialising parent of tk.Toplevel, which is tk.Tk
+        self.labelUsername = Label(self, text = "Enter calendar username: ")
+        self.entryUsername = Entry(self)
+        self.labelPassword = Label(self, text = "Enter calendar password: ")
+        self.entryPassword = Entry(self)
+        self.labelUsername.pack()
+        self.entryUsername.pack()
+        self.labelPassword.pack()
+        self.entryPassword.pack()
+        self.submitButton = Button(self, text = "Submit values", command = self.submitValues)
+        self.submitButton.pack()
+    
+    def submitValues(self):
+        self.result = (self.entryUsername.get(), self.entryPassword.get())
+        self.destroy()
         
 #general functions that don't need parameters
 def strongPasswordChecker(password):
