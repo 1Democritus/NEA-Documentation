@@ -10,6 +10,7 @@ import calendar, datetime
 from dotenv import load_dotenv
 load_dotenv(override=True)
 PARAMETERS = os.getenv("PARAMETERS").split(",")
+PARAMETERS = {"host": PARAMETERS[2], "user": PARAMETERS[0], "password": PARAMETERS[1]}
 UPPERCASE = string.ascii_uppercase
 LOWERCASE = string.ascii_lowercase
 
