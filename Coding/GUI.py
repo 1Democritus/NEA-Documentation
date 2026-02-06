@@ -205,7 +205,7 @@ VALUES(%s, %s, )
             connection.autocommit = True
             cursor = connection.cursor()
             statement = '''INSERT INTO APPOINTMENTS (AppointmentID, PatientID, DoctorID, TreatmentName, AppointmentDate, AppointmentTime, RoomNumber)
-            VALUES (001, %s, 001, %s, %s, 13:15, 25);'''
+            VALUES ('001', %s, '001', %s, %s, '13:15:00', 25);'''
             cursor.execute(statement, (patientID, self.treatment, self.date))
             connection.close()
 
