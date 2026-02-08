@@ -302,7 +302,7 @@ VALUES(%s, %s, )
             cursor.execute('''
         DELETE FROM Appointment WHERE AppointmentID = %s;
                        ''', (ID,))
-            if cursor.rowcount() == 0: #meaning no data was actually removed
+            if cursor.rowcount == 0: #meaning no data was actually removed
                 raise ValueError()
             self.removeAppointmentButton.config(text = "Last request to remove appointment was successful")
             for appointment in self.appointments:
@@ -365,8 +365,7 @@ VALUES(%s, %s, )
 INSERt INTO Appointment (AppointmentID, PatientID, DoctorID, TreatmentName, AppointmentDate, AppointmentTime, RoomNumber)
 VALUES (%s, %s, %s, %s, %s, %s, %s);''', 
 (appointmentID, patientID, doctorID, treatment, date, time, room))
-        except Exception as e:
-            print(e)
+        except:
             self.addMenu.config(text = "Either you've already added this appointment or data is in the wrong format")
     
 class CalendarPopup(Toplevel):
