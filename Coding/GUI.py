@@ -134,33 +134,25 @@ VALUES(%s, %s, )
         self.detailsButton.grid(row = 5, column = 1)
     
     def displaySymptoms(self):
-        self.bodyache = 0
-        self.cough = 0
-        self.shortnessbreath = 0
-        self.fatigue = 0
-        self.fever = 0
-        self.headache = 0
-        self.runnynose = 0
-        self.sorethroat = 0
 
         self.clearScreen()
         self.symptomLabel = Label(self.screen, text = "Please click on the symptoms that you have experienced")
         self.symptomLabel.grid(row = 0, column = 1)
-        self.bodyacheButton = Button(self.screen, text = "body ache", command = lambda:self.changeSymptom(self.bodyache, self.bodyacheButton, "body ache"))
+        self.bodyacheButton = Button(self.screen, text = "body ache", command = lambda:self.changeSymptom(self.bodyacheButton, "body ache"))
         self.bodyacheButton.grid(row = 1, column = 0)
-        self.coughButton = Button(self.screen, text = "cough", command = lambda:self.changeSymptom(self.cough, self.coughButton, "cough"))
+        self.coughButton = Button(self.screen, text = "cough", command = lambda:self.changeSymptom(self.coughButton, "cough"))
         self.coughButton.grid(row = 1, column = 1)
-        self.shortnessbreathButton = Button(self.screen, text = "shortness of breath", command = lambda:self.changeSymptom(self.shortnessbreath, self.shortnessbreathButton, "shortness of breath"))
+        self.shortnessbreathButton = Button(self.screen, text = "shortness of breath", command = lambda:self.changeSymptom(self.shortnessbreathButton, "shortness of breath"))
         self.shortnessbreathButton.grid(row = 1, column = 2)
-        self.fatigueButton = Button(self.screen, text = "Fatigue", command = lambda: self.changeSymptom(self.fatigue, self.fatigueButton, "Fatigue"))
+        self.fatigueButton = Button(self.screen, text = "Fatigue", command = lambda: self.changeSymptom(self.fatigueButton, "Fatigue"))
         self.fatigueButton.grid(row = 1, column = 3)
-        self.feverButton = Button(self.screen, text = "Fatigue", command = lambda:self.changeSymptom(self.fever, self.feverButton, "Fever"))
+        self.feverButton = Button(self.screen, text = "Fatigue", command = lambda:self.changeSymptom(self.feverButton, "Fever"))
         self.feverButton.grid(row = 2, column = 0)
-        self.headacheButton = Button(self.screen, text = "Headache", command = lambda:self.changeSymptom(self.headache, self.headacheButton, "Headache"))
+        self.headacheButton = Button(self.screen, text = "Headache", command = lambda:self.changeSymptom(self.headacheButton, "Headache"))
         self.headacheButton.grid(row = 2, column = 1)
-        self.runnynoseButton = Button(self.screen, text = "Runny Nose", command = lambda:self.changeSymptom(self.runnynose, self.runnynoseButton, "Runny Nose"))
+        self.runnynoseButton = Button(self.screen, text = "Runny Nose", command = lambda:self.changeSymptom(self.runnynoseButton, "Runny Nose"))
         self.runnynoseButton.grid(row = 2, column = 2)
-        self.sorethroatButton = Button(self.screen, text = "Sore Throat", command = lambda:self.changeSymptom(self.sorethroat, self.sorethroatButton, "Sore Throat"))
+        self.sorethroatButton = Button(self.screen, text = "Sore Throat", command = lambda:self.changeSymptom(self.sorethroatButton, "Sore Throat"))
         self.sorethroatButton.grid(row = 2, column = 3)
         self.symptomSubmit = Button(self.screen, text = "Click here to submit", command = self.readyPrediction)
         self.symptomSubmit.grid(row = 3, column = 1)
@@ -237,12 +229,11 @@ VALUES(%s, %s, )
         self.finalConfirmation = Label(self.screen, text = "Appointment confirmed, see you then!")
         self.finalConfirmation.pack()
 
-    def changeSymptom(self, symptom, button, symptomName):
-        if symptom == 0:
-            symptom = 1
+    def changeSymptom(self, button, symptomName):
+        textContent = button.cget('text') #acquires text variable from the button
+        if textContent == symptomName:
             button.config(text = "Click if you made a mistake and don't have " + symptomName)
         else:
-            symptom = 0
             button.config(text = symptomName)
 
     def storeDetails(self):
