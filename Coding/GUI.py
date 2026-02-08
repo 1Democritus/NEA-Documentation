@@ -20,7 +20,7 @@ LOWERCASE = string.ascii_lowercase
 with psycopg2.connect(dbname = "logins", **PARAMETERS) as conn:
     conn.autocommit = True
     cursor = conn.cursor()
-    query = "SELECT email, password FROM logindetails;"
+    query = "SELECT * FROM logindetails;"
     cursor.execute(query)
     accountDetails = cursor.fetchall()
 
@@ -46,7 +46,7 @@ class Interface:
 
     def login(self):
         self.clearScreen()
-        self.loginMain = Label(self.screen, text = "Welcome back! Sign back in now.")
+        self.loginMain = Label(self.screen, text = "Welcome back! Sign back in now. If you aren't staff, leave access code empty.")
         self.loginMain.pack()
         self.emailLabel = Label(self.screen, text = "email")
         self.emailLabel.pack()
@@ -56,17 +56,29 @@ class Interface:
         self.passwordLabel.pack()
         self.passwordText = Entry(self.screen)
         self.passwordText.pack()
+        self.accesscodeLabel = Label(self.screen, text = "Access code")
+        self.accesscodeLabel.pack()
+        self.accesscodeText = Entry(self.screen)
+        self.accesscodeText.pack()
         self.loginButton = Button(self.screen, text = "Login", command = self.checkLogin)
         self.loginButton.pack()
-        #add access codes later
 
     def checkLogin(self):
         email = self.emailText.get()
         password = self.passwordText.get()
-        if (email, password) not in accountDetails:
+        accessCode = ''
+        try:
+            accessCode = self.accesscodeText.get()
+        except:
+            pass
+        if (email, password, accessCode) not in accountDetails and accessCode == '':
             self.loginMain.config(text = "Wrong email or password")
-        else:
+        elif (email, password, accessCode) not in accountDetails and accessCode != '':
+            self.loginMain.config(text = "Wrong email, password or access code")
+        elif accessCode == '':
             self.displayForm()
+        else:
+            self.staffMenu()
     
     def register(self):
         self.clearScreen()
@@ -258,6 +270,104 @@ VALUES(%s, %s, )
         else:
             self.isFemale = True
             self.genderInput.config(text = "Press if you're a man")
+
+    def staffMenu(self):
+        self.clearScreen()
+        self.mainLabel = Label(self.screen, text = "staff menu")
+        self.mainLabel.pack()
+        self.addButton = Button(self.screen, text = "Add appointment", command = self.addAppointment)
+        self.addButton.pack()
+        self.removeButton = Button(self.screen, text = "Remove appointment", command = self.removeAppointment)
+        self.removeButton.pack()
+
+    def removeAppointment(self):
+        self.clearScreen()
+        conn = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
+        conn.autocommit = True
+        cursor = conn.cursor()
+        cursor.execute('''SELECT * FROM Appointment;''')
+        self.appointments = cursor.fetchall()
+        self.listOfAppointments = Label(self.screen, height = 5, text = f"Here are all the appointments on the database, please enter the id of the one you want to remove: {self.appointments}")
+        self.listOfAppointments.pack()
+        self.removedID = Entry(self.screen)
+        self.removedID.pack()
+        self.removeAppointmentButton = Button(self.screen, text = "Remove Button", command = lambda: self.removeSQL(cursor))
+        self.removeAppointmentButton.pack()
+        self.returnStaffButton = Button(self.screen, text = "Return to Menu", command = lambda: (conn.close(), self.staffMenu()))
+        self.returnStaffButton.pack()
+
+    def removeSQL(self, cursor):
+        ID = self.removedID.get()
+        try:
+            cursor.execute('''
+        DELETE FROM Appointment WHERE AppointmentID = %s;
+                       ''', (ID,))
+            if cursor.rowcount() == 0: #meaning no data was actually removed
+                raise ValueError()
+            self.removeAppointmentButton.config(text = "Last request to remove appointment was successful")
+            for appointment in self.appointments:
+                if appointment[0] == ID:
+                    self.appointments.remove(appointment)
+            self.listOfAppointments.config(text = f"Here are all the appointments on the database, please enter the id of the one you want to remove: {self.appointments}")
+        except:
+            self.removeAppointmentButton.config(text = 'The appointment you want to remove does not exist')
+    
+    def addAppointment(self):
+        conn = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
+        conn.autocommit = True
+        cursor = conn.cursor()
+        self.clearScreen()
+        self.addMenu = Label(self.screen, text = "Please enter the details of your appointment")
+        self.addMenu.grid(row = 0, column = 2)
+        self.STAFFmeetingIDLabel = Label(self.screen, text = "Meeting ID")
+        self.STAFFmeetingIDLabel.grid(row = 1, column = 0)
+        self.STAFFmeetingID = Entry(self.screen)
+        self.STAFFmeetingID.grid(row = 2, column = 0)
+        self.STAFFdoctorIDLabel = Label(self.screen, text = "Doctor ID")
+        self.STAFFdoctorIDLabel.grid(row = 1, column = 1)
+        self.STAFFdoctorID = Entry(self.screen)
+        self.STAFFdoctorID.grid(row = 2, column = 1)
+        self.STAFFpatientIDLabel = Label(self.screen, text = "Patient ID")
+        self.STAFFpatientIDLabel.grid(row = 1, column = 2)
+        self.STAFFpatientID = Entry(self.screen)
+        self.STAFFpatientID.grid(row = 2, column = 2)
+        self.STAFFtreatmentLabel = Label(self.screen, text = "Treatment Name")
+        self.STAFFtreatmentLabel.grid(row = 1, column = 3)
+        self.STAFFtreatment = Entry(self.screen)
+        self.STAFFtreatment.grid(row = 2, column = 3)
+        self.STAFFdateLabel = Label(self.screen, text = "Date, in the format dd/mm/yyyy")
+        self.STAFFdateLabel.grid(row = 1, column = 4)
+        self.STAFFdate = Entry(self.screen)
+        self.STAFFdate.grid(row = 2, column = 4)
+        self.STAFFtimeLabel = Label(self.screen, text = "Time, in the format hh:mm:ss")
+        self.STAFFtimeLabel.grid(row = 3, column = 1)
+        self.STAFFtime = Entry(self.screen)
+        self.STAFFtime.grid(row = 4, column = 1)
+        self.STAFFroomLabel = Label(self.screen, text = "Room Number")
+        self.STAFFroomLabel.grid(row = 3, column = 3)
+        self.STAFFroom = Entry(self.screen)
+        self.STAFFroom.grid(row = 4, column = 3)
+        self.STAFFaddAppointment = Button(self.screen, text = "Add appointment", command = lambda: self.addSQL(cursor))
+        self.STAFFaddAppointment.grid(row = 3, column = 2)
+        self.STAFFreturnToMenu = Button(self.screen, text = "Return to main menu", command = lambda: (conn.close(), self.staffMenu()))
+        self.STAFFreturnToMenu.grid(row = 4, column = 2)
+    
+    def addSQL(self, cursor):
+        try:
+            appointmentID = self.STAFFmeetingID.get()
+            patientID = self.STAFFpatientID.get()
+            doctorID = self.STAFFdoctorID.get()
+            treatment = self.STAFFtreatment.get()
+            date = self.STAFFdate.get()
+            time = self.STAFFtime.get()
+            room = self.STAFFroom.get()
+            cursor.execute('''
+INSERt INTO Appointment (AppointmentID, PatientID, DoctorID, TreatmentName, AppointmentDate, AppointmentTime, RoomNumber)
+VALUES (%s, %s, %s, %s, %s, %s, %s);''', 
+(appointmentID, patientID, doctorID, treatment, date, time, room))
+        except Exception as e:
+            print(e)
+            self.addMenu.config(text = "Either you've already added this appointment or data is in the wrong format")
     
 class CalendarPopup(Toplevel):
     def __init__(self, parent):
