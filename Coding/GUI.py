@@ -63,7 +63,6 @@ class Interface:
     def checkLogin(self):
         email = self.emailText.get()
         password = self.passwordText.get()
-        print(accountDetails)
         if (email, password) not in accountDetails:
             self.loginMain.config(text = "Wrong email or password")
         else:
