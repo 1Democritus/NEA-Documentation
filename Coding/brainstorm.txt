@@ -1,21 +1,5 @@
-interface:
-use python
-tkinter for buttons and widgets - have expertise so using should be comfortable
-
-
-database postgreSQL connection:
-use psycopg2
-making appointment:
-use cursor.fetchall() for appointments to see which doctor is available for customer's desired day
-find a way to implement access codes for staff
-
-
-machine learning architecture:
-deep neural network
-only imported module is numpy
-define ReLu and Softmax layers ourselves from scratch
-make backpropagation from scratch
-
-order of objectives:
-finish interface
-adding appointment to callendar
+objectives:
+neaten up how you add appointments for patients
+recheck NN accuracy
+check calendar implementation works
+start documentation in word
