@@ -49,7 +49,6 @@ def trainModel(model, epochCount, trainset, label):
   for epoch in range(epochCount):
     tensors = model.feedForward(trainset)
     predictions = numpy.argmax(tensors[3], axis = 0)
-    #I've chosen MAE (mean absolute error) to use for backpropagation
     epochError = tensors[3] - label
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
