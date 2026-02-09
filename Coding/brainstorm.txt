@@ -1,4 +1,4 @@
 objectives:
-recheck NN accuracy
+fix NN accuracy issues (always returning healthy despite what I input)
 check calendar implementation works
 start documentation in word
