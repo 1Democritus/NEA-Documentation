@@ -1,5 +1,4 @@
 objectives:
-neaten up how you add appointments for patients
 recheck NN accuracy
 check calendar implementation works
 start documentation in word
