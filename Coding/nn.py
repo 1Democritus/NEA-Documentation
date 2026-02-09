@@ -4,15 +4,15 @@ class DNN():
   def __init__(self, learningRate, columnSize, outputSize):
     self.__learningRate = learningRate #determines the rate at which weights change
     #initialise random values between 0.5 and -0.5
-    self.__w1 = numpy.random.randn(50, columnSize) - 0.5 
-    self.__b1 = numpy.random.randn(50, 1) - 0.5
-    self.__w2 = numpy.random.randn(outputSize, 50) - 0.5
-    self.__b2 = numpy.random.randn(outputSize, 1) - 0.5
+    self.__w1 = numpy.random.randn(50, columnSize) * numpy.sqrt(2 / columnSize)
+    self.__b1 = numpy.zeros((50,1))
+    self.__w2 = numpy.random.randn(outputSize, 50) * numpy.sqrt(2 / 50)
+    self.__b2 = numpy.zeros((outputSize, 1))
 
   def feedForward(self, tupl):
-    hiddenTensors = numpy.dot(self.__w1, tupl) - self.__b1
+    hiddenTensors = numpy.dot(self.__w1, tupl) + self.__b1
     hiddenTensorsActivated = self.ReLU(hiddenTensors)
-    finalTensors = numpy.dot(self.__w2, hiddenTensorsActivated) - self.__b2
+    finalTensors = numpy.dot(self.__w2, hiddenTensorsActivated) + self.__b2
     finalTensorsActivated = self.softmax(finalTensors)
     return hiddenTensors, hiddenTensorsActivated, finalTensors, finalTensorsActivated
   
@@ -53,6 +53,6 @@ def trainModel(model, epochCount, trainset, label):
     epochError = tensors[3] - label
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, tupl)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
-    accuracy = numpy.sum(predictions == numpy.argmax(label, axis = 0))/len(label)
+    accuracy = numpy.sum(predictions == numpy.argmax(label, axis = 0))/label.shape[1]
     print(f"Epoch: {epoch + 1}, accuracy: {accuracy}")
   return model
