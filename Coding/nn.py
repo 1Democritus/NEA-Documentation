@@ -1,11 +1,11 @@
 import numpy
 
 class DNN():
-  def __init__(self, learningRate, columnSize, outputSize):
+  def __init__(self, learningRate, columnSize, hiddenSize, outputSize):
     self.__learningRate = learningRate #determines the rate at which weights change
-    self.__w1 = numpy.random.randn(50, columnSize) * numpy.sqrt(2 / columnSize) #for scaling the inputs
-    self.__b1 = numpy.zeros((50, 1))
-    self.__w2 = numpy.random.randn(outputSize, 50) * numpy.sqrt(2 / 50)
+    self.__w1 = numpy.random.randn(hiddenSize, columnSize) * numpy.sqrt(2 / columnSize) #for scaling the inputs
+    self.__b1 = numpy.zeros((hiddenSize, 1))
+    self.__w2 = numpy.random.randn(outputSize, hiddenSize) * numpy.sqrt(2 / hiddenSize)
     self.__b2 = numpy.zeros((outputSize, 1))
 
   def feedForward(self, tupl):
