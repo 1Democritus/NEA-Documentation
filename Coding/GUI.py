@@ -207,9 +207,18 @@ VALUES(%s, %s, )
             connection = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
             connection.autocommit = True
             cursor = connection.cursor()
+            id = None
+            count = 1
             statement = '''INSERT INTO Appointment (AppointmentID, PatientID, DoctorID, TreatmentName, AppointmentDate, AppointmentTime, RoomNumber)
-            VALUES ('001', %s, 'RajKooth001', %s, %s, '13:15:00', 1);'''
-            cursor.execute(statement, (patientID, self.treatment, self.date))
+            VALUES (%s, %s, 'RajKooth001', %s, %s, '13:15:00', 1);'''
+            while id is None: #subroutine to generate unique id for every appointment
+                try:
+                    id = patientID[0:3] + 'Kooth' + str(count)
+                    cursor.execute(statement, (id, patientID, self.treatment, self.date))
+                except:
+                    id = None
+                    count += 1
+
             connection.close()
 
             self.clearScreen()
