@@ -49,12 +49,12 @@ def trainModel(model, epochCount, trainset, label):
   #database has a class imbalance; therefore class weights set to counterbalance and give more leverage to rare classes
   countPerClass = numpy.sum(label, axis = 1, keepdims = True)
   classWeights = label.shape[1] / (label.shape[0] * countPerClass)
-  exampleWeights = numpy.sum(classWeights * label, axis=0, keepdims=True) #extreme assignment of weights to individual patients to counterbalance massive class imbalance
+  biasedWeights = numpy.sum(classWeights * label, axis=0, keepdims=True) #extreme assignment of weights to individual patients to counterbalance massive class imbalance
   
   for epoch in range(1, epochCount+1):
     tensors = model.feedForward(trainset)
     predictions = numpy.argmax(tensors[3], axis = 0)
-    epochError = (tensors[3] - label) * exampleWeights
+    epochError = (tensors[3] - label) * biasedWeights
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
     accuracy = numpy.sum(predictions == numpy.argmax(label, axis = 0))/label.shape[1]
