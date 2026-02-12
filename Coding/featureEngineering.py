@@ -25,3 +25,4 @@ for symptom in symptomList:
 df = df.drop(columns = ["Patient_ID", "Symptoms", "Symptom_1", "Symptom_2", "Symptom_3", "Treatment_Plan", "Severity", "Blood_Pressure_mmHg"])
 labels = np.stack(df["Diagnosis"].apply(OHElabel).values).T
 features = df.drop(columns = ["Diagnosis"]).to_numpy(dtype = float).T
+features = (features - features.mean(axis=1, keepdims=True)) / features.std(axis=1, keepdims=True) #scaling down inputs with higher values to prevent unfair domination
