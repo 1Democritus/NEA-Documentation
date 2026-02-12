@@ -434,7 +434,7 @@ def validEmailChecker(email):
 def getPredictions(details):
     #combine features in format of database and label it xtest=
     model = nn.DNN(learningRate = 0.001, columnSize = features.shape[0], hiddenSize = 50, outputSize = labels.shape[0])
-    Oracle = nn.trainModel(model = model, epochCount = 400, label = labels, trainset = features)
+    Oracle = nn.trainModel(model = model, epochCount = 5000, label = labels, trainset = features)
     evaluation = Oracle.feedForward(details.reshape(-1, 1))    
     prediction = numpy.argmax(evaluation[3], axis = 0)
     conversion = {0: "Healthy", 1: "Bronchitis", 2: "Flu", 3: "Cold", 4: "Pneumonia"}
