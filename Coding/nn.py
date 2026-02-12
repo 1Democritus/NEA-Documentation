@@ -46,12 +46,16 @@ class DNN():
     return (tupl>0).astype(float)
 
 def trainModel(model, epochCount, trainset, label):
-  for epoch in range(epochCount):
+  #database has a class imbalance; therefore class weights set to counterbalance and give more leverage to rare classes
+  countPerClass = numpy.sum(label, axis = 1, keepdims = True)
+  classWeights = label.shape[1] / (label.shape[0] * countPerClass)
+  for epoch in range(1, epochCount+1):
     tensors = model.feedForward(trainset)
     predictions = numpy.argmax(tensors[3], axis = 0)
-    epochError = tensors[3] - label
+    epochError = (tensors[3] - label) * classWeights
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
     accuracy = numpy.sum(predictions == numpy.argmax(label, axis = 0))/label.shape[1]
-    print(f"Epoch: {epoch + 1}, accuracy: {accuracy}")
+    if epoch % 20 == 0:
+      print(f"Epoch: {epoch}, accuracy: {accuracy}")
   return model
