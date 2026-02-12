@@ -24,11 +24,11 @@ class DNN():
     hiddenBiasDerivative = numpy.sum(hiddenDerivative, axis = 1, keepdims = True) / Ysize
     return hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative
 
-  def updateParameters(self, hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative):
+  def updateParameters(self, hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative, L2constant = 0.01):
     #subtract derivative multiplied by learning rate from variables
-    self.__w1 -= self.__learningRate * hiddenWeightDerivative
+    self.__w1 -= self.__learningRate * (hiddenWeightDerivative + L2constant * self.__w1)
     self.__b1 -= self.__learningRate * hiddenBiasDerivative
-    self.__w2 -= self.__learningRate * finalWeightDerivative
+    self.__w2 -= self.__learningRate * (finalWeightDerivative + L2constant * self.__w2)
     self.__b2 -= self.__learningRate * finalBiasDerivative
 
   @staticmethod
@@ -49,10 +49,12 @@ def trainModel(model, epochCount, trainset, label):
   #database has a class imbalance; therefore class weights set to counterbalance and give more leverage to rare classes
   countPerClass = numpy.sum(label, axis = 1, keepdims = True)
   classWeights = label.shape[1] / (label.shape[0] * countPerClass)
+  exampleWeights = numpy.sum(classWeights * label, axis=0, keepdims=True) #extreme assignment of weights to individual patients to counterbalance massive class imbalance
+  
   for epoch in range(1, epochCount+1):
     tensors = model.feedForward(trainset)
     predictions = numpy.argmax(tensors[3], axis = 0)
-    epochError = (tensors[3] - label) * classWeights
+    epochError = (tensors[3] - label) * exampleWeights
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
     accuracy = numpy.sum(predictions == numpy.argmax(label, axis = 0))/label.shape[1]
