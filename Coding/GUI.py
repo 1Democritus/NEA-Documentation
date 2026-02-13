@@ -432,7 +432,8 @@ def validEmailChecker(email):
     domainPattern = "|".join([domain.replace(".", "\.")] for domain in validDomains) #replace domain structure to make it work with regex
 
     #define the full regular expression
-    validExpression = rf"^[^._\-\/?!*()@][^/?!*()@]*@({domainPattern})"
+    #use rf instead of just f to signal to python that nothing inside this string is a special command
+    validExpression = rf"^[^._\-\/?!*()@][^/?!*()@]*@({domainPattern})$"
 
     return re.fullmatch(validExpression, email, re.IGNORECASE)
 
