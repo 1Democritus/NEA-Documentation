@@ -243,18 +243,23 @@ VALUES(%s, %s, )
         self.screen.wait_window(popup) #waits to proceed until popup window is destroyed
         username, password = popup.result
         dateValues = self.date.split("/")
-        year, month, day = dateValues[2], dateValues[1], dateValues[0]
-        client = caldav.DAVClient(url = "https://caldav.icloud.com/", username = username, password = password)
-        myCalendar = client.principal().calendars()[0]
-        myCalendar.save_event(
-            dtstart = datetime.datetime(year, month, day, 13, 0),
-            dtend = datetime.datetime(year, month, day, 14, 0),
+        year, month, day = int(dateValues[2]), int(dateValues[1]), int(dateValues[0])
+        try:
+            client = caldav.DAVClient(url = "https://caldav.icloud.com/", username = username, password = password)
+            myCalendar = client.principal().calendars()[0]
+            myCalendar.save_event(
+            dtstart = datetime.datetime(year, month, day, 6, 0),
+            dtend = datetime.datetime(year, month, day, 7, 0),
             summary = "ORACLE APPOINTMENT"
         )
-        self.screen.deiconify()
-        self.clearScreen()
-        self.finalConfirmation = Label(self.screen, text = "Appointment confirmed, see you then!")
-        self.finalConfirmation.pack()
+            finalMsg = "Appointment scheduled, see you then!"
+        except Exception as e:
+            finalMsg = "Error", f"Sorry, something went wrong while adding to calendar: {e}"
+        finally:
+            self.screen.deiconify()
+            self.clearScreen()
+            self.finalLabel = Label(text = finalMsg)
+            self.finalLabel.pack()
 
     def changeSymptom(self, button, symptomName, symptom):
         textContent = button.cget('text') #acquires text variable from the button
