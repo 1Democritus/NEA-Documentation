@@ -54,9 +54,10 @@ def trainModel(model, epochCount, trainset, label):
   for epoch in range(1, epochCount+1):
     tensors = model.feedForward(trainset)
     predictions = numpy.argmax(tensors[3], axis = 0)
-    epochError = (tensors[3] - label) * biasedWeights
+    epochError = (tensors[3] - label) * biasedWeights #scaling individual errors with respect to their classes
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
+    #return pure accuracy; could also return class accuracy to display performance per class
     accuracy = numpy.sum(predictions == numpy.argmax(label, axis = 0))/label.shape[1]
     if epoch % 500 == 0:
       print(f"Epoch: {epoch}, accuracy: {accuracy}")
