@@ -1,2 +1,3 @@
 objectives:
+replace transformer objectives with new NN objectives (regularisation)
 start documentation in word (note that weights are heavily against healthy class for more accuracy of people with actual diseases)
