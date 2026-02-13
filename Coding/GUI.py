@@ -8,6 +8,7 @@ import numpy
 import psycopg2
 import calendar, datetime
 import caldav
+import re
 import os
 from dotenv import load_dotenv
 load_dotenv(override=True)
@@ -392,12 +393,12 @@ VALUES (%s, %s, %s, %s, %s, %s, %s);''',
             self.addMenu.config(text = "Either you've already added this appointment or data is in the wrong format")
     
 class CalendarPopup(Toplevel):
-    def __init__(self, parent):
-        super().__init__(parent) #initialising parent of tk.Toplevel, which is tk.Tk
+    def __init__(self, mainScreen):
+        super().__init__(mainScreen) #derives basic window structure from the main screen's features
         self.labelUsername = Label(self, text = "Enter calendar username: ")
         self.entryUsername = Entry(self)
         self.labelPassword = Label(self, text = "Enter calendar password: ")
-        self.entryPassword = Entry(self)
+        self.entryPassword = Entry(self, show = "*") #to hide my actual password
         self.labelUsername.pack()
         self.entryUsername.pack()
         self.labelPassword.pack()
@@ -427,14 +428,13 @@ def strongPasswordChecker(password):
     
 def validEmailChecker(email):
     validDomains = ["nhs.ac.uk", "denizati.tr", "gmail.com", "yahoo.com", "mcsoxford.org.uk"]
-    emailContents = email.split("@")
-    if len(emailContents) != 2:
-        return False
-    name, domain = emailContents[0], emailContents[1]
-    for disallowedChar in ["/", "?", "!", "*", "(", ")"]:
-        if disallowedChar in name:
-            return False
-    return domain in validDomains and name[0] not in [".", "_", "-"]
+
+    domainPattern = "|".join([domain.replace(".", "\.")] for domain in validDomains) #replace domain structure to make it work with regex
+
+    #define the full regular expression
+    validExpression = rf"^[^._\-\/?!*()@][^/?!*()@]*@({domainPattern})"
+
+    return re.fullmatch(validExpression, email, re.IGNORECASE)
 
 def getPredictions(details):
     #combine features in format of database and label it xtest=
