@@ -104,15 +104,58 @@ class Interface:
         elif not validEmailChecker(email):
             self.registryMain.config(text = "Not valid email. Please enter your actual email.")
         else:
-            with psycopg2.connect(dbname = "logins", **PARAMETERS) as connect:
-                connect.autocommit = True
-                cursor = connect.cursor()
-                query = '''
-INSERT INTO logindetails(email, password, accesscode)
-VALUES(%s, %s, '')
+            self.newEmail = email
+            self.newPassword = password
+            self.enterDatabaseDetails()
+    
+    def enterDatabaseDetails(self):
+        self.clearScreen()
+        self.newRegDetails = Label(self.screen, text = "Welcome to our app! Please enter these details so that we can make appointments for you in the future!")
+        self.newRegDetails.pack()
+        self.forenameLabel = Label(self.screen, text = "Enter your name please")
+        self.forenameLabel.pack()
+        self.forename = Entry(self.screen)
+        self.forename.pack()
+        self.surnameLabel = Label(self.screen, text = "Enter your surname")
+        self.surnameLabel.pack()
+        self.surname = Entry(self.screen)
+        self.surname.pack()
+        self.telephoneLabel = Label(self.screen, text = "Enter your phone")
+        self.telephoneLabel.pack()
+        self.telephone = Entry(self.screen)
+        self.telephone.pack()
+
+        self.registryConfirmButton = Button(self.screen, text = "Submit details", command = self.storeNewAccount)
+
+    def storeNewAccount(self):
+        forename = self.forename.get()
+        surname = self.surname.get()
+        telephone = self.telephone.get()
+        if not telephone.isnumeric() or len(telephone) != 11:
+            self.telephoneLabel.config(text = "Please enter a valid telephone number")
+        elif not surname.isalpha():
+            self.surnameLabel.config(text = "Please enter your actual surname")
+        elif not forename.isalpha():
+            self.forenameLabel.config(text = "Please enter your actual forename")
+        else:
+            with psycopg2.connect(dbname = 'logins', **PARAMETERS) as conn1:
+                conn1.autocommit = True
+                cursor = conn1.cursor()
+                cursor.execute('''
+                INSERT INTO loginDetails(email, password, accesscode)
+                VALUES (%s, %s, '');
+''', (self.newEmail, self.newPassword))
+            with psycopg2.connect(dbname = 'appointments', **PARAMETERS) as conn2:
+                conn2.autocommit = True
+                cursor = conn2.cursor()
+                id = forename[0:4] + surname[0:4] + telephone[0:4]
+                statement = '''
+INSERT INTO Patient(PatientID, Forename, Surname, telephoneNo, email)
+VALUES (%s,%s,%s,%s,%s);
 '''
-                cursor.execute(query, (email, password))
+                cursor.execute(statement, (id, forename, surname, telephone, self.newEmail))
             self.displayForm()
+            
         
     def displayForm(self):
         self.isFemale = False
@@ -221,7 +264,7 @@ VALUES(%s, %s, '')
             VALUES (%s, %s, 'RajKooth001', %s, %s, '13:15:00', 1);'''
             while id is None: #subroutine to generate unique id for every appointment
                 try:
-                    id = patientID[0:3] + 'Kooth' + str(count)
+                    id = patientID + 'Kooth' + str(count)
                     cursor.execute(statement, (id, patientID, self.treatment, self.date))
                 except:
                     id = None
@@ -435,7 +478,7 @@ def validEmailChecker(email):
     #use rf instead of just f to signal to python that nothing inside this string is a special command
     validExpression = rf"^[^._\-\/?!*()@][^/?!*()@]*@({domainPattern})$"
 
-    return re.fullmatch(validExpression, email, re.IGNORECASE)
+    return re.fullmatch(validExpression, email, re.IGNORECASE) and sum(int(email in account[0]) for account in accountDetails) != 0
 
 def getPredictions(details):
     #combine features in format of database and label it xtest=
