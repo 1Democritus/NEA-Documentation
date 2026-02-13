@@ -1,3 +1,2 @@
 objectives:
-improve display of accuracy
 start documentation in word (note that weights are heavily against healthy class for more accuracy of people with actual diseases)
