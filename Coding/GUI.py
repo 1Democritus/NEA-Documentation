@@ -197,7 +197,7 @@ VALUES(%s, %s, )
     def returnDates(self):
         month = self.month.get()
         self.unavailableDates = SQLCall(month, self.disease)
-        self.displayDates = Label(self.screen, height = 4, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
+        self.displayDates = Label(self.screen, height = 10, wraplength = 400, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
         self.displayDates.pack()
         self.preferredTime = Entry(self.screen)
         self.preferredTime.pack()
@@ -308,9 +308,9 @@ VALUES(%s, %s, )
         conn = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
         conn.autocommit = True
         cursor = conn.cursor()
-        cursor.execute('''SELECT * FROM Appointment;''')
+        cursor.execute('''SELECT AppointmentID, PatientID, DoctorID, AppointmentDate FROM Appointment;''')
         self.appointments = cursor.fetchall()
-        self.listOfAppointments = Label(self.screen, height = 5, text = f"Here are all the appointments on the database, please enter the id of the one you want to remove: {self.appointments}")
+        self.listOfAppointments = Label(self.screen, height = 10, wraplength = 400, text = f"Here are all the appointments on the database, please enter the id of the one you want to remove: {self.appointments}")
         self.listOfAppointments.pack()
         self.removedID = Entry(self.screen)
         self.removedID.pack()
@@ -463,7 +463,7 @@ ORDER BY AppointmentDate ASC;
     cursor.execute(sqlText, (monthFirst, monthLast, disease))
     dates = cursor.fetchall()
     connection.close()
-    return dates
+    return [str(date) for date in dates]
 
 def getDetails(email, disease):
     connection = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
