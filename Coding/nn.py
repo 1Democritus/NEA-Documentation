@@ -26,7 +26,7 @@ class DNN():
 
   def updateParameters(self, hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative, L2constant = 0.01):
     #subtract derivative multiplied by learning rate from variables
-    self.__w1 -= self.__learningRate * (hiddenWeightDerivative + L2constant * self.__w1)
+    self.__w1 -= self.__learningRate * (hiddenWeightDerivative + L2constant * self.__w1) #L2constant is L2 regularisation to prevent weights exploding
     self.__b1 -= self.__learningRate * hiddenBiasDerivative
     self.__w2 -= self.__learningRate * (finalWeightDerivative + L2constant * self.__w2)
     self.__b2 -= self.__learningRate * finalBiasDerivative
