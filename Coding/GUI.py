@@ -124,19 +124,19 @@ class Interface:
         self.telephoneLabel.pack()
         self.telephone = Entry(self.screen)
         self.telephone.pack()
-
         self.registryConfirmButton = Button(self.screen, text = "Submit details", command = self.storeNewAccount)
+        self.registryConfirmButton.pack()
 
     def storeNewAccount(self):
         forename = self.forename.get()
         surname = self.surname.get()
         telephone = self.telephone.get()
         if not telephone.isnumeric() or len(telephone) != 11:
-            self.telephoneLabel.config(text = "Please enter a valid telephone number")
+            self.telephoneLabel.config(text = "Please enter a valid telephone number of length 11")
         elif not surname.isalpha():
-            self.surnameLabel.config(text = "Please enter your actual surname")
+            self.surnameLabel.config(text = "Ennter your actual surname")
         elif not forename.isalpha():
-            self.forenameLabel.config(text = "Please enter your actual forename")
+            self.forenameLabel.config(text = "Please only enter your first name; middle names aren't accepted")
         else:
             with psycopg2.connect(dbname = 'logins', **PARAMETERS) as conn1:
                 conn1.autocommit = True
@@ -159,7 +159,10 @@ VALUES (%s,%s,%s,%s,%s);
         
     def displayForm(self):
         self.isFemale = False
-        self.accountEmail = self.emailText.get()
+        try:
+            self.accountEmail = self.emailText.get()
+        except:
+            self.accountEmail = self.newEmail
         self.clearScreen()
         self.formLabel = Label(self.screen, text = "Please enter your details so the Oracle can give the most accurate predictions")
         self.formLabel.grid(row = 0, column = 1)
@@ -478,7 +481,7 @@ def validEmailChecker(email):
     #use rf instead of just f to signal to python that nothing inside this string is a special command
     validExpression = rf"^[^._\-\/?!*()@][^/?!*()@]*@({domainPattern})$"
 
-    return re.fullmatch(validExpression, email, re.IGNORECASE) and sum(int(email in account[0]) for account in accountDetails) != 0
+    return re.fullmatch(validExpression, email, re.IGNORECASE) and sum(int(email == account[0]) for account in accountDetails) == 0
 
 def getPredictions(details):
     #combine features in format of database and label it xtest=
