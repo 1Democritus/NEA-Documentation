@@ -473,9 +473,9 @@ def strongPasswordChecker(password):
     return False not in checklist
     
 def validEmailChecker(email):
-    validDomains = ["nhs.ac.uk", "denizati.tr", "gmail.com", "yahoo.com", "mcsoxford.org.uk"]
+    validDomains = ["nhs\.ac\.uk", "denizati\.tr", "gmail\.com", "yahoo\.com", "mcsoxford\.org\.uk"]
 
-    domainPattern = "|".join([domain.replace(".", "\.") for domain in validDomains]) #replace domain structure to make it work with regex
+    domainPattern = "|".join([domain for domain in validDomains]) #replace domain structure to make it work with regex
 
     #define the full regular expression
     #use rf instead of just f to signal to python that nothing inside this string is a special command
