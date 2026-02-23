@@ -58,7 +58,7 @@ def trainModel(model, epochCount, trainset, label):
     hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative = model.backprop(epochError, tensors, trainset)
     model.updateParameters(hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative)
     #return pure accuracy; could also return class accuracy to display performance per class
-    accuracy = numpy.sum(predictions == numpy.argmax(label, axis = 0))/label.shape[1]
+    accuracy = numpy.sum(predictions == numpy.argmax(label, axis = 0))/label.shape[1] * 100
     if epoch % 500 == 0:
-      print(f"Epoch: {epoch}, accuracy: {accuracy}")
+      print(f"Epoch: {epoch}, accuracy (%): {accuracy}")
   return model
