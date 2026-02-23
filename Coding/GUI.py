@@ -436,7 +436,7 @@ INSERt INTO Appointment (AppointmentID, PatientID, DoctorID, TreatmentName, Appo
 VALUES (%s, %s, %s, %s, %s, %s, %s);''', 
 (appointmentID, patientID, doctorID, treatment, date, time, room))
         except:
-            self.addMenu.config(text = "Either you've already added this appointment or data is in the wrong format")
+            self.addMenu.config(text = "Either you've already added this appointment or some of the data is in the wrong format")
     
 class CalendarPopup(Toplevel):
     def __init__(self, mainScreen):
