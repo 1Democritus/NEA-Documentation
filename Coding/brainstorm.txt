@@ -1,3 +1,3 @@
 objectives:
-update (or remake) the old diagrams (especially Top Down diagram)
-start documentation in word (note that weights are heavily against healthy class for more accuracy of people with actual diseases)
+document the interface
+maybe add a second top down diagram to show the changes in design vs real, and explain why certain objectives weren't followed up on
