@@ -134,7 +134,7 @@ class Interface:
         if not telephone.isnumeric() or len(telephone) != 11:
             self.telephoneLabel.config(text = "Please enter a valid telephone number of length 11")
         elif not surname.isalpha():
-            self.surnameLabel.config(text = "Ennter your actual surname")
+            self.surnameLabel.config(text = "Enter your actual surname")
         elif not forename.isalpha():
             self.forenameLabel.config(text = "Please only enter your first name; middle names aren't accepted")
         else:
