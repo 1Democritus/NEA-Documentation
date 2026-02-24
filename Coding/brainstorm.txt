@@ -1,3 +1,2 @@
 objectives:
 document the interface
-maybe add a second top down diagram to show the changes in design vs real, and explain why certain objectives weren't followed up on
