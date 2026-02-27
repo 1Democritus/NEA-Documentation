@@ -1,5 +1,5 @@
 #import needed files
-from featureEngineering import labels as LABELS, features as FEATURES
+from featureEngineering import labels, features
 import nn
 #import needed modules
 from tkinter import *
@@ -320,19 +320,29 @@ VALUES (%s,%s,%s,%s,%s);
     def storeDetails(self):
         try:
             self.heartrate = int(self.heartrateInput.get())
+            if self.heartrate < 40 or self.heartrate > 240:
+                raise ValueError("Please don't mock our application by entering a fake heartrate")
+            elif self.heartrate > 130:
+                raise ValueError("Please enter your resting heartrate; entering your heartrate after exercise might reduce accuracy")
             self.age = int(self.ageInput.get())
+            if self.age < 0 or self.age > 120:
+                raise ValueError("Please enter your actual age")
             bloodpressure = self.bloodpressureInput.get().split("/")
             if len(bloodpressure) != 2:
-                raise ValueError()
+                raise AttributeError("Blood pressure should have two values separated by a /")
             self.systolic = int(bloodpressure[0])
             self.diastolic = int(bloodpressure[1])
             self.bodytemperature = int(self.bodytemperatureInput.get())
+            if self.bodytemperature < 25 or self.bodytemperature > 45:
+                raise ValueError("Please enter a valid temperature between 25 and 45 degrees Celsius")
             self.oxygen = int(self.oxygenInput.get())
+            if self.oxygen < 70 or self.oxygen > 100:
+                raise ValueError("Your oxygen saturation is either immediately fatal or not possible. Please enter your actual saturation")
             self.isFemale = int(self.isFemale)
             self.displaySymptoms()
-        except:
-            self.formLabel.config(text = "Please ensure all data you've entered is in valid format")
-    
+        except Exception as e:
+            self.formLabel.config(text = e)
+
     def changeGender(self):
         if self.isFemale:
             self.isFemale = False
@@ -485,8 +495,8 @@ def validEmailChecker(email):
 
 def getPredictions(details):
     #combine features in format of database and label it xtest=
-    model = nn.DNN(learningRate = 0.001, columnSize = FEATURES.shape[0], hiddenSize = 50, outputSize = LABELS.shape[0])
-    Oracle = nn.trainModel(model = model, epochCount = 5000, label = LABELS, trainset = FEATURES)
+    model = nn.DNN(learningRate = 0.001, columnSize = features.shape[0], hiddenSize = 50, outputSize = labels.shape[0])
+    Oracle = nn.trainModel(model = model, epochCount = 5000, label = labels, trainset = features)
     evaluation = Oracle.feedForward(details.reshape(-1, 1))    
     prediction = numpy.argmax(evaluation[3], axis = 0)
     conversion = {0: "Healthy", 1: "Bronchitis", 2: "Flu", 3: "Cold", 4: "Pneumonia"}
