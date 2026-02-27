@@ -1,4 +1,5 @@
 import psycopg2
+import os
 from dotenv import load_dotenv
 load_dotenv(override=True)
 PARAMETERS = os.getenv("PARAMETERS").split(",") #contains details needed to access the server
