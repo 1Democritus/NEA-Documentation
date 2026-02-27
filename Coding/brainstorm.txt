@@ -1,4 +1,3 @@
 objectives:
-add logical data validation
-different options for calendar 
-finetune appointment start time
+SQL Injection Prevention
+Error Handling
