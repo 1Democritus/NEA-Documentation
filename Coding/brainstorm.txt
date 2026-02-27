@@ -1,3 +1,2 @@
 extra add-ons to add:
-SQL Injection Prevention
 Error Handling
