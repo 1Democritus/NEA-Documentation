@@ -1,2 +1,4 @@
 objectives:
-document the interface
+add logical data validation
+different options for calendar 
+finetune appointment start time
