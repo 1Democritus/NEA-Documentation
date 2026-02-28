@@ -33,6 +33,10 @@ class Interface:
         self.screen.state("zoomed")
         self.screen.title("interfacePOC")
 
+        self.accountDictionary = HashTable()
+        for [email, password, accessCode] in accountDetails:
+            self.accountDictionary.add(email, password, accessCode)
+
         self.registryLabel = Label(self.screen, text = "Welcome back! Please sign in or create a new account so that we can help with your health concerns")
         self.registryLabel.pack()
         self.loginButton = Button(self.screen, text = "SIGN IN", command = self.login)
@@ -66,20 +70,25 @@ class Interface:
 
     def checkLogin(self):
         email = self.emailText.get()
-        password = self.passwordText.get()
-        accessCode = ''
-        try:
-            accessCode = self.accesscodeText.get()
-        except:
-            pass
-        if (email, password, accessCode) not in accountDetails and accessCode == '':
-            self.loginMain.config(text = "Wrong email or password")
-        elif (email, password, accessCode) not in accountDetails and accessCode != '':
-            self.loginMain.config(text = "Wrong email, password or access code")
-        elif accessCode == '':
-            self.displayForm()
+        password = HashTable.rollingHash(self.passwordText.get())
+        print(password)
+        accessCode = 0
+        DBresults = self.accountDictionary.search(email)
+        print(DBresults)
+        accessCode = HashTable.rollingHash(self.accesscodeText.get())
+        if DBresults == None:
+            self.loginMain.config("email doesn't exist")
         else:
-            self.staffMenu()
+            DBpassword = int(DBresults[0])
+            DBaccessCode = int(DBresults[1])
+            if (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode == '0':
+                self.loginMain.config(text = "Wrong password")
+            elif (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode != '0':
+                self.loginMain.config(text = "Wrong password or access code")
+            elif accessCode == '0':
+                self.displayForm()
+            else:
+                self.staffMenu()
     
     def register(self):
         self.clearScreen()
@@ -105,7 +114,7 @@ class Interface:
             self.registryMain.config(text = "Not valid email. Please enter your actual email.")
         else:
             self.newEmail = email
-            self.newPassword = password
+            self.newPassword = str(HashTable.rollingHash(password))
             self.enterDatabaseDetails()
     
     def enterDatabaseDetails(self):
@@ -143,7 +152,7 @@ class Interface:
                 cursor = conn1.cursor()
                 cursor.execute('''
                 INSERT INTO loginDetails(email, password, accesscode)
-                VALUES (%s, %s, '');
+                VALUES (%s, %s, '0');
 ''', (self.newEmail, self.newPassword))
             with psycopg2.connect(dbname = 'appointments', **PARAMETERS) as conn2:
                 conn2.autocommit = True
@@ -203,21 +212,21 @@ VALUES (%s,%s,%s,%s,%s);
         self.clearScreen()
         self.symptomLabel = Label(self.screen, text = "Please click on the symptoms that you have experienced")
         self.symptomLabel.grid(row = 0, column = 1)
-        self.bodyacheButton = Button(self.screen, text = "body ache", command = lambda:self.changeSymptom(self.bodyacheButton, "body ache", self.bodyache))
+        self.bodyacheButton = Button(self.screen, text = "body ache", command = lambda:self.changeSymptom(self.bodyacheButton, "body ache", "bodyache"))
         self.bodyacheButton.grid(row = 1, column = 0)
-        self.coughButton = Button(self.screen, text = "cough", command = lambda:self.changeSymptom(self.coughButton, "cough", self.cough))
+        self.coughButton = Button(self.screen, text = "cough", command = lambda:self.changeSymptom(self.coughButton, "cough", "cough"))
         self.coughButton.grid(row = 1, column = 1)
-        self.shortnessbreathButton = Button(self.screen, text = "shortness of breath", command = lambda:self.changeSymptom(self.shortnessbreathButton, "shortness of breath", self.shortnessbreath))
+        self.shortnessbreathButton = Button(self.screen, text = "shortness of breath", command = lambda:self.changeSymptom(self.shortnessbreathButton, "shortness of breath", "shortnessbreath"))
         self.shortnessbreathButton.grid(row = 1, column = 2)
-        self.fatigueButton = Button(self.screen, text = "Fatigue", command = lambda: self.changeSymptom(self.fatigueButton, "Fatigue", self.fatigue))
+        self.fatigueButton = Button(self.screen, text = "Fatigue", command = lambda: self.changeSymptom(self.fatigueButton, "Fatigue", "fatigue"))
         self.fatigueButton.grid(row = 1, column = 3)
         self.feverButton = Button(self.screen, text = "Fever", command = lambda:self.changeSymptom(self.feverButton, "Fever", self.fever))
         self.feverButton.grid(row = 2, column = 0)
-        self.headacheButton = Button(self.screen, text = "Headache", command = lambda:self.changeSymptom(self.headacheButton, "Headache", self.headache))
+        self.headacheButton = Button(self.screen, text = "Headache", command = lambda:self.changeSymptom(self.headacheButton, "Headache", "headache"))
         self.headacheButton.grid(row = 2, column = 1)
-        self.runnynoseButton = Button(self.screen, text = "Runny Nose", command = lambda:self.changeSymptom(self.runnynoseButton, "Runny Nose", self.runnynose))
+        self.runnynoseButton = Button(self.screen, text = "Runny Nose", command = lambda:self.changeSymptom(self.runnynoseButton, "Runny Nose", "runnynose"))
         self.runnynoseButton.grid(row = 2, column = 2)
-        self.sorethroatButton = Button(self.screen, text = "Sore Throat", command = lambda:self.changeSymptom(self.sorethroatButton, "Sore Throat", self.sorethroat))
+        self.sorethroatButton = Button(self.screen, text = "Sore Throat", command = lambda:self.changeSymptom(self.sorethroatButton, "Sore Throat", "sorethroat"))
         self.sorethroatButton.grid(row = 2, column = 3)
         self.symptomSubmit = Button(self.screen, text = "Click here to submit", command = self.readyPrediction)
         self.symptomSubmit.grid(row = 3, column = 1)
@@ -264,7 +273,7 @@ VALUES (%s,%s,%s,%s,%s);
             id = None
             count = 1
             statement = '''INSERT INTO Appointment (AppointmentID, PatientID, DoctorID, TreatmentName, AppointmentDate, AppointmentTime, RoomNumber)
-            VALUES (%s, %s, 'RajKooth001', %s, %s, '13:15:00', 1);'''
+            VALUES (%s, %s, 'MikSmi001', %s, %s, '13:15:00', 1);'''
             while id is None: #subroutine to generate unique id for every appointment
                 try:
                     id = patientID + 'Kooth' + str(count)
@@ -312,14 +321,14 @@ VALUES (%s,%s,%s,%s,%s);
         textContent = button.cget('text') #acquires text variable from the button
         if textContent == symptomName:
             button.config(text = "Click if you made a mistake and don't have " + symptomName)
-            symptom = 1
+            setattr(self, symptom, 1) #if changed the variable locally change wouldn't happen outside of subroutine
         else:
             button.config(text = symptomName)
-            symptom = 0
+            setattr(self, symptom, 0)
 
     def storeDetails(self):
         try:
-            self.heartrate = int(self.heartrateInput.get())
+            self.heartrate = float(self.heartrateInput.get())
             if self.heartrate < 40 or self.heartrate > 240:
                 raise ValueError("Please don't mock our application by entering a fake heartrate")
             elif self.heartrate > 130:
@@ -465,6 +474,29 @@ class CalendarPopup(Toplevel):
     def submitValues(self):
         self.result = (self.entryUsername.get(), self.entryPassword.get())
         self.destroy()
+
+class HashTable:
+    def __init__(self, size=101):
+        self.size = size
+        self.table = [[] for i in range(self.size)]
+
+    def add(self, email, passwordHashed, accessCodeHashed):
+        index = self.rollingHash(email)
+        self.table[index].append([email, (passwordHashed, accessCodeHashed)])
+
+    def search(self, email):
+        idx = self.rollingHash(email)
+        for pair in self.table[idx]:
+            if pair[0] == email:
+                return pair[1]
+        return None
+
+    @staticmethod
+    def rollingHash(key, rollingPrime = 31, length = 101):
+        hashSum = 0
+        for i in range(len(key)):
+            hashSum += ord(key[i]) * (rollingPrime ** i)
+        return hashSum % length
         
 #general functions that don't need parameters
 def strongPasswordChecker(password):
