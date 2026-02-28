@@ -31,9 +31,9 @@ cursor.close()
 conn.close()
 
 #now repeat with appointment database
-connection = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
-connection.autocommit = True
-cursor = connection.cursor()
+conn = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
+conn.autocommit = True
+cursor = conn.cursor()
 
 treatmentQuery = '''CREATE TABLE Treatment(
 TreatmentName VARCHAR(40) PRIMARY KEY,
@@ -88,4 +88,4 @@ queries = [treatmentQuery, conditionQuery, linkconditionQuery, doctorQuery, cust
 for query in queries:
   cursor.execute(query)
 cursor.close()
-connection.close()
+conn.close()
