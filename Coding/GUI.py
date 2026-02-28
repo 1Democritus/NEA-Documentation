@@ -514,7 +514,7 @@ def strongPasswordChecker(password):
             checklist[4] = True
     return False not in checklist
     
-def validEmailChecker(email):
+def validEmailChecker(email, accountDictionary):
     validDomains = ["nhs\.ac\.uk", "denizati\.tr", "gmail\.com", "yahoo\.com", "mcsoxford\.org\.uk"]
 
     domainPattern = "|".join([domain for domain in validDomains])
@@ -523,7 +523,7 @@ def validEmailChecker(email):
     #use rf instead of just f to signal to python that nothing inside this string is a special command
     validExpression = rf"^[^._\-\/?!*()@][^/?!*()@]*@({domainPattern})$"
 
-    return re.fullmatch(validExpression, email, re.IGNORECASE) and sum(int(email == account[0]) for account in accountDetails) == 0
+    return re.fullmatch(validExpression, email, re.IGNORECASE) and accountDictionary.search(email) == None
 
 def getPredictions(details):
     #combine features in format of database and label it xtest=
