@@ -1,2 +1,3 @@
 extra add-ons to add:
-Error Handling
+explain hashing algorithm
+explain why prime number is much smaller than what'd normally be used
