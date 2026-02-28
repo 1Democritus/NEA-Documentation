@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 PARAMETERS = os.getenv("PARAMETERS").split(",") #contains details needed to access the server
 PARAMETERS = {"host": PARAMETERS[2], "user": PARAMETERS[0], "password": PARAMETERS[1]}
-connection = psycopg2.connect(dbname = 'postgres', **PARAMETERS)
-connection.autocommit = True #every SQL query will be committed without requiring specific commits
-cursor = connection.cursor()
+conn = psycopg2.connect(dbname = 'postgres', **PARAMETERS)
+conn.autocommit = True #every SQL query will be committed without requiring specific commits
+cursor = conn.cursor()
 loginScript = 'CREATE DATABASE logins'
 appointmentScript = 'CREATE DATABASE appointments'
 cursor.execute(loginScript)
@@ -14,11 +14,11 @@ cursor.execute(appointmentScript)
 
 #have to close and reopen a connection to the new database
 cursor.close()
-connection.close()
+conn.close()
 
-connection = psycopg2.connect(dbname = 'logins', **PARAMETERS)
-connection.autocommit = True
-cursor = connection.cursor()
+conn = psycopg2.connect(dbname = 'logins', **PARAMETERS)
+conn.autocommit = True
+cursor = conn.cursor()
 
 query = '''CREATE TABLE loginDetails (
 email VARCHAR(40) PRIMARY KEY,
@@ -28,7 +28,7 @@ accesscode VARCHAR(15)
 
 cursor.execute(query)
 cursor.close()
-connection.close()
+conn.close()
 
 #now repeat with appointment database
 connection = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
