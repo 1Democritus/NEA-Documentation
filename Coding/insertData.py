@@ -17,7 +17,7 @@ def rollingHash(key, rollingPrime = 31, length = 101):
 accounts = [('c.akcabay@denizati.tr', 'boSSdhuraN', ''), ('mike.smith@nhs.ac.uk', 'mike1234', 'AP6QT#')]
 for email, password, accessCode in accounts:
   password = rollingHash(password)
-  accessCode = rollingHash(accessCode) if accessCode != '' else ''
+  accessCode = rollingHash(accessCode)
   statement = 'INSERT INTO loginDetails VALUES(%s, %s, %s);'
   cursor.execute(statement, (email, password, accessCode))
 conn.close()
