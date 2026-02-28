@@ -1,3 +1,2 @@
 extra add-ons to add:
-explain hashing algorithm
-explain why prime number is much smaller than what'd normally be used
+merge sort
