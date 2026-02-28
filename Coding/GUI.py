@@ -71,21 +71,19 @@ class Interface:
     def checkLogin(self):
         email = self.emailText.get()
         password = HashTable.rollingHash(self.passwordText.get())
-        print(password)
         accessCode = 0
         DBresults = self.accountDictionary.search(email)
-        print(DBresults)
         accessCode = HashTable.rollingHash(self.accesscodeText.get())
         if DBresults == None:
             self.loginMain.config("email doesn't exist")
         else:
             DBpassword = int(DBresults[0])
             DBaccessCode = int(DBresults[1])
-            if (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode == '0':
+            if (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode == 0:
                 self.loginMain.config(text = "Wrong password")
-            elif (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode != '0':
+            elif (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode != 0:
                 self.loginMain.config(text = "Wrong password or access code")
-            elif accessCode == '0':
+            elif accessCode == 0:
                 self.displayForm()
             else:
                 self.staffMenu()
@@ -110,7 +108,7 @@ class Interface:
         password = self.passwordText.get()
         if not strongPasswordChecker(password):
             self.registryMain.config(text = "Password not strong enough. Please choose a different password.")
-        elif not validEmailChecker(email):
+        elif not validEmailChecker(email, self.accountDictionary):
             self.registryMain.config(text = "Not valid email. Please enter your actual email.")
         else:
             self.newEmail = email
@@ -266,7 +264,6 @@ VALUES (%s,%s,%s,%s,%s);
             self.date = self.preferredTime.get()
             if self.date in self.unavailableDates:
                 raise ValueError()
-            print(patientID, self.treatment, self.date)
             connection = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
             connection.autocommit = True
             cursor = connection.cursor()
@@ -290,7 +287,6 @@ VALUES (%s,%s,%s,%s,%s);
             self.calendarButton = Button(self.screen, text = "Add to Calendar", command = self.addToCalendar)
             self.calendarButton.pack()
         except Exception as e:
-            print(e)
             self.appointmentConfirm.config(text = "Please ensure you've entered the date in the right format")
         
     def addToCalendar(self):
