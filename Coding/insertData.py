@@ -26,6 +26,6 @@ conn = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
 conn.autocommit = True #every SQL query will be committed without requiring specific commits
 cursor = conn.cursor()
 
-cursor.execute('INSERT INTO Room VALUES(%s, %s);', (1,1))
-cursor.execute('INSERT INTO Patient VALUES(%s, %s, %s, %s, %s);', ("CemAck001", "Cem", "Akcabay", "c.akcabay@denizati.tr", "09129358407"))
-cursor.execute('INSERT INTO Doctor VALUES(%s, %s, %s, %s);', ("MikSmi001", "Mike", "Smith", "08410248536"))
+cursor.execute('INSERT INTO Room (RoomNumber, RoomFloor) VALUES(%s, %s);', (2,2))
+cursor.execute('INSERT INTO Patient (PatientID, Forename, Surname, Email, TelephoneNo) VALUES(%s, %s, %s, %s, %s);', ("CemAck001", "Cem", "Akcabay", "c.akcabay@denizati.tr", "09129358407"))
+cursor.execute('INSERT INTO Doctor (DoctorID, DoctorName, Surname, TelephoneNo) VALUES(%s, %s, %s, %s);', ("MikSmi001", "Mike", "Smith", "08410248536"))
