@@ -15,10 +15,17 @@ def rollingHash(key, rollingPrime = 31, length = 101):
         return hashSum % length
 
 accounts = [('c.akcabay@denizati.tr', 'boSSdhuraN', ''), ('mike.smith@nhs.ac.uk', 'mike1234', 'AP6QT#')]
-patient = [('CemAkc001','Cem', 'Akcabay', '')]
 for email, password, accessCode in accounts:
   password = rollingHash(password)
   accessCode = rollingHash(accessCode) if accessCode != '' else ''
-  statement = 'INSERT INTO loginDetails VALUES(%s, %s, %s)'
+  statement = 'INSERT INTO loginDetails VALUES(%s, %s, %s);'
   cursor.execute(statement, (email, password, accessCode))
 conn.close()
+
+conn = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
+conn.autocommit = True #every SQL query will be committed without requiring specific commits
+cursor = conn.cursor()
+
+cursor.execute('INSERT INTO Room VALUES(%s, %s);', (1,1))
+cursor.execute('INSERT INTO Patient VALUES(%s, %s, %s, %s, %s);', ("CemAck001", "Cem", "Akcabay", "c.akcabay@denizati.tr", "09129358407"))
+cursor.execute('INSERT INTO Doctor VALUES(%s, %s, %s, %s);', ("MikSmi001", "Mike", "Smith", "08410248536"))
