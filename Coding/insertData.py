@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 PARAMETERS = os.getenv("PARAMETERS").split(",") #contains details needed to access the server
 PARAMETERS = {"host": PARAMETERS[2], "user": PARAMETERS[0], "password": PARAMETERS[1]}
-connection = psycopg2.connect(dbname = 'logins', **PARAMETERS)
-connection.autocommit = True #every SQL query will be committed without requiring specific commits
-cursor = connection.cursor()
+conn = psycopg2.connect(dbname = 'logins', **PARAMETERS)
+conn.autocommit = True #every SQL query will be committed without requiring specific commits
+cursor = conn.cursor()
 
 def rollingHash(key, rollingPrime = 31, length = 101):
         hashSum = 0
