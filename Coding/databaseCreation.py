@@ -22,8 +22,8 @@ cursor = conn.cursor()
 
 query = '''CREATE TABLE loginDetails (
 email VARCHAR(40) PRIMARY KEY,
-password VARCHAR(40) NOT NULL,
-accesscode VARCHAR(15)
+password INT NOT NULL,
+accesscode INT
 ) '''
 
 cursor.execute(query)
