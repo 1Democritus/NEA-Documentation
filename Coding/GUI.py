@@ -75,14 +75,14 @@ class Interface:
         DBresults = self.accountDictionary.search(email)
         accessCode = HashTable.rollingHash(self.accesscodeText.get())
         if DBresults == None:
-            self.loginMain.config("email doesn't exist")
+            self.loginMain.config(text = "wrong details")
         else:
             DBpassword = DBresults[0]
             DBaccessCode = DBresults[1]
             if (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode == 0:
-                self.loginMain.config(text = "Wrong password")
+                self.loginMain.config(text = "wrong details")
             elif (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode != 0:
-                self.loginMain.config(text = "Wrong password or access code")
+                self.loginMain.config(text = "wrong details")
             elif accessCode == 0:
                 self.displayForm()
             else:
