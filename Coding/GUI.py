@@ -106,9 +106,12 @@ class Interface:
     def checkRegistry(self):
         email = self.emailText.get()
         password = self.passwordText.get()
+        valid, used = validEmailChecker(email, self.accountDictionary)
         if not strongPasswordChecker(password):
             self.registryMain.config(text = "Password not strong enough. Please choose a different password.")
-        elif not validEmailChecker(email, self.accountDictionary):
+        elif used:
+            self.registryMain.config(text = "Email is already in the database")
+        elif not valid:
             self.registryMain.config(text = "Not valid email. Please enter your actual email.")
         else:
             self.newEmail = email
@@ -518,8 +521,8 @@ def validEmailChecker(email, accountDictionary):
     #define the full regular expression
     #use rf instead of just f to signal to python that nothing inside this string is a special command
     validExpression = rf"^[^._\-\/?!*()@][^/?!*()@]*@({domainPattern})$"
-
-    return re.fullmatch(validExpression, email, re.IGNORECASE) and accountDictionary.search(email) == None
+    print(accountDictionary.search(email))
+    return re.fullmatch(validExpression, email, re.IGNORECASE), accountDictionary.search(email) != None
 
 def getPredictions(details):
     #combine features in format of database and label it xtest=
