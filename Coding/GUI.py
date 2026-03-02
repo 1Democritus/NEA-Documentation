@@ -270,7 +270,7 @@ VALUES (%s,%s,%s,%s,%s);
             id = None
             count = 1
             statement = '''INSERT INTO Appointment (AppointmentID, PatientID, DoctorID, TreatmentName, AppointmentDate, AppointmentTime, RoomNumber)
-            VALUES (%s, %s, 'MikSmi001', %s, %s, '13:15:00', 1);'''
+            VALUES (%s, %s, 'MikSmi001', %s, %s, '13:00:00', 1);'''
             while id is None: #subroutine to generate unique id for every appointment
                 try:
                     id = patientID + 'Kooth' + str(count)
@@ -300,8 +300,8 @@ VALUES (%s,%s,%s,%s,%s);
             client = caldav.DAVClient(url = "https://caldav.icloud.com/", username = username, password = password)
             myCalendar = client.principal().calendars()[0]
             myCalendar.save_event(
-            dtstart = datetime.datetime(year, month, day, 6, 0),
-            dtend = datetime.datetime(year, month, day, 7, 0),
+            dtstart = datetime.datetime(year, month, day, 13, 0),
+            dtend = datetime.datetime(year, month, day, 14, 0),
             summary = "ORACLE APPOINTMENT"
         )
             finalMsg = "Appointment scheduled, see you then!"
@@ -348,7 +348,7 @@ VALUES (%s,%s,%s,%s,%s);
         except Exception as e:
             self.formLabel.config(text = e)
 
-    def changeGender(self):
+    def changeGender(self): #allows for this to be altered multiple times if you accidentally clicked it once
         if self.isFemale:
             self.isFemale = False
             self.genderInput.config(text = "Press if you're a woman")
@@ -487,7 +487,7 @@ class HashTable:
                 return pair[1]
         return None
 
-    @staticmethod
+    @staticmethod #so that it can be independently called outside of the class
     def rollingHash(key, rollingPrime = 31, length = 101):
         hashSum = 0
         for i in range(len(key)):
