@@ -153,7 +153,7 @@ class Interface:
                 cursor = conn1.cursor()
                 cursor.execute('''
                 INSERT INTO loginDetails(email, password, accesscode)
-                VALUES (%s, %s, '0');
+                VALUES (%s, %s, 0);
 ''', (self.newEmail, self.newPassword))
             with psycopg2.connect(dbname = 'appointments', **PARAMETERS) as conn2:
                 conn2.autocommit = True
@@ -221,7 +221,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.shortnessbreathButton.grid(row = 1, column = 2)
         self.fatigueButton = Button(self.screen, text = "Fatigue", command = lambda: self.changeSymptom(self.fatigueButton, "Fatigue", "fatigue"))
         self.fatigueButton.grid(row = 1, column = 3)
-        self.feverButton = Button(self.screen, text = "Fever", command = lambda:self.changeSymptom(self.feverButton, "Fever", self.fever))
+        self.feverButton = Button(self.screen, text = "Fever", command = lambda:self.changeSymptom(self.feverButton, "Fever", "fever"))
         self.feverButton.grid(row = 2, column = 0)
         self.headacheButton = Button(self.screen, text = "Headache", command = lambda:self.changeSymptom(self.headacheButton, "Headache", "headache"))
         self.headacheButton.grid(row = 2, column = 1)
@@ -340,7 +340,7 @@ VALUES (%s,%s,%s,%s,%s);
                 raise AttributeError("Blood pressure should have two values separated by a /")
             self.systolic = int(bloodpressure[0])
             self.diastolic = int(bloodpressure[1])
-            self.bodytemperature = int(self.bodytemperatureInput.get())
+            self.bodytemperature = float(self.bodytemperatureInput.get())
             if self.bodytemperature < 25 or self.bodytemperature > 45:
                 raise ValueError("Please enter a valid temperature between 25 and 45 degrees Celsius")
             self.oxygen = int(self.oxygenInput.get())
