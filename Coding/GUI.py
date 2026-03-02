@@ -77,8 +77,8 @@ class Interface:
         if DBresults == None:
             self.loginMain.config("email doesn't exist")
         else:
-            DBpassword = int(DBresults[0])
-            DBaccessCode = int(DBresults[1])
+            DBpassword = DBresults[0]
+            DBaccessCode = DBresults[1]
             if (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode == 0:
                 self.loginMain.config(text = "Wrong password")
             elif (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode != 0:
@@ -115,7 +115,7 @@ class Interface:
             self.registryMain.config(text = "Not valid email. Please enter your actual email.")
         else:
             self.newEmail = email
-            self.newPassword = str(HashTable.rollingHash(password))
+            self.newPassword = HashTable.rollingHash(password)
             self.enterDatabaseDetails()
     
     def enterDatabaseDetails(self):
