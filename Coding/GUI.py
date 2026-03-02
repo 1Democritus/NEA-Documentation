@@ -521,7 +521,6 @@ def validEmailChecker(email, accountDictionary):
     #define the full regular expression
     #use rf instead of just f to signal to python that nothing inside this string is a special command
     validExpression = rf"^[^._\-\/?!*()@][^/?!*()@]*@({domainPattern})$"
-    print(accountDictionary.search(email))
     return re.fullmatch(validExpression, email, re.IGNORECASE), accountDictionary.search(email) != None
 
 def getPredictions(details):
