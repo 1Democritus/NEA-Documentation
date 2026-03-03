@@ -33,6 +33,11 @@ class Interface:
         self.screen.state("zoomed")
         self.screen.title("interfacePOC")
 
+        font = ("Arial", 24) #adjust letter size of all future widgets
+        self.screen.option_add("*Font", font)
+        self.screen.option_add("*Button.Font", font)
+        self.screen.option_add("*Label.Font", font)
+        self.screen.option_add("*Entry.Font", font)
         self.accountDictionary = HashTable()
         for [email, password, accessCode] in accountDetails:
             self.accountDictionary.add(email, password, accessCode)
