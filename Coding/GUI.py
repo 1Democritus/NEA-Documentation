@@ -570,9 +570,9 @@ def SQLCall(month, disease):
     month = month.lower()
     monthConversion = {"january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6, "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12}
     month = monthConversion[month]
-    range = calendar.monthrange(2025, month)[1]
-    monthFirst = datetime.date(2025, month, 1)
-    monthLast = datetime.date(2025, month, range)
+    range = calendar.monthrange(2026, month)[1]
+    monthFirst = datetime.date(2026, month, 1)
+    monthLast = datetime.date(2026, month, range)
     sqlText = f"""
 SELECT AppointmentDate FROM Appointment, LinkedCondition
 WHERE AppointmentDate >= %s AND AppointmentDate <= %s AND LinkedCondition.TreatmentName = Appointment.TreatmentName AND LinkedCondition.ConditionName = %s
