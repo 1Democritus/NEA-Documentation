@@ -38,10 +38,13 @@ class Interface:
         self.screen.option_add("*Button.Font", font)
         self.screen.option_add("*Label.Font", font)
         self.screen.option_add("*Entry.Font", font)
+
         self.accountDictionary = HashTable()
         for [email, password, accessCode] in accountDetails:
             self.accountDictionary.add(email, password, accessCode)
+        self.mainMenu()
 
+    def mainMenu(self):
         self.registryLabel = Label(self.screen, text = "Welcome back! Please sign in or create a new account so that we can help with your health concerns")
         self.registryLabel.pack(expand = True, fill = 'both')
         self.loginButton = Button(self.screen, text = "SIGN IN", command = self.login)
@@ -72,6 +75,8 @@ class Interface:
         self.accesscodeText.pack(expand = True, fill = 'both')
         self.loginButton = Button(self.screen, text = "Login", command = self.checkLogin)
         self.loginButton.pack(expand = True, fill = 'both')
+        self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
+        self.returnButton.pack(expand = True, fill = "both")
 
     def checkLogin(self):
         email = self.emailText.get()
@@ -107,6 +112,8 @@ class Interface:
         self.passwordText.pack(expand = True, fill = 'both')
         self.registerButton = Button(self.screen, text = "Register account", command = self.checkRegistry)
         self.registerButton.pack(expand = True, fill = 'both')
+        self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
+        self.returnButton.pack(expand = True, fill = "both")
 
     def checkRegistry(self):
         email = self.emailText.get()
@@ -237,7 +244,10 @@ VALUES (%s,%s,%s,%s,%s);
         self.sorethroatButton.grid(row = 2, column = 3, sticky ="nsew")
         self.symptomSubmit = Button(self.screen, text = "Click here to submit", command = self.readyPrediction)
         self.symptomSubmit.grid(row = 3, column = 1, sticky ="nsew")
+        self.returnForm = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
+        self.returnForm.pack(expand = True, fill = "both")
         self.configureGrid(rowCount = 4, columnCount = 4, sticky ="nsew")
+
     
     def readyPrediction(self):
         self.clearScreen()
