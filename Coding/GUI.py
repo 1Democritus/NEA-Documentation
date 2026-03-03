@@ -45,6 +45,7 @@ class Interface:
         self.mainMenu()
 
     def mainMenu(self):
+        self.clearScreen() #not needed initially, but important as clients can return here from registration or login
         self.registryLabel = Label(self.screen, text = "Welcome back! Please sign in or create a new account so that we can help with your health concerns")
         self.registryLabel.pack(expand = True, fill = 'both')
         self.loginButton = Button(self.screen, text = "SIGN IN", command = self.login)
@@ -245,7 +246,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.symptomSubmit = Button(self.screen, text = "Click here to submit", command = self.readyPrediction)
         self.symptomSubmit.grid(row = 3, column = 1, sticky ="nsew")
         self.returnForm = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
-        self.returnForm.pack(expand = True, fill = "both")
+        self.returnForm.grid(row = 3, column = 2, sticky = "nsew")
         self.configureGrid(rowCount = 4, columnCount = 4, sticky ="nsew")
 
     
