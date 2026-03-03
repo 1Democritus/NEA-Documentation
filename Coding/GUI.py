@@ -187,7 +187,7 @@ VALUES (%s,%s,%s,%s,%s);
         except:
             self.accountEmail = self.newEmail
         self.clearScreen()
-        self.formLabel = Label(self.screen, text = "Please enter your details so the Oracle can give the most accurate predictions")
+        self.formLabel = Label(self.screen, text = "Please enter your details so the Oracle can give the most accurate predictions", wraplength = 250)
         self.formLabel.grid(row = 0, column = 1, sticky ="nsew")
         self.heartrateLabel = Label(self.screen, text = "Enter heartrate")
         self.heartrateLabel.grid(row = 1, column = 0, sticky ="nsew")
@@ -197,7 +197,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.ageLabel.grid(row = 1, column = 1, sticky ="nsew")
         self.ageInput = Entry(self.screen)
         self.ageInput.grid(row = 2, column = 1, sticky ="nsew")
-        self.bloodpressureLabel = Label(self.screen, text = "Enter your blood pressure (in the format systolic/diastolic)")
+        self.bloodpressureLabel = Label(self.screen, text = "Enter your blood pressure (in the format systolic/diastolic)", wraplength = 250)
         self.bloodpressureLabel.grid(row = 1, column = 2, sticky ="nsew")
         self.bloodpressureInput = Entry(self.screen)
         self.bloodpressureInput.grid(row = 2, column = 2, sticky ="nsew")
@@ -225,7 +225,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.runnynose = 0
         self.sorethroat = 0
         self.clearScreen()
-        self.symptomLabel = Label(self.screen, text = "Please click on the symptoms that you have experienced")
+        self.symptomLabel = Label(self.screen, text = "Please click on the symptoms that you have experienced", wraplength = 250)
         self.symptomLabel.grid(row = 0, column = 1, sticky ="nsew")
         self.bodyacheButton = Button(self.screen, text = "body ache", command = lambda:self.changeSymptom(self.bodyacheButton, "body ache", "bodyache"))
         self.bodyacheButton.grid(row = 1, column = 0, sticky ="nsew")
@@ -245,9 +245,9 @@ VALUES (%s,%s,%s,%s,%s);
         self.sorethroatButton.grid(row = 2, column = 3, sticky ="nsew")
         self.symptomSubmit = Button(self.screen, text = "Click here to submit", command = self.readyPrediction)
         self.symptomSubmit.grid(row = 3, column = 1, sticky ="nsew")
-        self.returnForm = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
+        self.returnForm = Button(self.screen, text = "Return to form", command = self.displayForm)
         self.returnForm.grid(row = 3, column = 2, sticky = "nsew")
-        self.configureGrid(rowCount = 4, columnCount = 4, sticky ="nsew")
+        self.configureGrid(rowCount = 4, columnCount = 4)
 
     
     def readyPrediction(self):
@@ -261,6 +261,8 @@ VALUES (%s,%s,%s,%s,%s);
         if self.disease == "Healthy":
             Oracle = Label(self.screen, text = "Good news, you don't have a disease! You should rest for a couple days, and then you should be fine. Thank you for using this service!")
             Oracle.pack(expand = True, fill = 'both')
+            self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
+            self.returnButton.pack(expand = True, fill = "both")
         else:
             self.Oracle = Label(self.screen, text = "You have the disease " + self.disease)
             self.Oracle.pack(expand = True, fill = 'both')
@@ -307,6 +309,8 @@ VALUES (%s,%s,%s,%s,%s);
             self.confirmation.pack(expand = True, fill = 'both')
             self.calendarButton = Button(self.screen, text = "Add to Calendar", command = self.addToCalendar)
             self.calendarButton.pack(expand = True, fill = 'both')
+            self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
+            self.returnButton.pack(expand = True, fill = "both")
         except Exception as e:
             self.appointmentConfirm.config(text = "Please ensure you've entered the date in the right format, and that you haven't entered an unavailable date")
         
@@ -333,6 +337,8 @@ VALUES (%s,%s,%s,%s,%s);
             self.clearScreen()
             self.finalLabel = Label(text = finalMsg)
             self.finalLabel.pack(expand = True, fill = 'both')
+            self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
+            self.returnButton.pack(expand = True, fill = "both")
 
     def changeSymptom(self, button, symptomName, symptom):
         textContent = button.cget('text') #acquires text variable from the button
@@ -353,11 +359,14 @@ VALUES (%s,%s,%s,%s,%s);
             self.age = int(self.ageInput.get())
             if self.age < 0 or self.age > 120:
                 raise ValueError("Please enter your actual age")
-            bloodpressure = self.bloodpressureInput.get().split("/")
+            try:
+                bloodpressure = self.bloodpressureInput.get().split("/")
+                self.systolic = float(bloodpressure[0])
+                self.diastolic = float(bloodpressure[1])
+            except:
+                raise AttributeError("Blood pressure should have float values separated by a /")
             if len(bloodpressure) != 2:
-                raise AttributeError("Blood pressure should have two values separated by a /")
-            self.systolic = int(bloodpressure[0])
-            self.diastolic = int(bloodpressure[1])
+                raise AttributeError("Blood pressure should have float values separated by a /")
             self.bodytemperature = float(self.bodytemperatureInput.get())
             if self.bodytemperature < 25 or self.bodytemperature > 45:
                 raise ValueError("Please enter a valid temperature between 25 and 45 degrees Celsius")
