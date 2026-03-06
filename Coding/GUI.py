@@ -481,6 +481,7 @@ VALUES (%s,%s,%s,%s,%s);
 INSERt INTO Appointment (AppointmentID, PatientID, DoctorID, TreatmentName, AppointmentDate, AppointmentTime, RoomNumber)
 VALUES (%s, %s, %s, %s, %s, %s, %s);''', 
 (appointmentID, patientID, doctorID, treatment, date, time, room))
+            self.addMenu.config(text = "Last appointment entered has been appended successfully")
         except:
             self.addMenu.config(text = "Either you've already added this appointment or some of the data is in the wrong format")
         
