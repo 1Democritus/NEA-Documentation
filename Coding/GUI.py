@@ -482,8 +482,12 @@ INSERt INTO Appointment (AppointmentID, PatientID, DoctorID, TreatmentName, Appo
 VALUES (%s, %s, %s, %s, %s, %s, %s);''', 
 (appointmentID, patientID, doctorID, treatment, date, time, room))
             self.addMenu.config(text = "Last appointment entered has been appended successfully")
-        except:
-            self.addMenu.config(text = "Either you've already added this appointment or some of the data is in the wrong format")
+        except TypeError:
+            self.addMenu.config(text = "some of the data is in the wrong format")
+        except psycopg2.errors.UniqueViolation: #meaning record is alrezdy on SQL
+            self.addMenu.config(text = "You've already added this appointment")
+        except psycopg2.Error: #every other database error, signalling issues with data format
+            self.addMenu.config(text = "some of the data is in the wrong format")
         
     def configureGrid(self, rowCount, columnCount):
         for i in range(rowCount):
