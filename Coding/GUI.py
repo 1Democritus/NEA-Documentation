@@ -274,12 +274,15 @@ VALUES (%s,%s,%s,%s,%s);
     def returnDates(self):
         month = self.month.get()
         self.unavailableDates = SQLCall(month, self.disease)
-        self.displayDates = Label(self.screen, height = 10, wraplength = 400, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
-        self.displayDates.pack(expand = True, fill = 'both')
-        self.preferredTime = Entry(self.screen)
-        self.preferredTime.pack(expand = True, fill = 'both')
-        self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment, please enter your date in the format dd/mm/yyyy", command = self.confirmAppointment)
-        self.appointmentConfirm.pack(expand = True, fill = 'both')
+        if not self.unavailableDates:
+            self.Oracle.config(text = "Please enter a valid month")
+        else:
+            self.displayDates = Label(self.screen, height = 10, wraplength = 400, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
+            self.displayDates.pack(expand = True, fill = 'both')
+            self.preferredTime = Entry(self.screen)
+            self.preferredTime.pack(expand = True, fill = 'both')
+            self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment, please enter your date in the format dd/mm/yyyy", command = self.confirmAppointment)
+            self.appointmentConfirm.pack(expand = True, fill = 'both')
     
     def confirmAppointment(self):
         try:
@@ -574,7 +577,10 @@ def getPredictions(details):
 def SQLCall(month, disease):
     month = month.lower()
     monthConversion = {"january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6, "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12}
-    month = monthConversion[month]
+    try:
+        month = monthConversion[month]
+    except:
+        return False
     range = calendar.monthrange(2026, month)[1]
     monthFirst = datetime.date(2026, month, 1)
     monthLast = datetime.date(2026, month, range)
