@@ -76,6 +76,8 @@ class Interface:
         self.accesscodeText.pack(expand = True, fill = 'both')
         self.loginButton = Button(self.screen, text = "Login", command = self.checkLogin)
         self.loginButton.pack(expand = True, fill = 'both')
+        self.resetButton = Button(self.screen, text = "Forgot password?", command = self.resetPassword)
+        self.resetButton.pack(expand = True, fill = "both")
         self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
         self.returnButton.pack(expand = True, fill = "both")
 
@@ -98,6 +100,38 @@ class Interface:
                 self.displayForm()
             else:
                 self.staffMenu()
+
+    def resetPassword(self):
+        self.clearScreen()
+        self.resetLabel = Label(self.screen, text = "Please enter your new password below. You will be redirected to the main menu once this is successful", wraplength = 250)
+        self.resetLabel.pack(expand = True, fill = "both")
+        self.emailLabel = Label(self.screen, text = "Enter email")
+        self.emailLabel.pack(expand = True, fill = 'both')
+        self.emailEntry = Entry(self.screen)
+        self.emailEntry.pack(expand = True, fill = "both")
+        self.passwordLabel = Label(self.screen, text = "Enter new password")
+        self.passwordLabel.pack(expand = True, fill = 'both')
+        self.passwordEntry = Entry(self.screen)
+        self.passwordEntry.pack(expand = True, fill = "both")
+        self.updateButton = Button(self.screen, text = "SUBMIT", command = self.updatePassword)
+        self.updateButton.pack(expand = True, fill = "both")
+    
+    def updatePassword(self):
+        email = self.emailEntry.get()
+        password = HashTable.rollingHash(self.passwordEntry.get())
+        if self.accountDictionary.search(email) == None:
+            self.emailLabel.config(text = "Email not found in database. Please enter your actual email")
+        else:
+            conn = psycopg2.connect(dbname = "logins", **PARAMETERS)
+            conn.autocommit = True
+            cursor = conn.cursor()
+            statement = '''UPDATE loginDetails
+            SET password = %s
+            WHERE email = %s;
+            '''
+            cursor.execute(statement, (password, email))
+            conn.close()
+            self.mainMenu()
     
     def register(self):
         self.clearScreen()
