@@ -118,9 +118,12 @@ class Interface:
     
     def updatePassword(self):
         email = self.emailEntry.get()
-        password = HashTable.rollingHash(self.passwordEntry.get())
+        password = self.passwordEntry.get()
+        passwordHashed = HashTable.rollingHash(password)
         if self.accountDictionary.search(email) == None:
-            self.emailLabel.config(text = "Email not found in database. Please enter your actual email")
+            self.resetLabel.config(text = "Email not found in database. Please enter your actual email")
+        elif not strongPasswordChecker(password):
+            self.resetLabel.config(text = "Password not strong enough. Please enter a stronger password")
         else:
             conn = psycopg2.connect(dbname = "logins", **PARAMETERS)
             conn.autocommit = True
@@ -129,7 +132,7 @@ class Interface:
             SET password = %s
             WHERE email = %s;
             '''
-            cursor.execute(statement, (password, email))
+            cursor.execute(statement, (passwordHashed, email))
             conn.close()
             self.mainMenu()
     
