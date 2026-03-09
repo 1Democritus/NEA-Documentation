@@ -1,5 +1,5 @@
 #import needed files
-from featureEngineering import labels, features
+from featureEngineering import labels, features, MEAN, STD
 import nn
 #import needed modules
 from tkinter import *
@@ -607,8 +607,9 @@ def validEmailChecker(email, accountDictionary):
     return re.fullmatch(validExpression, email, re.IGNORECASE), accountDictionary.search(email) != None
 
 def getPredictions(details, Oracle):
-    #combine features in format of database and label it xtest=
-    evaluation = Oracle.feedForward(details.reshape(-1, 1))    
+    #combine features in format of database and label it xtest
+    scaledDetails = (details.reshape(-1, 1) - MEAN) / STD #if these aren't scaled down accuracy will be 0%
+    evaluation = Oracle.feedForward()    
     prediction = numpy.argmax(evaluation[3], axis = 0)
     conversion = {0: "Healthy", 1: "Bronchitis", 2: "Flu", 3: "Cold", 4: "Pneumonia"}
     return conversion[prediction[0]]
