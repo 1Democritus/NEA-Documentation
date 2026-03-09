@@ -316,7 +316,7 @@ VALUES (%s,%s,%s,%s,%s);
     def returnDates(self):
         month = self.month.get()
         self.unavailableDates = SQLCall(month, self.disease)
-        if not self.unavailableDates:
+        if self.unavailableDates == False:
             self.Oracle.config(text = "Please enter a valid month")
         else:
             try:
