@@ -609,7 +609,7 @@ def validEmailChecker(email, accountDictionary):
 def getPredictions(details, Oracle):
     #combine features in format of database and label it xtest
     scaledDetails = (details.reshape(-1, 1) - MEAN) / STD #if these aren't scaled down accuracy will be 0%
-    evaluation = Oracle.feedForward()    
+    evaluation = Oracle.feedForward(scaledDetails)    
     prediction = numpy.argmax(evaluation[3], axis = 0)
     conversion = {0: "Healthy", 1: "Bronchitis", 2: "Flu", 3: "Cold", 4: "Pneumonia"}
     return conversion[prediction[0]]
