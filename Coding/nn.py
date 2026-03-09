@@ -24,7 +24,7 @@ class DNN():
     hiddenBiasDerivative = numpy.sum(hiddenDerivative, axis = 1, keepdims = True) / Ysize
     return hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative
 
-  def updateParameters(self, hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative, L2constant = 0.01):
+  def updateParameters(self, hiddenWeightDerivative, hiddenBiasDerivative, finalWeightDerivative, finalBiasDerivative, L2constant = 0.001):
     #subtract derivative multiplied by learning rate from variables
     self.__w1 -= self.__learningRate * (hiddenWeightDerivative + L2constant * self.__w1) #L2constant is L2 regularisation to prevent weights exploding
     self.__b1 -= self.__learningRate * hiddenBiasDerivative
