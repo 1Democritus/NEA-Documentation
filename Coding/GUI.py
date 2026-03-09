@@ -319,12 +319,8 @@ VALUES (%s,%s,%s,%s,%s);
         if self.unavailableDates == False:
             self.Oracle.config(text = "Please enter a valid month")
         else:
-            try:
-                self.displayDates.destroy()
-                self.preferredTime.destroy()
-                self.appointmentConfirm.destroy()
-            except:
-                pass
+            self.month.destroy()
+            self.monthButton.destroy()
             self.displayDates = Label(self.screen, height = 10, wraplength = 400, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
             self.displayDates.pack(expand = True, fill = 'both')
             self.preferredTime = Entry(self.screen)
