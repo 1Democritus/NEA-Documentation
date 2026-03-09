@@ -25,6 +25,10 @@ with psycopg2.connect(dbname = "logins", **PARAMETERS) as conn:
     cursor.execute(query)
     accountDetails = cursor.fetchall()
 
+#pretraining model for later predictions
+model = nn.DNN(learningRate = 0.001, columnSize = features.shape[0], hiddenSize = 50, outputSize = labels.shape[0])
+Oracle = nn.trainModel(model = model, epochCount = 5000, label = labels, trainset = features)
+
 class Interface:
     #open main menu of interface
     def __init__(self):
@@ -290,7 +294,7 @@ VALUES (%s,%s,%s,%s,%s);
     def readyPrediction(self):
         self.clearScreen()
         details = numpy.array([self.age, self.isFemale, self.heartrate, self.bodytemperature, self.oxygen, self.systolic, self.diastolic, self.bodyache, self.cough, self.shortnessbreath, self.fatigue, self.fever, self.headache, self.runnynose, self.sorethroat])
-        self.disease = getPredictions(details)
+        self.disease = getPredictions(details, Oracle)
         self.displayOptions()
         #prepare to pass details into the machine
 
@@ -602,10 +606,8 @@ def validEmailChecker(email, accountDictionary):
     validExpression = rf"^[^._\-\/?!*()@][^/?!*()@]*@({domainPattern})$"
     return re.fullmatch(validExpression, email, re.IGNORECASE), accountDictionary.search(email) != None
 
-def getPredictions(details):
+def getPredictions(details, Oracle):
     #combine features in format of database and label it xtest=
-    model = nn.DNN(learningRate = 0.001, columnSize = features.shape[0], hiddenSize = 50, outputSize = labels.shape[0])
-    Oracle = nn.trainModel(model = model, epochCount = 5000, label = labels, trainset = features)
     evaluation = Oracle.feedForward(details.reshape(-1, 1))    
     prediction = numpy.argmax(evaluation[3], axis = 0)
     conversion = {0: "Healthy", 1: "Bronchitis", 2: "Flu", 3: "Cold", 4: "Pneumonia"}
