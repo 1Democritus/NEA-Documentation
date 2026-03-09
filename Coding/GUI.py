@@ -385,12 +385,12 @@ VALUES (%s,%s,%s,%s,%s);
             self.returnButton.pack(expand = True, fill = "both")
 
     def changeSymptom(self, button, symptomName, symptom):
-        textContent = button.cget('text') #acquires text variable from the button
-        if textContent == symptomName:
-            button.config(text = "Click if you made a mistake and don't have " + symptomName)
+        clr = button.cget('background') #acquires text variable from the button
+        if clr == "white":
+            button.config(background = "red")
             setattr(self, symptom, 1) #if changed the variable locally change wouldn't happen outside of subroutine
         else:
-            button.config(text = symptomName)
+            button.config(background = "white")
             setattr(self, symptom, 0)
 
     def storeDetails(self):
