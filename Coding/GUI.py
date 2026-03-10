@@ -43,6 +43,8 @@ class Interface:
         self.screen.option_add("*Button.Font", font)
         self.screen.option_add("*Label.Font", font)
         self.screen.option_add("*Entry.Font", font)
+        self.screen.option_add("*Label.Background", "blue")
+        self.screen.configure(background = "black")
 
         self.accountDictionary = HashTable()
         for [email, password, accessCode] in accountDetails:
