@@ -448,9 +448,9 @@ VALUES (%s,%s,%s,%s,%s);
         conn = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
         conn.autocommit = True
         cursor = conn.cursor()
-        cursor.execute('''SELECT AppointmentID, PatientID, DoctorID, AppointmentDate FROM Appointment;''')
+        cursor.execute('''SELECT AppointmentID, PatientID, DoctorID FROM Appointment;''')
         self.appointments = cursor.fetchall()
-        self.listOfAppointments = Label(self.screen, height = 10, wraplength = 400, text = f"Here are all the appointments on the database, please enter the id of the one you want to remove: {self.appointments}")
+        self.listOfAppointments = Label(self.screen, height = 10, wraplength = 300, text = f"Here are all the appointments on the database, please enter the id of the one you want to remove: {self.appointments}")
         self.listOfAppointments.pack(expand = True, fill = 'both')
         self.removedID = Entry(self.screen)
         self.removedID.pack(expand = True, fill = 'both')
