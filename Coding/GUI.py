@@ -3,7 +3,7 @@ from featureEngineering import labels, features, MEAN, STD
 import nn
 #import needed modules
 from tkmacosx import Button #allows tkinter in macbook to use different colours for buttons
-from tkinter import Tk, Label, Entry, Toplevel
+from tkinter import Tk, Toplevel, Entry, Label
 import string
 import numpy
 import psycopg2
@@ -31,7 +31,8 @@ model = nn.DNN(learningRate = 0.001, columnSize = features.shape[0], hiddenSize 
 Oracle = nn.trainModel(model = model, epochCount = 5000, label = labels, trainset = features)
 
 class Interface:
-    #open main menu of interface
+    
+        #open main menu of interface
     def __init__(self):
         self.screen = Tk()
         self.screen.geometry("500x500")
@@ -87,6 +88,7 @@ class Interface:
         self.resetButton.pack(expand = True, fill = "both")
         self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
         self.returnButton.pack(expand = True, fill = "both")
+        self.screen.update_idletasks()
 
     def checkLogin(self):
         email = self.emailText.get()
@@ -122,6 +124,7 @@ class Interface:
         self.passwordEntry.pack(expand = True, fill = "both")
         self.updateButton = Button(self.screen, text = "SUBMIT", command = self.updatePassword)
         self.updateButton.pack(expand = True, fill = "both")
+        self.screen.update_idletasks()
     
     def updatePassword(self):
         email = self.emailEntry.get()
@@ -159,6 +162,7 @@ class Interface:
         self.registerButton.pack(expand = True, fill = 'both')
         self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
         self.returnButton.pack(expand = True, fill = "both")
+        self.screen.update_idletasks()
 
     def checkRegistry(self):
         email = self.emailText.get()
@@ -193,6 +197,7 @@ class Interface:
         self.telephone.pack(expand = True, fill = 'both')
         self.registryConfirmButton = Button(self.screen, text = "Submit details", command = self.storeNewAccount)
         self.registryConfirmButton.pack(expand = True, fill = 'both')
+        self.screen.update_idletasks()
 
     def storeNewAccount(self):
         forename = self.forename.get()
@@ -258,6 +263,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.detailsButton = Button(self.screen, text = "Click here to submit", command = self.storeDetails)
         self.detailsButton.grid(row = 5, column = 1, sticky ="nsew")
         self.configureGrid(rowCount = 6, columnCount = 3)
+        self.screen.update_idletasks()
     
     def displaySymptoms(self):
         self.bodyache = 0
@@ -292,6 +298,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.returnForm = Button(self.screen, text = "Return to form", command = self.displayForm)
         self.returnForm.grid(row = 3, column = 2, sticky = "nsew")
         self.configureGrid(rowCount = 4, columnCount = 4)
+        self.screen.update_idletasks()
 
     
     def readyPrediction(self):
@@ -314,6 +321,7 @@ VALUES (%s,%s,%s,%s,%s);
             self.month.pack(expand = True, fill = 'both')
             self.monthButton = Button(self.screen, text = "Display dates", command = self.returnDates)
             self.monthButton.pack(expand = True, fill = 'both')
+            self.screen.update_idletasks()
 
     def returnDates(self):
         month = self.month.get()
@@ -330,6 +338,7 @@ VALUES (%s,%s,%s,%s,%s);
             self.preferredTime.pack(expand = True, fill = 'both')
             self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment", command = self.confirmAppointment)
             self.appointmentConfirm.pack(expand = True, fill = 'both')
+            self.screen.update_idletasks()
     
     def confirmAppointment(self):
         try:
@@ -464,6 +473,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.removeAppointmentButton.pack(expand = True, fill = 'both')
         self.returnStaffButton = Button(self.screen, text = "Return to Menu", command = lambda: (conn.close(), self.staffMenu()))
         self.returnStaffButton.pack(expand = True, fill = 'both')
+        self.screen.update_idletasks()
 
     def removeSQL(self, cursor):
         ID = self.removedID.get()
@@ -521,6 +531,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.STAFFreturnToMenu = Button(self.screen, text = "Return to main menu", command = lambda: (conn.close(), self.staffMenu()))
         self.STAFFreturnToMenu.grid(row = 4, column = 2, sticky ="nsew")
         self.configureGrid(rowCount = 5, columnCount = 5)
+        self.screen.update_idletasks()
     
     def addSQL(self, cursor):
         try:
@@ -562,6 +573,7 @@ class CalendarPopup(Toplevel):
         self.entryPassword.pack(expand = True, fill = "both")
         self.submitButton = Button(self, text = "Submit values", command = self.submitValues)
         self.submitButton.pack(expand = True, fill = "both")
+        self.update_idletasks()
     
     def submitValues(self):
         self.result = (self.entryUsername.get(), self.entryPassword.get())
