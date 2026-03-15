@@ -308,11 +308,11 @@ VALUES (%s,%s,%s,%s,%s);
             self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
             self.returnButton.pack(expand = True, fill = "both")
         else:
-            self.Oracle = Label(self.screen, text = "You have the disease " + self.disease)
+            self.Oracle = Label(self.screen, text = "You have the disease " + self.disease + ". Please below enter the month in which you want the appointment", wraplength = 400)
             self.Oracle.pack(expand = True, fill = 'both')
             self.month = Entry(self.screen)
             self.month.pack(expand = True, fill = 'both')
-            self.monthButton = Button(self.screen, text = "Display possible dates in above entered month", command = self.returnDates)
+            self.monthButton = Button(self.screen, text = "Display dates", command = self.returnDates)
             self.monthButton.pack(expand = True, fill = 'both')
 
     def returnDates(self):
@@ -324,11 +324,11 @@ VALUES (%s,%s,%s,%s,%s);
             self.Oracle.destroy()
             self.month.destroy()
             self.monthButton.destroy()
-            self.displayDates = Label(self.screen, height = 10, wraplength = 400, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date.")
+            self.displayDates = Label(self.screen, height = 10, wraplength = 400, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date in the format YYYY-MM-DD.")
             self.displayDates.pack(expand = True, fill = 'both')
             self.preferredTime = Entry(self.screen)
             self.preferredTime.pack(expand = True, fill = 'both')
-            self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment, please enter your date in the format dd/mm/yyyy", command = self.confirmAppointment)
+            self.appointmentConfirm = Button(self.screen, text = "Confirm Appointment", command = self.confirmAppointment)
             self.appointmentConfirm.pack(expand = True, fill = 'both')
     
     def confirmAppointment(self):
@@ -348,14 +348,18 @@ VALUES (%s,%s,%s,%s,%s);
                 try:
                     id = patientID + 'Kooth' + str(count)
                     cursor.execute(statement, (id, patientID, self.treatment, self.date))
-                except:
+                except psycopg2.errors.UniqueViolation: #appointment already exists
                     id = None
                     count += 1
+                except Exception: #issue with data formatting
+                    print(e)
+                    self.displayDates.config(text = f"Please ensure your date is valid and isn't in the unavailable list: {self.unavailableDates}")
+                    break
 
             connection.close()
 
             self.clearScreen()
-            self.confirmation = Label(self.screen, text = "Done! We have scheduled your appointment. Click the button below to add the appointment to calendar. Otherwise, thank you for using our service!")
+            self.confirmation = Label(self.screen, text = "Done! We have scheduled your appointment. Click the button below to add the appointment to calendar. Otherwise, thank you for using our service!", wraplength = 400)
             self.confirmation.pack(expand = True, fill = 'both')
             self.calendarButton = Button(self.screen, text = "Add to Calendar", command = self.addToCalendar)
             self.calendarButton.pack(expand = True, fill = 'both')
@@ -370,7 +374,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.screen.wait_window(popup) #waits to proceed until popup window is destroyed
         username, password = popup.result
         dateValues = self.date.split("/")
-        year, month, day = int(dateValues[2]), int(dateValues[1]), int(dateValues[0])
+        year, month, day = int(dateValues[0]), int(dateValues[1]), int(dateValues[2])
         try:
             client = caldav.DAVClient(url = "https://caldav.icloud.com/", username = username, password = password)
             myCalendar = client.principal().calendars()[0]
