@@ -1,7 +1,7 @@
 import numpy as np
 import pandas
 
-
+#load database
 df = pandas.read_csv("disease_diagnosis.csv")
 
 #convert label from qualitative to one-hot-encoding
@@ -9,7 +9,7 @@ def OHElabel(value):
     conversionDict = {"Healthy": [1,0,0,0,0], "Bronchitis": [0,1,0,0,0], "Flu":[0,0,1,0,0], "Cold": [0,0,0,1,0], "Pneumonia": [0,0,0,0,1]}
     return conversionDict[value]
 
-def convertGender(value):
+def convertGender(value): #encode to trainable data
     return 0 if value == "Male" else 1
 
 df[["Systolic_Pressure", "Diastolic_Pressure"]] = df["Blood_Pressure_mmHg"].str.split('/', n = 1, expand = True).astype(float)
