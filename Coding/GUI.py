@@ -10,6 +10,8 @@ import psycopg2
 import calendar, datetime
 import caldav
 import re
+
+#load parameters needed to access the databases
 import os
 from dotenv import load_dotenv
 load_dotenv(override=True)
@@ -47,6 +49,7 @@ class Interface:
         self.screen.option_add("*Label.Background", "blue")
         self.screen.configure(background = "blue")
 
+        #load account data into a hastable
         self.accountDictionary = HashTable()
         for [email, password, accessCode] in accountDetails:
             self.accountDictionary.add(email, password, accessCode)
@@ -88,11 +91,11 @@ class Interface:
         self.resetButton.pack(expand = True, fill = "both")
         self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
         self.returnButton.pack(expand = True, fill = "both")
-        self.screen.update_idletasks()
+        self.screen.update_idletasks() #to make sure entries immediately show up when the page opens
 
     def checkLogin(self):
         email = self.emailText.get()
-        password = HashTable.rollingHash(self.passwordText.get())
+        password = HashTable.rollingHash(self.passwordText.get()) #convert password into hashed version
         accessCode = 0
         DBresults = self.accountDictionary.search(email)
         accessCode = HashTable.rollingHash(self.accesscodeText.get())
@@ -101,13 +104,11 @@ class Interface:
         else:
             DBpassword = DBresults[0]
             DBaccessCode = DBresults[1]
-            if (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode == 0:
+            if (password != DBpassword or accessCode != DBaccessCode):
                 self.loginMain.config(text = "wrong details")
-            elif (password != DBpassword or accessCode != DBaccessCode) and DBaccessCode != 0:
-                self.loginMain.config(text = "wrong details")
-            elif accessCode == 0:
+            elif accessCode == 0: #meaning successful login as patient
                 self.displayForm()
-            else:
+            else: #meaning successful login as staff
                 self.staffMenu()
 
     def resetPassword(self):
@@ -129,21 +130,21 @@ class Interface:
     def updatePassword(self):
         email = self.emailEntry.get()
         password = self.passwordEntry.get()
-        passwordHashed = HashTable.rollingHash(password)
+        passwordHashed = HashTable.rollingHash(password) #to store hashed version in database
         if self.accountDictionary.search(email) == None:
             self.resetLabel.config(text = "Email not found in database. Please enter your actual email")
         elif not strongPasswordChecker(password):
             self.resetLabel.config(text = "Password not strong enough. Please enter a stronger password")
         else:
             conn = psycopg2.connect(dbname = "logins", **PARAMETERS)
-            conn.autocommit = True
+            conn.autocommit = True #commit immediately is effected in database
             cursor = conn.cursor()
             statement = '''UPDATE loginDetails
             SET password = %s
             WHERE email = %s;
             '''
             cursor.execute(statement, (passwordHashed, email))
-            conn.close()
+            conn.close() #for robustness
             self.mainMenu()
     
     def register(self):
@@ -160,19 +161,19 @@ class Interface:
         self.passwordText.pack(expand = True, fill = 'both')
         self.registerButton = Button(self.screen, text = "Register account", command = self.checkRegistry)
         self.registerButton.pack(expand = True, fill = 'both')
-        self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
+        self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu) #for bidirectional navigation
         self.returnButton.pack(expand = True, fill = "both")
         self.screen.update_idletasks()
 
     def checkRegistry(self):
         email = self.emailText.get()
         password = self.passwordText.get()
-        valid, used = validEmailChecker(email, self.accountDictionary)
+        valid, used = validEmailChecker(email, self.accountDictionary) #checks using regular expressions if email is valid
         if not strongPasswordChecker(password):
             self.registryMain.config(text = "Password not strong enough. Please choose a different password.")
-        elif used:
+        elif used: #patient should be logging in not registering
             self.registryMain.config(text = "Email is already in the database")
-        elif not valid:
+        elif not valid: #not a proper email
             self.registryMain.config(text = "Not valid email. Please enter your actual email.")
         else:
             self.newEmail = email
@@ -180,6 +181,7 @@ class Interface:
             self.enterDatabaseDetails()
     
     def enterDatabaseDetails(self):
+        #submit data needed to be stored for future appointments
         self.clearScreen()
         self.newRegDetails = Label(self.screen, text = "Welcome to our app! Please enter these details so that we can make appointments for you in the future!")
         self.newRegDetails.pack(expand = True, fill = 'both')
@@ -203,6 +205,7 @@ class Interface:
         forename = self.forename.get()
         surname = self.surname.get()
         telephone = self.telephone.get()
+        #check data validity
         if not telephone.isnumeric() or len(telephone) != 11:
             self.telephoneLabel.config(text = "Please enter a valid telephone number of length 11")
         elif not surname.isalpha():
@@ -220,24 +223,33 @@ class Interface:
             with psycopg2.connect(dbname = 'appointments', **PARAMETERS) as conn2:
                 conn2.autocommit = True
                 cursor = conn2.cursor()
-                id = forename[0:4] + surname[0:4] + telephone[0:4]
+                id = forename[0:4] + surname[0:4] + telephone[0:4] + "1" #quick method of generating unique id for patients
                 statement = '''
 INSERT INTO Patient(PatientID, Forename, Surname, telephoneNo, email)
 VALUES (%s,%s,%s,%s,%s);
 '''
-                cursor.execute(statement, (id, forename, surname, telephone, self.newEmail))
+                #robustness against two patients getting the same patient id
+                xtra = 1
+                executed = False
+                while not executed:
+                    xtra += 1
+                    try:
+                        cursor.execute(statement, (id, forename, surname, telephone, self.newEmail))
+                        executed = True
+                    except:
+                        id = id[:-2] + str(xtra)
             self.displayForm()
             
         
     def displayForm(self):
         self.isFemale = False
         try:
-            self.accountEmail = self.emailText.get()
+            self.accountEmail = self.emailText.get() #for logged in users
         except:
-            self.accountEmail = self.newEmail
+            self.accountEmail = self.newEmail #for registered users
         self.clearScreen()
         self.formLabel = Label(self.screen, text = "Please enter your details so the Oracle can give the most accurate predictions", wraplength = 250)
-        self.formLabel.grid(row = 0, column = 1, sticky ="nsew")
+        self.formLabel.grid(row = 0, column = 1, sticky ="nsew") #use sticky to get buttons to expand
         self.heartrateLabel = Label(self.screen, text = "Enter heartrate")
         self.heartrateLabel.grid(row = 1, column = 0, sticky ="nsew")
         self.heartrateInput = Entry(self.screen)
@@ -262,6 +274,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.oxygenInput.grid(row = 4, column = 2, sticky ="nsew")
         self.detailsButton = Button(self.screen, text = "Click here to submit", command = self.storeDetails)
         self.detailsButton.grid(row = 5, column = 1, sticky ="nsew")
+        #give widgets weight for them to expand
         self.configureGrid(rowCount = 6, columnCount = 3)
         self.screen.update_idletasks()
     
@@ -303,13 +316,15 @@ VALUES (%s,%s,%s,%s,%s);
     
     def readyPrediction(self):
         self.clearScreen()
+        #arrange the details in the format used in the trainset 
         details = numpy.array([self.age, self.isFemale, self.heartrate, self.bodytemperature, self.oxygen, self.systolic, self.diastolic, self.bodyache, self.cough, self.shortnessbreath, self.fatigue, self.fever, self.headache, self.runnynose, self.sorethroat])
+        #pass details into trained NN for prediction
         self.disease = getPredictions(details, Oracle)
         self.displayOptions()
-        #prepare to pass details into the machine
 
     def displayOptions(self):
         if self.disease == "Healthy":
+            #no disease therefore no appointment needed
             Oracle = Label(self.screen, text = "Good news, you don't have a disease! You should rest for a couple days, and then you should be fine. Thank you for using this service!")
             Oracle.pack(expand = True, fill = 'both')
             self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
@@ -326,12 +341,14 @@ VALUES (%s,%s,%s,%s,%s);
     def returnDates(self):
         month = self.month.get()
         self.unavailableDates = SQLCall(month, self.disease)
-        if self.unavailableDates == False:
+        if self.unavailableDates == False: #therefore query wasn't with a valid data for "AppointmentDate"
             self.Oracle.config(text = "Please enter a valid month")
         else:
+            #get rid of unneeded widgets
             self.Oracle.destroy()
             self.month.destroy()
             self.monthButton.destroy()
+
             self.displayDates = Label(self.screen, height = 10, wraplength = 400, text = f"Following days aren't available: {self.unavailableDates}. With that in mind, enter your preferred date in the format YYYY-MM-DD.")
             self.displayDates.pack(expand = True, fill = 'both')
             self.preferredTime = Entry(self.screen)
@@ -344,7 +361,7 @@ VALUES (%s,%s,%s,%s,%s);
         try:
             patientID, self.treatment = getDetails(self.accountEmail, self.disease)
             self.date = self.preferredTime.get()
-            if self.date in self.unavailableDates:
+            if self.date in self.unavailableDates: #robustness against unavailable dates
                 raise ValueError()
             connection = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
             connection.autocommit = True
@@ -361,7 +378,6 @@ VALUES (%s,%s,%s,%s,%s);
                     id = None
                     count += 1
                 except Exception: #issue with data formatting
-                    print(e)
                     self.displayDates.config(text = f"Please ensure your date is valid and isn't in the unavailable list: {self.unavailableDates}")
                     break
 
@@ -374,18 +390,18 @@ VALUES (%s,%s,%s,%s,%s);
             self.calendarButton.pack(expand = True, fill = 'both')
             self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
             self.returnButton.pack(expand = True, fill = "both")
-        except Exception as e:
+        except:
             self.appointmentConfirm.config(text = "Please ensure you've entered the date in the right format, and that you haven't entered an unavailable date")
         
     def addToCalendar(self):
-        self.screen.withdraw()
+        self.screen.withdraw() #recalls main screen
         popup = CalendarPopup(self.screen)
         self.screen.wait_window(popup) #waits to proceed until popup window is destroyed
         username, password = popup.result
         dateValues = self.date.split("/")
         year, month, day = int(dateValues[0]), int(dateValues[1]), int(dateValues[2])
         try:
-            client = caldav.DAVClient(url = "https://caldav.icloud.com/", username = username, password = password)
+            client = caldav.DAVClient(url = "https://caldav.icloud.com/", username = username, password = password) #connect to icloud client
             myCalendar = client.principal().calendars()[0]
             myCalendar.save_event(
             dtstart = datetime.datetime(year, month, day, 13, 0),
@@ -396,18 +412,19 @@ VALUES (%s,%s,%s,%s,%s);
         except Exception as e:
             finalMsg = "Error", f"Sorry, something went wrong while adding to calendar: {e}"
         finally:
-            self.screen.deiconify()
+            self.screen.deiconify() #brings back screen
             self.clearScreen()
             self.finalLabel = Label(text = finalMsg)
             self.finalLabel.pack(expand = True, fill = 'both')
             self.returnButton = Button(self.screen, text = "Return to main menu", command = self.mainMenu)
             self.returnButton.pack(expand = True, fill = "both")
 
-    def changeSymptom(self, button, symptomName, symptom):
+    def changeSymptom(self, button, symptom):
+        #reversible way of changing what symptoms you're experiencing
         clr = button.cget('background') #acquires text variable from the button
         if clr == "white":
             button.config(background = "red")
-            setattr(self, symptom, 1) #if changed the variable locally change wouldn't happen outside of subroutine
+            setattr(self, symptom, 1) #method of effecting the change outside of the local procedure
         else:
             button.config(background = "white")
             setattr(self, symptom, 0)
@@ -438,7 +455,7 @@ VALUES (%s,%s,%s,%s,%s);
                 raise ValueError("Your oxygen saturation is either immediately fatal or not possible. Please enter your actual saturation")
             self.isFemale = int(self.isFemale)
             self.displaySymptoms()
-        except Exception as e:
+        except Exception as e: #robustness against incorrect data formats
             self.formLabel.config(text = e)
 
     def changeGender(self): #allows for this to be altered multiple times if you accidentally clicked it once
@@ -460,6 +477,7 @@ VALUES (%s,%s,%s,%s,%s);
 
     def removeAppointment(self):
         self.clearScreen()
+        #create connection to fetch appointments on database
         conn = psycopg2.connect(dbname = 'appointments', **PARAMETERS)
         conn.autocommit = True
         cursor = conn.cursor()
@@ -488,7 +506,7 @@ VALUES (%s,%s,%s,%s,%s);
                 if appointment[0] == ID:
                     self.appointments.remove(appointment)
             self.listOfAppointments.config(text = f"Here are all the appointments on the database, please enter the id of the one you want to remove: {self.appointments}")
-        except:
+        except: #robustness against appointment that doesn't exist
             self.removeAppointmentButton.config(text = 'The appointment you want to remove does not exist')
     
     def addAppointment(self):
@@ -498,6 +516,7 @@ VALUES (%s,%s,%s,%s,%s);
         self.clearScreen()
         self.addMenu = Label(self.screen, text = "Please enter the details of your appointment", wraplength = 250)
         self.addMenu.grid(row = 0, column = 2, sticky ="nsew")
+        #display details required for appointment
         self.STAFFmeetingIDLabel = Label(self.screen, text = "Meeting ID")
         self.STAFFmeetingIDLabel.grid(row = 1, column = 0, sticky ="nsew")
         self.STAFFmeetingID = Entry(self.screen)
@@ -547,20 +566,20 @@ INSERt INTO Appointment (AppointmentID, PatientID, DoctorID, TreatmentName, Appo
 VALUES (%s, %s, %s, %s, %s, %s, %s);''', 
 (appointmentID, patientID, doctorID, treatment, date, time, room))
             self.addMenu.config(text = "Last appointment entered has been appended successfully")
-        except TypeError:
+        except TypeError: #robustness against incorrect data
             self.addMenu.config(text = "some of the data is in the wrong format")
         except psycopg2.errors.UniqueViolation: #meaning record is alrezdy on SQL
             self.addMenu.config(text = "You've already added this appointment")
         except psycopg2.Error: #every other database error, signalling issues with data format
             self.addMenu.config(text = "some of the data is in the wrong format")
         
-    def configureGrid(self, rowCount, columnCount):
+    def configureGrid(self, rowCount, columnCount): #frequently called function to expand a grid's widgets so that it is easier to read by a customer
         for i in range(rowCount):
             self.screen.rowconfigure(i, weight = 1)
         for j in range(columnCount):
             self.screen.columnconfigure(j, weight = 1)
     
-class CalendarPopup(Toplevel):
+class CalendarPopup(Toplevel): #OOP for the popup window
     def __init__(self, mainScreen):
         super().__init__(mainScreen) #derives basic window structure from the main screen's features
         self.labelUsername = Label(self, text = "Enter calendar username: ")
@@ -576,7 +595,7 @@ class CalendarPopup(Toplevel):
         self.update_idletasks()
     
     def submitValues(self):
-        self.result = (self.entryUsername.get(), self.entryPassword.get())
+        self.result = (self.entryUsername.get(), self.entryPassword.get()) #used by the main interface for calendar functions
         self.destroy()
 
 class HashTable:
@@ -632,7 +651,7 @@ def getPredictions(details, Oracle):
     #combine features in format of database and label it xtest
     scaledDetails = (details.reshape(-1, 1) - MEAN) / STD #if these aren't scaled down accuracy will be 0%
     evaluation = Oracle.feedForward(scaledDetails)    
-    prediction = numpy.argmax(evaluation[3], axis = 0)
+    prediction = numpy.argmax(evaluation[3], axis = 0) #convert probability prediction to absolute
     conversion = {0: "Healthy", 1: "Bronchitis", 2: "Flu", 3: "Cold", 4: "Pneumonia"}
     return conversion[prediction[0]]
 
@@ -666,7 +685,7 @@ def getDetails(email, disease):
     emailStatement = '''SELECT PatientID FROM Patient WHERE
 email = %s;
 '''
-    cursor.execute(emailStatement, (email, ))
+    cursor.execute(emailStatement, (email, )) #no validation needed as it's already confirmed the email is valid due to login/register
     patientID = cursor.fetchone()
     diseaseStatement = '''SELECT TreatmentName FROM LinkedCondition WHERE
 ConditionName = %s;    '''
@@ -676,4 +695,4 @@ ConditionName = %s;    '''
     return patientID[0], treatmentName[0] #since SQL results are always returned as a list
 
 nhsInterface = Interface()
-nhsInterface.screen.mainloop()
+nhsInterface.screen.mainloop() #start the main process
