@@ -85,7 +85,6 @@ RoomNumber INT REFERENCES Room(RoomNumber)
 )'''
 
 queries = [treatmentQuery, conditionQuery, linkconditionQuery, doctorQuery, customerQuery, roomQuery, appointmentQuery]
-for query in queries:
+for query in queries: #execute queries sequentially
   cursor.execute(query)
-cursor.close()
-conn.close()
+conn.close() #for security of database
